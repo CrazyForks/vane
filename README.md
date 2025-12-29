@@ -19,7 +19,9 @@
 
 ## What is Vane
 
-Vane is a high-performance, flow-based reverse proxy and network protocol engine written in Rust. It is designed to bridge the architectural gap between raw transport layer (L4) forwarding and complex application layer (L7) processing. Unlike traditional reverse proxies that rely on static hierarchical configurations, Vane utilizes a dynamic, composable pipeline architecture that treats network connections as programmable flows.
+Vane is a high-performance, flow-based network protocol engine written in Rust. It is designed to bridge the architectural gap between raw transport layer (L4) forwarding and complex application layer (L7) processing. Unlike traditional proxies that rely on static hierarchical configurations, Vane utilizes a dynamic, composable pipeline architecture that treats network connections as programmable flows.
+
+Vane operates as a protocol funnel—connections enter at L4 (TCP/UDP), optionally pass through L4+ (TLS/QUIC inspection), and can terminate at any layer based on runtime flow decisions. HTTP is one of many protocols supported; the architecture is designed for extensibility to DNS, gRPC, and other application protocols.
 
 ## Core Concepts
 
