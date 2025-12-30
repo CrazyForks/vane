@@ -93,6 +93,15 @@ We have successfully completed the Architecture Vulnerability Scan (Task 0.3). T
       - Introduced `push_sanitized` to eliminate intermediate sanitized plugin name allocations.
     - **Result**: Reduced allocation count from 2+ per step to exactly 1, and eliminated `format!` parsing overhead.
 
+12. ✅ **Task 2.2: Fix External Command Injection (SEC-2)**
+    - **Problem**: External command driver allowed execution of arbitrary binaries anywhere on the system.
+    - **Solution**: Implemented a "Trusted Bin Root" security policy.
+    - **Changes**:
+      - Restricted command execution to `$CONFIG_DIR/bin/` directory.
+      - Added strict path validation and canonicalization during both registration and runtime execution.
+      - Automatically creates `bin/` directory during startup initialization.
+    - **Result**: Prohibits unauthorized system command execution, ensuring secure external plugin integration in cloud-native environments.
+
 ---
 
 ## 🎯 Next Steps: Phase II - Security & Quality Fixes
@@ -113,7 +122,7 @@ We have successfully completed the Architecture Vulnerability Scan (Task 0.3). T
 - [`.report/performance.md`](.report/performance.md) - 8 performance bottlenecks
 - [`.report/maintainability-surface.md`](.report/maintainability-surface.md) - 24 面子 issues (Phase III)
 
-**Next Task**: Task 2.2 - Fix external command injection vulnerability (SEC-2)
+**Next Task**: Task 2.3 - Implement template recursion DoS protection (SEC-3)
 
 ---
 
@@ -183,10 +192,10 @@ ONLY after user approval:
 2. ✅ ~~**Task 2.7** - QUIC Session Cleanup (REL-1)~~ **COMPLETE**
 3. ✅ ~~**Task 2.10** - Flow Engine Cloning Fix (PERF-1)~~ **COMPLETE**
 4. ✅ ~~**Task 2.11** - Flow Path String Optimization (PERF-2)~~ **COMPLETE**
-5. **Task 2.2** - Command Injection Fix (SEC-2) ← **NEXT**
+5. ✅ ~~**Task 2.2** - Command Injection Fix (SEC-2)~~ **COMPLETE**
+6. **Task 2.3** - Template DoS Protection (SEC-3) ← **NEXT**
 
 ### Next Week (Critical Vulnerabilities)
-6. **Task 2.3** - Template DoS Protection (SEC-3)
 7. **Task 2.4** - Template Size Limits (SEC-4)
 8. **Task 2.5** - Config Reload Race Fix (SEC-5)
 9. **Task 2.6** - Path Canonicalization (SEC-6)
@@ -200,10 +209,10 @@ ONLY after user approval:
 
 ## 📝 Version Information
 
-**Current Version**: 0.7.3
+**Current Version**: 0.7.4
 **Target Version**: 0.8.0 (After remaining CRITICAL fixes complete)
 **Expected Versions**:
-- 0.7.4: Tasks 2.2-2.4 (Security fixes)
+- 0.7.5: Tasks 2.3-2.4 (Template security)
 - 0.8.0: All CRITICAL + HIGH fixes complete
 
 ---
