@@ -512,10 +512,9 @@ let resolved_inputs = resolve_inputs(&instance.input, &mut context).await; // No
 - **Circular references**: May cause infinite recursion - need depth limit in resolver
   - Example: `{{kv.{{kv.x}}}}` where `kv.x = "{{kv.x}}"` → infinite loop
   - Solution: Add `max_depth` parameter (default: 10)
-- **Escape sequences**: **NOT SUPPORTED** (by design)
-  - Literal `{{` or `}}` characters in configuration are not supported
-  - This is a deliberate design decision to avoid ambiguity
-  - If users need special characters, use alternative configuration approach
+- **Escape sequences**: Not implemented in initial version
+  - Users who need literal `{{` can use KV: `kv.set("lbrace", "{{")`
+  - Can be added later if there's demand
 
 ---
 
