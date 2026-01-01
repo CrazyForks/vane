@@ -36,15 +36,15 @@ full = [
 ]
 
 # Core Transport (L4)
-tcp = ["dep:fancy-regex"]
-udp = ["dep:fancy-regex"]
+tcp = ["dep:hex", "dep:fancy-regex"]
+udp = ["dep:hex", "dep:fancy-regex"]
 
 # Carrier Layer (L4+)
-tls = ["dep:ring", "dep:rustls", "dep:tokio-rustls", "dep:rcgen", "dep:hyper-rustls", "dep:tls-parser", "dep:nom", "dep:x509-parser", "dep:rustls-pemfile", "dep:rustls-native-certs"]
-quic = ["tls", "dep:quinn", "dep:nom", "dep:aes"]
+tls = ["dep:ring", "dep:rustls", "dep:tokio-rustls", "dep:rcgen", "dep:hyper-rustls", "dep:tls-parser", "dep:nom", "dep:hex", "dep:x509-parser", "dep:rustls-pemfile", "dep:rustls-native-certs"]
+quic = ["tls", "dep:quinn", "dep:nom", "dep:aes", "dep:hex"]
 
 # Application Layer (L7)
-httpx = ["tls", "quic", "dep:hyper", "dep:hyper-util", "dep:http-body", "dep:http-body-util", "dep:tower-service"]
+httpx = ["tls", "quic", "dep:hyper", "dep:hyper-util", "dep:http-body", "dep:http-body-util", "dep:infer", "dep:base64", "dep:hex", "dep:tower-service"]
 
 # Console / Management API
 console= ["http-console", "unix-console"]
@@ -102,7 +102,7 @@ fancy-regex = { version = "0.17", optional = true }
 uuid = { version = "1", features = ["v4", "v7", "serde"] }
 futures = "0.3"
 anyhow = "1"
-hex = "0.4"
+hex = { version = "0.4", optional = true }
 async-trait = "0.1"
 reqwest = { version = "0.12", default-features = false, features = ["rustls-tls", "json"], optional = true }
 hickory-resolver = { version = "0.25", optional = true }
