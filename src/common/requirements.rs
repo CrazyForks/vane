@@ -3,6 +3,7 @@
 use crate::common::getconf;
 use crate::modules::stack::protocol::carrier::quic::session as quic_session;
 use crate::modules::stack::transport::{health, session};
+use fancy_log::{LogLevel, log};
 use notify::{Event, EventKind, RecursiveMode, Watcher};
 use std::{ffi::OsStr, time::Duration};
 use tokio::fs;
@@ -73,12 +74,20 @@ pub fn start_config_watchers_only() -> ConfigChangeReceivers {
 
 	tokio::spawn(async move {
 		let (event_tx, mut event_rx) = mpsc::channel::<Event>(32);
-		let mut watcher = notify::recommended_watcher(move |res| {
+		let mut watcher = match notify::recommended_watcher(move |res| {
 			if let Ok(e) = res {
 				let _ = event_tx.try_send(e);
 			}
-		})
-		.unwrap();
+		}) {
+			Ok(w) => w,
+			Err(e) => {
+				log(
+					LogLevel::Error,
+					&format!("✗ Failed to initialize config watcher: {}", e),
+				);
+				return;
+			}
+		};
 		let config_dir = getconf::get_config_dir();
 		let _ = watcher.watch(&config_dir, RecursiveMode::Recursive);
 
