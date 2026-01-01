@@ -78,7 +78,7 @@ We have successfully completed the Architecture Vulnerability Scan (Task 0.3). T
 
 **Detailed Reports:** See `.report/` directory.
 
-**Next Task**: Continue Task 2.15 - Replace unwrap() in production code
+**Next Task**: Task 2.20 - Implement L4/L4+ connection rate limits
 
 ---
 
@@ -105,12 +105,12 @@ We have successfully completed the Architecture Vulnerability Scan (Task 0.3). T
 12. ✅ ~~**Task 2.12** - Template Complexity Protection~~ **COMPLETE**
 13. ✅ ~~**Task 2.13** - Template Injection Protection~~ **COMPLETE**
 14. ✅ ~~**Task 2.14** - Flow Execution Timeout~~ **COMPLETE**
-15. 🔄 **Task 2.15** - Replace unwrap() in production code **IN PROGRESS**
+15. ✅ ~~**Task 2.15** - Replace unwrap() in production code~~ **COMPLETE**
 16. ✅ ~~**Task 2.16** - Replace unreachable!() with error handling~~ **COMPLETE**
 17. ✅ ~~**Task 2.17** - Rate Limiter Memory Fix~~ **COMPLETE**
 18. ✅ ~~**Task 2.18** - QUIC Frame Optimization~~ **COMPLETE**
 19. ✅ ~~**Task 2.19** - Async I/O Replacement~~ **COMPLETE**
-20. **Task 2.20** - Implement L4/L4+ connection rate limits ← **NEXT**
+20. 🔄 **Task 2.20** - Implement L4/L4+ connection rate limits **NEXT**
 
 ### Next Week (Reliability & Performance)
 ...
