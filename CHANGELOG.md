@@ -7,6 +7,12 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## Unreleased
 
+## 0.7.20 (2. Jan, 2026)
+
+- **Added:** Implemented Cycle Detection in the flow engine validator to prevent infinite loops in configuration.
+- **Changed:** Enhanced error reporting for configuration failures with precise path tracing (e.g., `[plugin_a -> plugin_b.input.param_x]`).
+- **Fixed:** Completely refactored the Flow Validation Framework. Eliminated all `Box::leak` calls in configuration validators, achieving memory safety during hot-reloads.
+
 ## 0.7.19 (1. Jan, 2026)
 
 - **Added:** Implemented Global Connection Rate Limits. Introduced two new environment variables `MAX_CONNECTIONS` (default: 10000) and `MAX_CONNECTIONS_PER_IP` (default: 50) to enforce concurrency limits at the L4/L4+ layer.
