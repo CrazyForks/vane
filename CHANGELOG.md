@@ -7,6 +7,11 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## Unreleased
 
+## 0.7.19 (1. Jan, 2026)
+
+- **Added:** Implemented Global Connection Rate Limits. Introduced two new environment variables `MAX_CONNECTIONS` (default: 10000) and `MAX_CONNECTIONS_PER_IP` (default: 50) to enforce concurrency limits at the L4/L4+ layer.
+- **Changed:** Integrated connection tracking into TCP listeners, UDP sessions (Legacy & Flow), and QUIC session management. Utilizing RAII guards to ensure precise and automatic resource counting across configuration hot-reloads.
+
 ## 0.7.18 (1. Jan, 2026)
 
 - **Changed:** Completed full migration to Asynchronous I/O across the entire codebase. Replaced all remaining `std::fs` calls with `tokio::fs` in core loading engines, certificate management, management API, and plugin persistence.
