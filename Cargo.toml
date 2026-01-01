@@ -1,6 +1,6 @@
 [package]
 name = "vane"
-version = "0.7.20"
+version = "0.8.0"
 categories = ["network-programming", "web-programming", "asynchronous"]
 description = "A flow-based, two-phase reverse proxy with modular protocol layers and unified middleware."
 edition = "2024"
@@ -19,24 +19,56 @@ name = "vane"
 path = "src/main.rs"
 
 [features]
-default = ["aws-lc-rs", "full"]
-full = []
+default = ["full"]
+full = [
+    "tcp", 
+    "udp", 
+    "tls", 
+    "quic", 
+    "httpx",
+    "h2upstream", 
+    "h3upstream",
+    "cgi", 
+    "static", 
+    "ratelimit", 
+    "aws-lc-rs"
+]
+
+# Core Transport (L4)
+tcp = []
+udp = []
+
+# Carrier Layer (L4+)
+tls = ["rustls", "tokio-rustls", "rcgen", "hyper-rustls"]
+quic = ["quinn"]
+
+# Application Layer (L7)
+httpx = ["hyper", "hyper-util", "axum"]
+
+# Feature Flags for Plugins/Drivers
+cgi = []
+static = []
+ratelimit = []
+h2upstream = ["reqwest"]
+h3upstream = ["quinn", "h3", "h3-quinn"]
+
+# Crypto Backends
 aws-lc-rs = [
-  "rustls/aws-lc-rs",
-  "tokio-rustls/aws-lc-rs",
-  "hyper-rustls/aws-lc-rs",
-  "quinn/aws-lc-rs",
+  "rustls?/aws-lc-rs",
+  "tokio-rustls?/aws-lc-rs",
+  "hyper-rustls?/aws-lc-rs",
+  "quinn?/aws-lc-rs",
 ]
 ring = [
-  "rustls/ring",
-  "tokio-rustls/ring",
-  "hyper-rustls/ring",
-  "quinn/ring",
+  "rustls?/ring",
+  "tokio-rustls?/ring",
+  "hyper-rustls?/ring",
+  "quinn?/ring",
 ]
 
 [dependencies]
 tokio = { version = "1", features = ["full", "signal"] }
-axum = { version = "0.8", features = ["macros"] }
+axum = { version = "0.8", features = ["macros"], optional = true }
 serde = { version = "1", features = ["derive"] }
 serde_json = "1"
 dotenvy = "0.15"
@@ -61,29 +93,29 @@ futures = "0.3"
 anyhow = "1"
 hex = "0.4"
 async-trait = "0.1"
-reqwest = { version = "0.12", default-features = false, features = ["rustls-tls", "json"] }
+reqwest = { version = "0.12", default-features = false, features = ["rustls-tls", "json"], optional = true }
 hickory-resolver = "0.25"
 tls-parser = "0.12"
 nom = "8"
-quinn = { version = "0.11", default-features = false, features = ["runtime-tokio"] }
+quinn = { version = "0.11", default-features = false, features = ["runtime-tokio"], optional = true }
 quinn-proto = "0.11"
-tokio-rustls = { version = "0.26", default-features = false, features = ["logging", "tls12"] }
+tokio-rustls = { version = "0.26", default-features = false, features = ["logging", "tls12"], optional = true }
 rustls-pemfile = "2"
 thiserror = "2"
-hyper = { version = "1", features = ["full"] }
-hyper-util = { version = "0.1", features = ["full"] }
+hyper = { version = "1", features = ["full"], optional = true }
+hyper-util = { version = "0.1", features = ["full"], optional = true }
 http-body-util = "0.1"
 bytes = "1"
 http = "1"
-rcgen = "0.14"
+rcgen = { version = "0.14", optional = true }
 x509-parser = "0.18"
 httparse = "1"
-h3 = "0.0.8"
-h3-quinn = "0.0.10"
+h3 = { version = "0.0.8", optional = true }
+h3-quinn = { version = "0.0.10", optional = true }
 http-body = "1"
 oneshot = "0.1"
-rustls = { version = "0.23", default-features = false, features = ["logging", "std", "tls12"] }
-hyper-rustls = { version = "0.27", default-features = false, features = ["http2", "native-tokio", "logging"] }
+rustls = { version = "0.23", default-features = false, features = ["logging", "std", "tls12"], optional = true }
+hyper-rustls = { version = "0.27", default-features = false, features = ["http2", "native-tokio", "logging", "tls12"], optional = true }
 infer = "0.19"
 rustls-native-certs = "0.8"
 tower-service = "0.3"
