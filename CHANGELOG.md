@@ -12,6 +12,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - **Changed:** Completed full migration to Asynchronous I/O across the entire codebase. Replaced all remaining `std::fs` calls with `tokio::fs` in core loading engines, certificate management, management API, and plugin persistence.
 - **Changed:** Eliminated potential worker thread blocking during configuration hot-reloads and environment initialization, ensuring consistent low latency under disk I/O pressure.
 - **Fixed:** Refactored the internal port listener lifecycle to support asynchronous binding and graceful task handovers.
+- **Fixed:** Replaced potential panic points in the WebSocket builder, config watcher initialization, and regex compilation with robust error handling and logging, ensuring 100% panic safety in the data plane.
 
 ## 0.7.17 (1. Jan, 2026)
 
