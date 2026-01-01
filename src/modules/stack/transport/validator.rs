@@ -9,6 +9,7 @@ use std::borrow::Cow;
 use std::collections::{HashMap, HashSet};
 use validator::{ValidationError, ValidationErrors};
 
+use super::model::Target;
 use super::tcp::TcpProtocolRule;
 use super::udp::UdpProtocolRule;
 
@@ -17,6 +18,25 @@ use super::udp::UdpProtocolRule;
 pub struct FlowValidationError {
 	pub path: String,
 	pub message: String,
+}
+
+pub fn validate_target(target: &Target, path: &str) -> Vec<FlowValidationError> {
+	let mut errors = Vec::new();
+	match target {
+		Target::Domain { domain, .. } => {
+			if !cfg!(feature = "domain-target") {
+				errors.push(FlowValidationError {
+					path: path.to_string(),
+					message: format!(
+						"Domain target '{}' is disabled in this build. Please recompile with 'domain-target' feature enabled.",
+						domain
+					),
+				});
+			}
+		}
+		_ => {}
+	}
+	errors
 }
 
 /// Recursively validates a flow-based configuration tree.
@@ -247,6 +267,16 @@ fn validate_plugin_inputs_internal(
 							def.name, def.param_type
 						),
 					});
+				}
+
+				// Deep validation for Target types (IP/Domain/Node)
+				if def.param_type == ParamType::Any || def.param_type == ParamType::Map {
+					if let Ok(target) = serde_json::from_value::<Target>(value.clone()) {
+						errors.extend(validate_target(
+							&target,
+							&format!("{}.input.{}", current_path, def.name),
+						));
+					}
 				}
 			}
 			None => {
