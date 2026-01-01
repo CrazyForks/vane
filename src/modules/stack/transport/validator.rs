@@ -45,6 +45,30 @@ pub fn validate_flow_recursive(
 		format!("{} -> {}", path, plugin_name)
 	};
 
+	// 0. Check Feature Constraints for Built-in Plugins
+	if plugin_name.starts_with("internal.") {
+		let is_disabled = match plugin_name.as_str() {
+			"internal.driver.cgi" => !cfg!(feature = "cgi"),
+			"internal.driver.static" => !cfg!(feature = "static"),
+			"internal.common.ratelimit.sec" | "internal.common.ratelimit.min" => {
+				!cfg!(feature = "ratelimit")
+			}
+			"internal.driver.upstream" => !cfg!(any(feature = "h2upstream", feature = "h3upstream")),
+			_ => false,
+		};
+
+		if is_disabled {
+			errors.push(FlowValidationError {
+				path: current_path.clone(),
+				message: format!(
+					"Plugin '{}' is disabled in this build. Please recompile Vane with the corresponding feature enabled.",
+					plugin_name
+				),
+			});
+			return errors;
+		}
+	}
+
 	// 1. Cycle Detection
 	if ancestors.contains(plugin_name) {
 		errors.push(FlowValidationError {
@@ -99,6 +123,26 @@ pub fn validate_flow_recursive(
 
 	if !is_generic && is_http_specific {
 		let current_proto = protocol.to_lowercase();
+
+		// Check if the protocol itself is disabled via features
+		let proto_disabled = match current_proto.as_str() {
+			"tls" => !cfg!(feature = "tls"),
+			"quic" => !cfg!(feature = "quic"),
+			"httpx" => !cfg!(feature = "httpx"),
+			_ => false,
+		};
+
+		if proto_disabled {
+			errors.push(FlowValidationError {
+				path: current_path.clone(),
+				message: format!(
+					"Protocol '{}' is disabled in this build. Please recompile Vane with the corresponding feature enabled.",
+					current_proto
+				),
+			});
+			return errors;
+		}
+
 		let supports_current = supported_protocols
 			.iter()
 			.any(|p| p.to_lowercase() == current_proto);
