@@ -1,45 +1,27 @@
 # Agent Session Progress
 
 **Last Updated**: 2026-01-02
-**Current Task**: Phase IV - Deep Analysis (Step 1: Core & Common)
-**Status**: Starting Analysis Loop
-**Strategy**: Scan -> Document -> Analyze -> Repeat
+**Current Task**: Task 6.2 - TLS Fail-Closed (Security Hardening)
+**Status**: Ready to start
+**Strategy**: Audit `tls.rs` for error handling during peek/parse.
 
 ---
 
 ## 📍 Current Position
 
-We have cleared the TODO list and established a roadmap for deep analysis.
-I will now scan the codebase module-by-module to create a "source of truth" in `docs/reference/`.
+Version bumped to **0.8.4**. `CHANGELOG.md` updated.
+Task 6.1 (QUIC Security) complete.
 
-## 📋 Analysis Queue
+## 📋 Next Task: Task 6.2 - TLS Fail-Closed
 
-1.  **Core & Common** (`src/core`, `src/common`) **<- CURRENT**
-    - Entry point logic
-    - Configuration loading
-    - Utilities (IP, Env, Port)
-2.  **L4 Transport** (`src/modules/stack/transport`)
-    - TCP/UDP handling
-    - Dispatcher logic
-    - Legacy Proxy logic
-3.  **L4+ Carrier** (`src/modules/stack/carrier`)
-    - TLS/QUIC logic
-    - Session management
-    - Handover logic
-4.  **L7 Application** (`src/modules/stack/application`)
-    - HTTP engines
-    - Container/Envelope
-    - Flow Engine
-5.  **Plugins** (`src/modules/plugins`)
-    - Registry
-    - Middleware/Terminators
-    - Drivers
+**Goal:** Ensure that if Vane fails to peek or parse the TLS ClientHello, it doesn't bypass inspection (which might happen if the flow continues or falls back to an unsafe default).
 
-## 📝 Findings Log (Draft)
-
-*Will be populated as I scan.*
+**Audit Plan:**
+1.  Read `src/modules/stack/carrier/tls.rs` (again, focusing on error paths).
+2.  Identify where `peek` errors or `parse_client_hello` errors are logged but execution continues.
+3.  Change logic to return `Err` (drop connection) on failure, OR ensure fallback is explicitly "deny".
 
 ## 📝 Version Information
 
-**Current Version**: 0.8.3
+**Current Version**: 0.8.4
 **Target Version**: 0.9.0
