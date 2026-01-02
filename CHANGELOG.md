@@ -7,6 +7,11 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## Unreleased
 
+## 0.8.1 (2. Jan, 2026)
+
+- **Changed:** Optimized the dependency tree by making most of heavy libraries optional, significantly reducing minimal build size.
+- **Fixed:** Resolved CGI `PATH_INFO` and `SCRIPT_NAME` derivation edge cases. Implemented segment-based splitting and path normalization to strictly adhere to RFC 3875.
+
 ## 0.8.0 (2. Jan, 2026)
 
 - **Added:** Comprehensive support for modular Rust Feature Flags. Users can now customize the binary by enabling/disabling 13 core features: `tcp`, `udp`, `tls`, `quic`, `httpx`, `h2upstream`, `h3upstream`, `cgi`, `static`, `ratelimit`, `domain-target`, `http-console`, and `unix-console`.
