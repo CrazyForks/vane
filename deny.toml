@@ -17,7 +17,7 @@ allow = [
 	"Unicode-3.0",
 	"CDLA-Permissive-2.0",
 	# Pull by rustls ecosystem aws-lc-sys
-	# Vane is 100% Rustls technology stack and has nothing to do with OpenSSL
+	# Vane is full rustls stack and has nothing to do with OpenSSL
 	"OpenSSL",
 ]
 
