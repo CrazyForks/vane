@@ -1,35 +1,45 @@
 # Agent Session Progress
 
 **Last Updated**: 2026-01-02
-**Current Task**: Phase IV - Documentation (Architecture & Code)
-**Status**: Task 3.3 Complete
+**Current Task**: Phase IV - Deep Analysis (Step 1: Core & Common)
+**Status**: Starting Analysis Loop
+**Strategy**: Scan -> Document -> Analyze -> Repeat
 
 ---
 
 ## 📍 Current Position
 
-We have successfully reorganized the entire codebase structure (Phase III).
-- `src/modules/plugins/` is modularized (core, middleware, terminators, l7).
-- `src/modules/stack/` is flattened (removed `protocol`).
-- Plugin file structure is standardized (main logic in `mod.rs`).
+We have cleared the TODO list and established a roadmap for deep analysis.
+I will now scan the codebase module-by-module to create a "source of truth" in `docs/reference/`.
 
-### Recently Completed
+## 📋 Analysis Queue
 
-1. ✅ **Task 3.3: Standardize Plugin File Structure**
-   - Merged `cgi/plugin.rs` -> `cgi/mod.rs`
-   - Merged `resource/static.rs` -> `resource/mod.rs`
-   - Updated imports and verified with `cargo check`.
+1.  **Core & Common** (`src/core`, `src/common`) **<- CURRENT**
+    - Entry point logic
+    - Configuration loading
+    - Utilities (IP, Env, Port)
+2.  **L4 Transport** (`src/modules/stack/transport`)
+    - TCP/UDP handling
+    - Dispatcher logic
+    - Legacy Proxy logic
+3.  **L4+ Carrier** (`src/modules/stack/carrier`)
+    - TLS/QUIC logic
+    - Session management
+    - Handover logic
+4.  **L7 Application** (`src/modules/stack/application`)
+    - HTTP engines
+    - Container/Envelope
+    - Flow Engine
+5.  **Plugins** (`src/modules/plugins`)
+    - Registry
+    - Middleware/Terminators
+    - Drivers
 
-## 📋 Next Task: Phase IV - Documentation
+## 📝 Findings Log (Draft)
 
-**Goal:** Ensure documentation reflects the final codebase structure.
-
-**Tasks:**
-1. Update `ARCHITECTURE.md` (Already partially done, needs full review)
-2. Update `CODE.md` (Needs major updates to reflect new paths)
-3. Create `docs/development.md` (or update existing)
+*Will be populated as I scan.*
 
 ## 📝 Version Information
 
-**Current Version**: 0.8.2
+**Current Version**: 0.8.3
 **Target Version**: 0.9.0
