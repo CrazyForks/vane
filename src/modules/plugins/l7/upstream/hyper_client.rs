@@ -44,7 +44,7 @@ pub async fn execute_hyper_request(
 
 	let body: BoxBody<Bytes, Error> = match req_payload {
 		PayloadState::Http(vane_body) => vane_body.boxed(),
-		PayloadState::Buffered(bytes) => Full::new(bytes).map_err(|e| match e {}).boxed(),
+		PayloadState::Buffered(bytes, _guard) => Full::new(bytes).map_err(|e| match e {}).boxed(),
 		PayloadState::Empty | PayloadState::Generic => BoxBody::default(),
 	};
 
@@ -127,7 +127,7 @@ pub async fn execute_h1_websocket_request(
 
 	let body: BoxBody<Bytes, Error> = match req_payload {
 		PayloadState::Http(vane_body) => vane_body.boxed(),
-		PayloadState::Buffered(bytes) => Full::new(bytes).map_err(|e| match e {}).boxed(),
+		PayloadState::Buffered(bytes, _guard) => Full::new(bytes).map_err(|e| match e {}).boxed(),
 		PayloadState::Empty | PayloadState::Generic => BoxBody::default(),
 	};
 
