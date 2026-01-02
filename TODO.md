@@ -96,6 +96,7 @@ See [`.todo/roadmap.md`](.todo/roadmap.md) for full details.
 | 2.18 | Remove unnecessary QUIC frame clones | 2025-12-30 | [Performance Report](.report/performance.md) |
 | 1.1 | Rust feature flags support (Comprehensive) | 2026-01-02 | [`.todo/rust-feature-flags.md`](.todo/rust-feature-flags.md) |
 | 1.4 | Flow validation framework (Custom Engine) | 2026-01-02 | [`.todo/flow-validation.md`](.todo/flow-validation.md) |
+| 0.4 | L4 legacy config file extraction | 2026-01-02 | [`.todo/l4-traditional-config.md`](.todo/l4-traditional-config.md) |
 | 2.19 | Replace blocking I/O with async | 2025-12-30 | [Performance Report](.report/performance.md) |
 
 ---
@@ -178,7 +179,6 @@ See [`.todo/roadmap.md`](.todo/roadmap.md) for full details.
 
 | ID | Task | Status | File |
 |----|------|--------|------|
-| 0.4 | L4 legacy config file extraction | Pending | [`.todo/l4-traditional-config.md`](.todo/l4-traditional-config.md) |
 | 3.x | Plugin directory reorganization | Pending | [`.todo/code-organization.md`](.todo/code-organization.md) |
 
 ---
