@@ -10,8 +10,7 @@ use std::collections::{HashMap, HashSet};
 use validator::{ValidationError, ValidationErrors};
 
 use super::model::Target;
-use super::tcp::TcpProtocolRule;
-use super::udp::UdpProtocolRule;
+use crate::modules::stack::transport::legacy::{tcp::TcpProtocolRule, udp::UdpProtocolRule};
 
 /// Internal error type for flow validation that doesn't require &'static str.
 #[derive(Debug)]
