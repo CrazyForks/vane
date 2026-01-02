@@ -1,4 +1,4 @@
-/* src/modules/stack/protocol/application/model.rs */
+/* src/modules/stack/application/model.rs */
 
 use crate::modules::{
 	plugins::core::model::{Layer, ProcessingStep},

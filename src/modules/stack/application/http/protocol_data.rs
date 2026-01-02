@@ -1,10 +1,10 @@
-/* src/modules/stack/protocol/application/http/protocol_data.rs */
+/* src/modules/stack/application/http/protocol_data.rs */
 
 use std::any::Any;
 
 use hyper::upgrade::OnUpgrade;
 
-use crate::modules::stack::protocol::application::protocol_data::ProtocolData;
+use crate::modules::stack::application::protocol_data::ProtocolData;
 
 /// HTTP-specific protocol extension data.
 ///

@@ -12,7 +12,7 @@ use crate::modules::{
 	plugins::core::model::{
 		HttpMiddleware, L7Middleware, MiddlewareOutput, ParamDef, ParamType, Plugin, ResolvedInputs,
 	},
-	stack::protocol::application::container::{Container, PayloadState},
+	stack::application::container::{Container, PayloadState},
 };
 use anyhow::{Result, anyhow};
 use async_trait::async_trait;

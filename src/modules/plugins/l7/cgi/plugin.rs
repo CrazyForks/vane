@@ -4,7 +4,7 @@ use super::executor::{self, CgiConfig};
 use crate::modules::plugins::core::model::{
 	HttpMiddleware, L7Middleware, MiddlewareOutput, ParamDef, ParamType, Plugin, ResolvedInputs,
 };
-use crate::modules::stack::protocol::application::container::Container;
+use crate::modules::stack::application::container::Container;
 use anyhow::Result;
 use async_trait::async_trait;
 use serde_json::Value;

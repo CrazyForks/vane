@@ -1,4 +1,4 @@
-/* src/modules/stack/protocol/application/container.rs */
+/* src/modules/stack/application/container.rs */
 
 use std::fmt;
 
@@ -14,7 +14,7 @@ use crate::common::{
 };
 use crate::modules::{
 	kv::KvStore,
-	stack::protocol::application::{
+	stack::application::{
 		http::{protocol_data::HttpProtocolData, wrapper::VaneBody},
 		protocol_data::ProtocolData,
 	},

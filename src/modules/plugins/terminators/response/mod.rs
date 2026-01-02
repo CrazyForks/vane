@@ -6,7 +6,7 @@ use crate::modules::{
 	plugins::core::model::{
 		L7Terminator, ParamDef, ParamType, Plugin, ResolvedInputs, TerminatorResult,
 	},
-	stack::protocol::application::{
+	stack::application::{
 		container::{Container, PayloadState},
 		http::wrapper::VaneBody,
 	},

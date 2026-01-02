@@ -1,4 +1,4 @@
-/* src/modules/stack/protocol/carrier/context.rs */
+/* src/modules/stack/carrier/context.rs */
 
 use crate::modules::{
 	kv::KvStore,

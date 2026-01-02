@@ -4,7 +4,7 @@ use crate::{
 	common::{getenv, ip},
 	modules::{
 		plugins::protocol::quic::parser,
-		stack::protocol::carrier::quic::session::{self, SessionAction},
+		stack::carrier::quic::session::{self, SessionAction},
 		stack::transport::{
 			health,
 			model::ResolvedTarget,

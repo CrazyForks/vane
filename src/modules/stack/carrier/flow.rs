@@ -1,4 +1,4 @@
-/* src/modules/stack/protocol/carrier/flow.rs */
+/* src/modules/stack/carrier/flow.rs */
 
 use anyhow::Result;
 

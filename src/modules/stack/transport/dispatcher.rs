@@ -3,7 +3,7 @@
 use super::{context, flow, legacy, tcp::TcpConfig};
 use crate::modules::{
 	kv::KvStore, plugins::core::model::ConnectionObject, plugins::core::model::TerminatorResult,
-	stack::protocol::carrier,
+	stack::carrier,
 };
 use fancy_log::{LogLevel, log};
 use std::sync::Arc;

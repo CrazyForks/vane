@@ -1,9 +1,9 @@
-/* src/modules/stack/protocol/application/http/h3.rs */
+/* src/modules/stack/application/http/h3.rs */
 
 use super::wrapper::{H3BodyAdapter, VaneBody};
 use crate::common::requirements::{Error, Result};
 use crate::modules::kv::KvStore;
-use crate::modules::stack::protocol::application::{
+use crate::modules::stack::application::{
 	container::{Container, PayloadState},
 	flow,
 	model::APPLICATION_REGISTRY,

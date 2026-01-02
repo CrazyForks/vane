@@ -18,7 +18,7 @@ use crate::modules::{
 	certs, nodes,
 	plugins::core::loader as plugin_loader,
 	ports,
-	stack::protocol::{
+	stack::{
 		application::{hotswap as app_hotswap, model as app_model},
 		carrier::{hotswap as resolver_hotswap, model as resolver_model},
 	},

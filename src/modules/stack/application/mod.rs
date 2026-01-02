@@ -1,4 +1,4 @@
-/* src/modules/stack/protocol/application/mod.rs */
+/* src/modules/stack/application/mod.rs */
 
 pub mod container;
 pub mod dns;

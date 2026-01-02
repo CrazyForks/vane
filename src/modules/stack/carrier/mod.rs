@@ -1,4 +1,4 @@
-/* src/modules/stack/protocol/carrier/mod.rs */
+/* src/modules/stack/carrier/mod.rs */
 
 pub mod context;
 pub mod flow;

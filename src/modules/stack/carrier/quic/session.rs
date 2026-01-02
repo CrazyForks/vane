@@ -1,4 +1,4 @@
-/* src/modules/stack/protocol/carrier/quic/session.rs */
+/* src/modules/stack/carrier/quic/session.rs */
 
 use crate::common::getenv;
 use crate::modules::ports::tasks::ConnectionGuard;

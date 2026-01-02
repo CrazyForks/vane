@@ -5,7 +5,7 @@ use crate::common::requirements::Error;
 use crate::modules::plugins::core::model::{
 	HttpMiddleware, L7Middleware, MiddlewareOutput, ParamDef, ParamType, Plugin, ResolvedInputs,
 };
-use crate::modules::stack::protocol::application::{
+use crate::modules::stack::application::{
 	container::{Container, PayloadState},
 	http::wrapper::VaneBody,
 };

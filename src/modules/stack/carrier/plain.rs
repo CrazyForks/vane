@@ -1,11 +1,11 @@
-/* src/modules/stack/protocol/carrier/plain.rs */
+/* src/modules/stack/carrier/plain.rs */
 
 use super::{context, flow};
 use crate::common::getenv;
 use crate::modules::{
 	kv::KvStore,
 	plugins::core::model::{ConnectionObject, TerminatorResult},
-	stack::protocol::{application::http::httpx, carrier::model::RESOLVER_REGISTRY},
+	stack::{application::http::httpx, carrier::model::RESOLVER_REGISTRY},
 };
 use anyhow::{Result, anyhow};
 use fancy_log::{LogLevel, log};

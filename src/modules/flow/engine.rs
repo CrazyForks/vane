@@ -8,7 +8,7 @@ use crate::modules::{
 		model::{ConnectionObject, MiddlewareOutput, ProcessingStep, TerminatorResult},
 		registry,
 	},
-	stack::protocol::application::container::Container,
+	stack::application::container::Container,
 };
 
 use super::{context::ApplicationContext, context::ExecutionContext, key_scoping};

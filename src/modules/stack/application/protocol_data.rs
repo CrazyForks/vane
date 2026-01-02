@@ -1,4 +1,4 @@
-/* src/modules/stack/protocol/application/protocol_data.rs */
+/* src/modules/stack/application/protocol_data.rs */
 
 use std::any::Any;
 

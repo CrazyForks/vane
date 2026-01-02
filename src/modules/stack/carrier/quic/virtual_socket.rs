@@ -1,4 +1,4 @@
-/* src/modules/stack/protocol/carrier/quic/virtual_socket.rs */
+/* src/modules/stack/carrier/quic/virtual_socket.rs */
 
 use std::io;
 use std::net::SocketAddr;

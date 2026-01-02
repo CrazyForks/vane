@@ -1,4 +1,4 @@
-/* src/modules/stack/protocol/carrier/hotswap.rs */
+/* src/modules/stack/carrier/hotswap.rs */
 
 use super::model::{RESOLVER_REGISTRY, ResolverConfig, SUPPORTED_UPGRADE_PROTOCOLS};
 use crate::common::{

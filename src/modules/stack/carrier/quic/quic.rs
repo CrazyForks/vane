@@ -1,17 +1,17 @@
-/* src/modules/stack/protocol/carrier/quic/quic.rs */
+/* src/modules/stack/carrier/quic/quic.rs */
 
 use super::muxer::QuicMuxer;
 use super::session::{self, PendingState, SessionAction};
 use crate::common::getenv;
 use crate::modules::ports::tasks::GLOBAL_TRACKER;
-use crate::modules::stack::protocol::carrier::{context, flow};
+use crate::modules::stack::carrier::{context, flow};
 use crate::modules::{
 	kv::KvStore,
 	plugins::{
 		core::model::{ConnectionObject, TerminatorResult},
 		protocol::quic::parser,
 	},
-	stack::protocol::carrier::model::RESOLVER_REGISTRY,
+	stack::carrier::model::RESOLVER_REGISTRY,
 };
 use anyhow::{Result, anyhow};
 use fancy_log::{LogLevel, log};

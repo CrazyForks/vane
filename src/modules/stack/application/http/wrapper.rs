@@ -1,4 +1,4 @@
-/* src/modules/stack/protocol/application/http/wrapper.rs */
+/* src/modules/stack/application/http/wrapper.rs */
 
 use crate::common::requirements::Error;
 use bytes::Bytes;

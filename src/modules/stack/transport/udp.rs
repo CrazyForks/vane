@@ -4,7 +4,7 @@ use super::{context, flow, legacy};
 use crate::modules::{
 	kv::KvStore,
 	plugins::core::model::{ConnectionObject, Layer, ProcessingStep, TerminatorResult},
-	stack::protocol::carrier,
+	stack::carrier,
 };
 use fancy_log::{LogLevel, log};
 use serde::{Deserialize, Serialize};

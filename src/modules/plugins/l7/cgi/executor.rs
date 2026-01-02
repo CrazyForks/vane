@@ -4,7 +4,7 @@ use super::stream::{CgiResponseBody, pump_stdout};
 use crate::common::{getenv, requirements::Error};
 use crate::modules::{
 	plugins::core::model::MiddlewareOutput,
-	stack::protocol::application::{
+	stack::application::{
 		container::{Container, PayloadState},
 		http::wrapper::VaneBody,
 	},

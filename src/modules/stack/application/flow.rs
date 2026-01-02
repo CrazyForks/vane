@@ -1,11 +1,11 @@
-/* src/modules/stack/protocol/application/flow.rs */
+/* src/modules/stack/application/flow.rs */
 
 use anyhow::Result;
 
 use crate::modules::{
 	flow::engine,
 	plugins::core::model::{ProcessingStep, TerminatorResult},
-	stack::protocol::application::container::Container,
+	stack::application::container::Container,
 };
 
 pub async fn execute_l7(

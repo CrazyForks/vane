@@ -1,4 +1,4 @@
-/* src/modules/stack/protocol/carrier/tls.rs */
+/* src/modules/stack/carrier/tls.rs */
 
 use super::{context, flow};
 use crate::common::getenv;
@@ -10,7 +10,7 @@ use crate::modules::{
 		protocol::tls::clienthello,
 		terminators::upgrader::decryptor,
 	},
-	stack::protocol::carrier::model::RESOLVER_REGISTRY,
+	stack::carrier::model::RESOLVER_REGISTRY,
 };
 use anyhow::anyhow;
 use fancy_log::{LogLevel, log};
