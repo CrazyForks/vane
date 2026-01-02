@@ -201,7 +201,7 @@ impl HttpMiddleware for StaticPlugin {
 					http::header::CONTENT_TYPE,
 					HeaderValue::from_static("text/html; charset=utf-8"),
 				);
-				container.response_body = PayloadState::Buffered(html);
+				container.response_body = PayloadState::new_buffered(html)?;
 				return Ok(MiddlewareOutput {
 					branch: Cow::Borrowed("success"),
 					store: None,
