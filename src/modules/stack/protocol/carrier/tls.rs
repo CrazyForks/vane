@@ -6,9 +6,9 @@ use crate::common::requirements::{Error, Result};
 use crate::modules::{
 	kv::KvStore,
 	plugins::{
-		model::{ConnectionObject, TerminatorResult},
+		core::model::{ConnectionObject, TerminatorResult},
 		protocol::tls::clienthello,
-		terminator::upgrader::decryptor,
+		terminators::upgrader::decryptor,
 	},
 	stack::protocol::carrier::model::RESOLVER_REGISTRY,
 };

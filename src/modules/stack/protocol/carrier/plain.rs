@@ -4,7 +4,7 @@ use super::{context, flow};
 use crate::common::getenv;
 use crate::modules::{
 	kv::KvStore,
-	plugins::model::{ConnectionObject, TerminatorResult},
+	plugins::core::model::{ConnectionObject, TerminatorResult},
 	stack::protocol::{application::http::httpx, carrier::model::RESOLVER_REGISTRY},
 };
 use anyhow::{Result, anyhow};

@@ -4,7 +4,7 @@ use anyhow::Result;
 
 use crate::modules::{
 	flow::engine,
-	plugins::model::{ProcessingStep, TerminatorResult},
+	plugins::core::model::{ProcessingStep, TerminatorResult},
 	stack::protocol::application::container::Container,
 };
 

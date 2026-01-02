@@ -16,7 +16,7 @@ use crate::core::{router, socket};
 use crate::middleware::auth;
 use crate::modules::{
 	certs, nodes,
-	plugins::loader as plugin_loader,
+	plugins::core::loader as plugin_loader,
 	ports,
 	stack::protocol::{
 		application::{hotswap as app_hotswap, model as app_model},

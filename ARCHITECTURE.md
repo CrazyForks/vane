@@ -503,9 +503,7 @@ internal.common.match:
 
 **Flow is a decision tree constructed at runtime.** Each plugin returns a branch name, and the flow engine traverses to the next step.
 
-### Flow Data Structure
-
-**Location:** `src/modules/plugins/model.rs`
+**Location:** `src/modules/plugins/core/model.rs`
 
 ```rust
 pub type ProcessingStep = HashMap<String, PluginInstance>;
@@ -837,7 +835,7 @@ impl Middleware for MyPlugin {
 
 ### Internal Plugin Registry
 
-**Location:** `src/modules/plugins/registry.rs`
+**Location:** `src/modules/plugins/core/registry.rs`
 
 ```rust
 static INTERNAL_PLUGIN_REGISTRY: Lazy<DashMap<String, Arc<dyn Plugin>>> = Lazy::new(|| {
@@ -887,7 +885,7 @@ pub fn get_internal_plugin(name: &str) -> Option<Arc<dyn Plugin>> {
 
 ### External Plugin System
 
-**Location:** `src/modules/plugins/loader.rs`, `src/modules/plugins/external.rs`
+**Location:** `src/modules/plugins/core/loader.rs`, `src/modules/plugins/core/external.rs`
 
 **Why External Plugins?**
 
@@ -984,7 +982,7 @@ impl Middleware for ExternalPlugin {
 **Why External Terminators Not Supported:**
 
 ```rust
-// src/modules/plugins/external.rs
+// src/modules/plugins/core/external.rs
 if self.config.role == PluginRole::Terminator {
     return Err(anyhow!(
         "External plugins cannot be Terminators. Only built-in plugins can terminate connections."

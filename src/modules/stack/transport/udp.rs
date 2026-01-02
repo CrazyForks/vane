@@ -3,7 +3,7 @@
 use super::{context, flow, legacy};
 use crate::modules::{
 	kv::KvStore,
-	plugins::model::{ConnectionObject, Layer, ProcessingStep, TerminatorResult},
+	plugins::core::model::{ConnectionObject, Layer, ProcessingStep, TerminatorResult},
 	stack::protocol::carrier,
 };
 use fancy_log::{LogLevel, log};

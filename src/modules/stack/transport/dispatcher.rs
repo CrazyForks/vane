@@ -2,7 +2,7 @@
 
 use super::{context, flow, legacy, tcp::TcpConfig};
 use crate::modules::{
-	kv::KvStore, plugins::model::ConnectionObject, plugins::model::TerminatorResult,
+	kv::KvStore, plugins::core::model::ConnectionObject, plugins::core::model::TerminatorResult,
 	stack::protocol::carrier,
 };
 use fancy_log::{LogLevel, log};

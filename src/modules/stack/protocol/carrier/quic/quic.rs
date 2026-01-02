@@ -8,7 +8,7 @@ use crate::modules::stack::protocol::carrier::{context, flow};
 use crate::modules::{
 	kv::KvStore,
 	plugins::{
-		model::{ConnectionObject, TerminatorResult},
+		core::model::{ConnectionObject, TerminatorResult},
 		protocol::quic::parser,
 	},
 	stack::protocol::carrier::model::RESOLVER_REGISTRY,

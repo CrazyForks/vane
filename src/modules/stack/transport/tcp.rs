@@ -1,6 +1,6 @@
 /* src/modules/stack/transport/tcp.rs */
 
-use crate::modules::plugins::model::{Layer, ProcessingStep};
+use crate::modules::plugins::core::model::{Layer, ProcessingStep};
 use serde::{Deserialize, Serialize};
 use validator::{Validate, ValidationErrors};
 

@@ -1,7 +1,7 @@
 /* src/modules/stack/protocol/application/model.rs */
 
 use crate::modules::{
-	plugins::model::{Layer, ProcessingStep},
+	plugins::core::model::{Layer, ProcessingStep},
 	stack::transport::loader::PreProcess,
 };
 use arc_swap::ArcSwap;

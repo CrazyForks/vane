@@ -3,7 +3,7 @@
 use super::wrapper::VaneBody;
 use crate::common::requirements::{Error, Result};
 use crate::modules::kv::KvStore;
-use crate::modules::plugins::model::ConnectionObject;
+use crate::modules::plugins::core::model::ConnectionObject;
 use crate::modules::stack::protocol::application::{
 	container::{Container, PayloadState},
 	flow,

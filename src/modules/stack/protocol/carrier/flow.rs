@@ -5,7 +5,7 @@ use anyhow::Result;
 use crate::modules::{
 	flow::{context::TransportContext, engine},
 	kv::KvStore,
-	plugins::model::{ConnectionObject, ProcessingStep, TerminatorResult},
+	plugins::core::model::{ConnectionObject, ProcessingStep, TerminatorResult},
 };
 
 pub async fn execute(
