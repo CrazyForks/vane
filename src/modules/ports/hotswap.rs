@@ -1,7 +1,6 @@
 /* src/modules/ports/hotswap.rs */
 
 use super::{
-	super::stack::transport::{loader, tcp::TcpConfig, udp::UdpConfig},
 	listener,
 	model::{CONFIG_STATE, PortStatus, Protocol},
 };
@@ -10,6 +9,7 @@ use crate::common::{
 	config::{getconf, getenv},
 	sys::hotswap::watch_loop,
 };
+use crate::layers::l4::{loader, tcp::TcpConfig, udp::UdpConfig};
 use fancy_log::{LogLevel, log};
 use std::{collections::HashMap, sync::Arc};
 use tokio::fs;
