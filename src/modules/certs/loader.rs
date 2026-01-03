@@ -1,6 +1,6 @@
 /* src/modules/certs/loader.rs */
 
-use crate::common::{getconf, hotswap::watch_loop, lifecycle::Result};
+use crate::common::{config::getconf, hotswap::watch_loop, lifecycle::Result};
 use crate::modules::certs::{arcswap, format};
 use fancy_log::{LogLevel, log};
 use std::collections::HashMap;
