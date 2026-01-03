@@ -80,12 +80,12 @@ This plan breaks down the structural overhaul into atomic, verifiable steps.
         - [x] `cargo check`.
 
 - [ ] **1.4: Establish `src/resources/certs`**
-    - [ ] **1.4.1: Move Certs Module**
-        - [ ] Move `src/modules/certs/` -> `src/resources/certs/`.
-        - [ ] Add `pub mod certs;` to `src/resources/mod.rs`.
-        - [ ] Remove `certs` from `src/modules/mod.rs`.
-        - [ ] Search & Replace `crate::modules::certs` -> `crate::resources::certs`.
-        - [ ] `cargo check`.
+    - [x] **1.4.1: Move Certs Module**
+        - [x] Move `src/modules/certs/` -> `src/resources/certs/`.
+        - [x] Add `pub mod certs;` to `src/resources/mod.rs`.
+        - [x] Remove `certs` from `src/modules/mod.rs`.
+        - [x] Search & Replace `crate::modules::certs` -> `crate::resources::certs`.
+        - [x] `cargo check`.
 
 - [ ] **1.5: Establish `src/resources/service_discovery`**
     - [ ] **1.5.1: Move Nodes Module**
