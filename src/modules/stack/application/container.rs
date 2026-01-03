@@ -14,13 +14,11 @@ use crate::common::{
 	config::getenv,
 	sys::lifecycle::{Error, Result},
 };
-use crate::modules::{
-	kv::KvStore,
-	stack::application::{
-		http::{protocol_data::HttpProtocolData, wrapper::VaneBody},
-		protocol_data::ProtocolData,
-	},
+use crate::modules::stack::application::{
+	http::{protocol_data::HttpProtocolData, wrapper::VaneBody},
+	protocol_data::ProtocolData,
 };
+use crate::resources::kv::KvStore;
 
 // --- Memory Management State ---
 
