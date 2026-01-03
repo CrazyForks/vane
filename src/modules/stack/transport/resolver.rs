@@ -2,7 +2,7 @@
 
 use super::model::{ResolvedTarget, Target};
 use crate::common::config::getenv;
-use crate::modules::nodes::model::NODES_STATE;
+use crate::resources::service_discovery::model::NODES_STATE;
 use fancy_log::{LogLevel, log};
 #[cfg(feature = "domain-target")]
 use hickory_resolver::{
