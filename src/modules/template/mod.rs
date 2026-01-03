@@ -119,7 +119,7 @@ fn resolve_value_recursive<'a>(
 #[cfg(test)]
 mod tests {
 	use super::*;
-	use crate::modules::kv::KvStore;
+	use crate::resources::kv::KvStore;
 	use context::SimpleContext;
 
 	/// Tests resolve_template with simple variable.
