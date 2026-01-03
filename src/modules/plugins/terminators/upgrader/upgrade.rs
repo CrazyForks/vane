@@ -1,12 +1,10 @@
 /* src/modules/plugins/terminators/upgrader/upgrade.rs */
 
-use crate::modules::{
-	kv::KvStore,
-	plugins::core::model::{
-		ConnectionObject, Layer, ParamDef, ParamType, Plugin, ResolvedInputs, Terminator,
-		TerminatorResult,
-	},
+use crate::modules::plugins::core::model::{
+	ConnectionObject, Layer, ParamDef, ParamType, Plugin, ResolvedInputs, Terminator,
+	TerminatorResult,
 };
+use crate::resources::kv::KvStore;
 use anyhow::{Result, anyhow};
 use async_trait::async_trait;
 use fancy_log::{LogLevel, log};
