@@ -1,7 +1,7 @@
 /* src/modules/stack/transport/resolver.rs */
 
 use super::model::{ResolvedTarget, Target};
-use crate::common::getenv;
+use crate::common::config::getenv;
 use crate::modules::nodes::model::NODES_STATE;
 use fancy_log::{LogLevel, log};
 #[cfg(feature = "domain-target")]
