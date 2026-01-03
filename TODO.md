@@ -122,13 +122,12 @@ This plan breaks down the structural overhaul into atomic, verifiable steps.
         - [x] Fix internal imports in `contract.rs`.
         - [x] `cargo check`.
 
-- [ ] **2.2: Move Flow Logic**
-    - [ ] **2.2.1: Move Context**
-        - [ ] Move `src/modules/flow/context.rs` -> `src/engine/context.rs`.
-        - [ ] Search & Replace `crate::modules::flow::context` -> `crate::engine::context`.
-        - [ ] `cargo check`.
-    - [ ] **2.2.2: Move Key Scoping**
-        - [ ] Move `src/modules/flow/key_scoping.rs` -> `src/engine/key_scoping.rs`.
+    - [ ] **2.2: Move Flow Logic**
+        - [x] **2.2.1: Move Context**
+            - [x] Move `src/modules/flow/context.rs` -> `src/engine/context.rs`.
+            - [x] Search & Replace `crate::modules::flow::context` -> `crate::engine::context`.
+            - [x] `cargo check`.
+        - [ ] **2.2.2: Move Key Scoping**        - [ ] Move `src/modules/flow/key_scoping.rs` -> `src/engine/key_scoping.rs`.
         - [ ] Search & Replace `crate::modules::flow::key_scoping` -> `crate::engine::key_scoping`.
         - [ ] `cargo check`.
     - [ ] **2.2.3: Move Executor (Engine)**
