@@ -1,7 +1,10 @@
 /* src/modules/nodes/hotswap.rs */
 
 use super::model::{NODES_STATE, NodesConfig};
-use crate::common::{getconf, hotswap::watch_loop, loader};
+use crate::common::{
+	config::{getconf, loader},
+	hotswap::watch_loop,
+};
 use fancy_log::{LogLevel, log};
 use std::sync::Arc;
 use tokio::sync::mpsc;
