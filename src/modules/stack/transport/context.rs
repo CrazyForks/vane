@@ -1,7 +1,7 @@
 /* src/modules/stack/transport/context.rs */
 
 use crate::common::config::getenv;
-use crate::modules::kv::KvStore;
+use crate::resources::kv::KvStore;
 use tokio::net::TcpStream;
 
 /// Peeks at the initial bytes of a TCP stream and populates the KvStore with context data.
