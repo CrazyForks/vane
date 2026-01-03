@@ -1,41 +1,37 @@
 # Agent Session Progress
 
 **Last Updated**: 2026-01-02
-**Current Task**: Task 6.4 - Global L7 Buffer Cap (Security Hardening)
-**Status**: Implementation
-**Strategy**: Adaptive memory limit based on OS free memory + Vane's current buffer usage.
+**Current Task**: Task 5.3 - Flatten Proxy Module (Phase III Refinement)
+**Status**: Task 5.2 Complete
+**Strategy**: Split `proxy.rs` into specialized modules.
 
 ---
 
 ## 📍 Current Position
 
-Implementing an intelligent, adaptive memory quota system for L7 buffering.
+Refactored `bootstrap.rs` into `logging.rs`, `console.rs`, and `monitor.rs`. Version is now **0.8.9**.
 
-## 📋 Task Breakdown (Task 6.4)
+### Recently Completed
 
-### 1. Update `container.rs`
-- [x] Add `GLOBAL_L7_BUFFERED_BYTES: AtomicUsize`.
-- [x] Add `CURRENT_MEMORY_LIMIT: AtomicUsize`.
-- [x] Implement `Drop` for `PayloadState` to release bytes.
-- [x] Update `force_buffer` to check quota.
+1. ✅ **Task 5.2: Refactor Bootstrap**
+   - Created `src/core/logging.rs` (Logging & MOTD).
+   - Created `src/core/console.rs` (Management API Lifecycle).
+   - Created `src/core/monitor.rs` (L7 Memory Watcher).
+   - Simplified `src/core/bootstrap.rs` into a pure orchestrator.
+   - Updated `src/core/mod.rs`.
 
-### 2. Implement Memory Monitor
-- [ ] Create `src/common/ip.rs` (or appropriate place) helper to get free memory.
-- [ ] Since I cannot add crates easily, I will use:
-    - Linux: `/proc/meminfo`
-    - macOS/FreeBSD: `sysctl` command.
-- [ ] Spawn background task in `bootstrap.rs` to update `CURRENT_MEMORY_LIMIT` every 1s.
+## 📋 Next Task: Task 5.3 - Flatten Proxy Module
 
-### 3. Configuration
-- [x] `L7_GLOBAL_BUFFER_LIMIT` (Fixed fallback).
-- [x] `L7_ADAPTIVE_MEMORY_LIMIT` (Toggle).
-- [x] `L7_ADAPTIVE_MEMORY_RATIO` (Percentage).
+**Goal:** Split the monolithic `src/modules/stack/transport/proxy.rs` into specialized files.
 
-### 4. Version Bump
-- [ ] Update `Cargo.toml` to `0.8.8`.
-- [ ] Update `CHANGELOG.md`.
+**Plan:**
+1.  Create `src/modules/stack/transport/proxy/` directory.
+2.  Move TCP proxy logic to `proxy/tcp.rs`.
+3.  Move UDP proxy logic to `proxy/udp.rs`.
+4.  Move Generic/ByteStream proxy logic to `proxy/stream.rs`.
+5.  Update `mod.rs` and imports.
 
 ## 📝 Version Information
 
-**Current Version**: 0.8.7
-**Target Version**: 0.8.8
+**Current Version**: 0.8.9
+**Target Version**: 0.9.0
