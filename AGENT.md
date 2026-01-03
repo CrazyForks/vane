@@ -8,10 +8,10 @@ Execute the Vane 2.0 structural refactoring plan as detailed in `TODO.md`.
 2. [ ] **Phase 2: The Engine Core**
     - [x] 2.1: Extract Traits (Contract)
     - [ ] 2.2: Move Flow Logic
-        - [x] 2.2.1: Move Context (Completed)
-        - [ ] 2.2.2: Move Key Scoping (Next)
-        - [ ] 2.2.3: Move Executor (Engine)
-        - [ ] 2.2.4: Cleanup Flow Module
+        - [x] 2.2.1: Move Context
+        - [x] 2.2.2: Move Key Scoping
+        - [x] 2.2.3: Move Executor (Engine) (Completed)
+        - [ ] 2.2.4: Cleanup Flow Module (Next)
 3. [ ] **Phase 3: The Protocol Stack (Layers)**
 4. [ ] **Phase 4: Ingress & Plugins**
 5. [ ] **Phase 5: Server & API**
@@ -25,9 +25,11 @@ Execute the Vane 2.0 structural refactoring plan as detailed in `TODO.md`.
 - **2.1.2 Completed:** Moved `model.rs` to `engine/contract.rs`.
 - **2.1.3 Completed:** Fixed all import errors.
 - **2.2.1 Completed:** Moved `src/modules/flow/context.rs` -> `src/engine/context.rs`.
-    - Updated `engine/mod.rs` to expose `context`.
-    - Updated `src/modules/flow/mod.rs` to remove local mod and export from `crate::engine::context`.
-    - Fixed imports in `modules/flow/engine.rs`, `stack/carrier/flow.rs`, `stack/transport/flow.rs`.
+- **2.2.2 Completed:** Moved `src/modules/flow/key_scoping.rs` -> `src/engine/key_scoping.rs`.
+- **2.2.3 Completed:** Moved `src/modules/flow/engine.rs` -> `src/engine/executor.rs`.
+    - Updated `engine/mod.rs` to expose `executor`.
+    - Updated `src/modules/flow/mod.rs` to re-export from `crate::engine::executor`.
+    - Fixed imports in `stack/application/flow.rs`, `stack/carrier/flow.rs`, `stack/transport/flow.rs`.
     - `cargo check` passed.
 
 ### 1. AGENT.md Management
