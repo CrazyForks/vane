@@ -2,15 +2,17 @@
 
 pub mod plugin_output;
 
+use ahash::AHashMap;
 use chrono::Utc;
-use std::{collections::HashMap, net::SocketAddr};
+use std::net::SocketAddr;
 use uuid::Uuid;
 
 /// A per-connection, key-value storage space.
 ///
 /// Keys are expected to be lowercase and dot-separated (e.g., "conn.ip").
 /// All values are stored as strings.
-pub type KvStore = HashMap<String, String>;
+/// Using AHashMap for high-performance variable resolution.
+pub type KvStore = AHashMap<String, String>;
 
 /// Creates a new, pre-populated KvStore for an incoming connection.
 ///
