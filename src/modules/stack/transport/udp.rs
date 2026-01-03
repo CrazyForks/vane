@@ -91,10 +91,9 @@ pub async fn dispatch_udp_datagram(
 				&flow_config.connection,
 				&mut kv_store,
 				conn_object,
-				std::collections::HashMap::new(),
+				ahash::AHashMap::new(),
 			)
 			.await;
-
 			match result {
 				Ok(TerminatorResult::Finished) => {
 					log(LogLevel::Debug, "✓ UDP Flow handled at L4.");
