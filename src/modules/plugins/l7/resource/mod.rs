@@ -5,7 +5,7 @@ pub mod inspect;
 pub mod range;
 pub mod router;
 
-use crate::common::requirements::Error;
+use crate::common::lifecycle::Error;
 use crate::modules::plugins::core::model::{
 	HttpMiddleware, L7Middleware, MiddlewareOutput, ParamDef, ParamType, Plugin, ResolvedInputs,
 };
