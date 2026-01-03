@@ -1,9 +1,7 @@
 /* src/modules/plugins/terminators/upgrader/decryptor.rs */
 
-use crate::modules::{
-	certs, plugins::core::model::ConnectionObject, stack::application::http::httpx,
-};
-use crate::resources::kv::KvStore;
+use crate::modules::{plugins::core::model::ConnectionObject, stack::application::http::httpx};
+use crate::resources::{certs, kv::KvStore};
 use anyhow::{Result, anyhow};
 use fancy_log::{LogLevel, log};
 use std::sync::Arc;
