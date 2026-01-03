@@ -1,7 +1,7 @@
 /* src/modules/plugins/drivers/httpx.rs */
 
 use crate::{
-	common::getenv,
+	common::config::getenv,
 	modules::plugins::core::model::{ExternalApiResponse, MiddlewareOutput, ResolvedInputs},
 };
 use anyhow::{Result, anyhow};
