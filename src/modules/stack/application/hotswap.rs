@@ -6,7 +6,7 @@ use crate::common::{
 		getconf,
 		loader::{self, LoadResult},
 	},
-	hotswap::watch_loop,
+	sys::hotswap::watch_loop,
 };
 use dashmap::DashMap;
 use fancy_log::{LogLevel, log};
