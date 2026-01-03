@@ -3,11 +3,11 @@
 use super::model::{CONFIG_STATE, ListenerState, Protocol, TASK_REGISTRY};
 use crate::common::config::getenv;
 use crate::modules::{
-	kv,
 	plugins::protocol::quic::parser,
 	stack::carrier::quic::{muxer::QuicMuxer, session},
 	stack::transport::{dispatcher, udp},
 };
+use crate::resources::kv;
 use dashmap::DashMap;
 use fancy_log::{LogLevel, log};
 use once_cell::sync::Lazy;
