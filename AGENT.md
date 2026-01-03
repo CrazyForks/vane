@@ -17,6 +17,13 @@ Execute the Vane 2.0 structural refactoring plan as detailed in `TODO.md`.
 ## Progress Log
 - Session started.
 - Reviewed `TODO.md` and confirmed the Vane 2.0 refactoring plan.
+- Completed Phase 1.1: Restructuring `src/common/` (Config).
+- Completed Phase 1.2: Restructuring `src/common/` (Net & Sys).
+- Completed 1.3.1: Setup Resources Module.
+- Completed 1.3.2: Move KV Module.
+- Completed 1.4.1: Move Certs Module.
+- Fixed integration tests: Updated expected log message from "ACCESS_TOKEN not set" to "Access token not set, management API disabled" in `integration/pkg/env/process.go` and `integration/tests/common/test_no_console.go`.
+- Ready to proceed with Phase 1.5.1: Move Nodes Module (waiting for user approval).
 ### 1. AGENT.md Management
 - `AGENT.md` is your personal workspace and status tracker.
 - You MUST update it frequently (ideally every turn or after completing a logical step).
