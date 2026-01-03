@@ -5,8 +5,11 @@ use super::{
 	listener,
 	model::{CONFIG_STATE, PortStatus, Protocol},
 };
-use crate::common::loader::LoadResult;
-use crate::common::{getconf, getenv, hotswap::watch_loop};
+use crate::common::config::loader::LoadResult;
+use crate::common::{
+	config::{getconf, getenv},
+	hotswap::watch_loop,
+};
 use fancy_log::{LogLevel, log};
 use std::{collections::HashMap, sync::Arc};
 use tokio::fs;
