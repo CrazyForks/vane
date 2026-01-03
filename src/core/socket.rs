@@ -1,6 +1,6 @@
 /* src/core/socket.rs */
 
-use crate::common::getenv;
+use crate::common::config::getenv;
 use fancy_log::{LogLevel, log};
 use std::path::{Path, PathBuf};
 use tokio::fs;
