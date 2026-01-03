@@ -23,9 +23,8 @@
 //! 1. Try `L7Middleware` first, then fallback to `Middleware`.
 //! 2. Try `L7Terminator` first, then fallback to `Terminator`.
 
-pub mod context;
 pub mod engine;
 pub mod key_scoping;
 
-pub use context::{ApplicationContext, ExecutionContext, TransportContext};
+pub use crate::engine::context::{ApplicationContext, ExecutionContext, TransportContext};
 pub use engine::{execute, execute_l7};
