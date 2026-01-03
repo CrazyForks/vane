@@ -3,10 +3,10 @@
 use super::{context, flow};
 use crate::common::config::getenv;
 use crate::modules::{
-	kv::KvStore,
 	plugins::core::model::{ConnectionObject, TerminatorResult},
 	stack::{application::http::httpx, carrier::model::RESOLVER_REGISTRY},
 };
+use crate::resources::kv::KvStore;
 use anyhow::{Result, anyhow};
 use fancy_log::{LogLevel, log};
 use tokio::net::TcpStream;
