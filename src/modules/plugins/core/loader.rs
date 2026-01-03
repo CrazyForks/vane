@@ -1,6 +1,6 @@
 /* src/modules/plugins/core/loader.rs */
 
-use crate::common::{getconf, getenv};
+use crate::common::config::{getconf, getenv};
 use crate::modules::plugins::core::external::ExternalPlugin;
 use crate::modules::plugins::core::{
 	model::{ExternalPluginConfig, Plugin},
