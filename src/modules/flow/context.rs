@@ -40,7 +40,7 @@ pub trait ExecutionContext: Send {
 /// Transport context for L4 and L4+ layers.
 pub struct TransportContext<'a> {
 	pub kv: &'a mut KvStore,
-	pub payloads: HashMap<String, Bytes>,
+	pub payloads: ahash::AHashMap<String, Bytes>,
 }
 
 #[async_trait]
