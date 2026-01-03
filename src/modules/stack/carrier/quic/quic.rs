@@ -2,7 +2,7 @@
 
 use super::muxer::QuicMuxer;
 use super::session::{self, PendingState, SessionAction};
-use crate::common::getenv;
+use crate::common::config::getenv;
 use crate::modules::ports::tasks::GLOBAL_TRACKER;
 use crate::modules::stack::carrier::{context, flow};
 use crate::modules::{
