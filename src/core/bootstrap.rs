@@ -5,7 +5,10 @@ use fancy_log::{LogLevel, log};
 use std::sync::Arc;
 use tokio::signal;
 
-use crate::common::{config::getenv, lifecycle, watcher};
+use crate::common::{
+	config::getenv,
+	sys::{lifecycle, watcher},
+};
 use crate::core::{console, logging, monitor};
 use crate::modules::{
 	certs, nodes,
