@@ -1,7 +1,7 @@
 /* src/modules/stack/carrier/tls.rs */
 
 use super::{context, flow};
-use crate::common::getenv;
+use crate::common::config::getenv;
 use crate::common::lifecycle::{Error, Result};
 use crate::modules::{
 	kv::KvStore,
