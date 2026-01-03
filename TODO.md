@@ -96,12 +96,12 @@ This plan breaks down the structural overhaul into atomic, verifiable steps.
         - [x] `cargo check`.
 
 - [ ] **1.6: Establish `src/resources/templates`**
-    - [ ] **1.6.1: Move Template Module**
-        - [ ] Move `src/modules/template/` -> `src/resources/templates/`.
-        - [ ] Add `pub mod templates;` to `src/resources/mod.rs`.
-        - [ ] Remove `template` from `src/modules/mod.rs`.
-        - [ ] Search & Replace `crate::modules::template` -> `crate::resources::templates`.
-        - [ ] `cargo check`.
+    - [x] **1.6.1: Move Template Module**
+        - [x] Move `src/modules/template/` -> `src/resources/templates/`.
+        - [x] Add `pub mod templates;` to `src/resources/mod.rs`.
+        - [x] Remove `template` from `src/modules/mod.rs`.
+        - [x] Search & Replace `crate::modules::template` -> `crate::resources::templates`.
+        - [x] `cargo check`.
 
 ## Phase 2: The Engine Core
 *Goal: Centralize the "Contract" and "Executor".*
