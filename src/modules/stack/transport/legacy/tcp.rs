@@ -1,6 +1,6 @@
 /* src/modules/stack/transport/legacy/tcp.rs */
 
-use crate::common::getenv;
+use crate::common::config::getenv;
 use crate::modules::kv::KvStore;
 use crate::modules::stack::transport::model::{Detect, DetectMethod, Forward};
 use crate::modules::stack::transport::{balancer, proxy};
