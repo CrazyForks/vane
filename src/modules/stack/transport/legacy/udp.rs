@@ -1,6 +1,6 @@
 /* src/modules/stack/transport/legacy/udp.rs */
 
-use crate::common::{config::getenv, ip};
+use crate::common::{config::getenv, net::ip};
 use crate::modules::ports::tasks::GLOBAL_TRACKER;
 use crate::modules::stack::transport::model::{DetectMethod, Forward};
 use crate::modules::stack::transport::session::{REVERSE_SESSIONS, SESSIONS, Session};
