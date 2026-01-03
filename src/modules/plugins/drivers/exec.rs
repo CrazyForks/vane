@@ -1,6 +1,6 @@
 /* src/modules/plugins/drivers/exec.rs */
 
-use crate::common::getenv;
+use crate::common::config::getenv;
 use crate::modules::plugins::core::{
 	external,
 	model::{MiddlewareOutput, ResolvedInputs},
