@@ -1,6 +1,6 @@
 /* src/modules/plugins/l7/cgi/stream.rs */
 
-use crate::common::lifecycle::{Error, Result as VaneResult};
+use crate::common::sys::lifecycle::{Error, Result as VaneResult};
 use crate::modules::stack::application::container::{self, BufferGuard};
 use bytes::Bytes;
 use fancy_log::{LogLevel, log};
