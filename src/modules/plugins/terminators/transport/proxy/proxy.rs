@@ -2,14 +2,14 @@
 
 use crate::{
 	common::{config::getenv, net::ip},
+	layers::l4::{
+		health,
+		model::ResolvedTarget,
+		session::{REVERSE_SESSIONS, SESSIONS, Session},
+	},
 	modules::{
 		plugins::protocol::quic::parser,
 		stack::carrier::quic::session::{self, SessionAction},
-		stack::transport::{
-			health,
-			model::ResolvedTarget,
-			session::{REVERSE_SESSIONS, SESSIONS, Session},
-		},
 	},
 };
 use anyhow::{Context, Result};
