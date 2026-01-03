@@ -1,4 +1,4 @@
-/* src/modules/ports/hotswap.rs */
+/* src/ingress/hotswap.rs */
 
 use super::{
 	listener,

@@ -2,7 +2,7 @@
 
 use super::model::ResolvedTarget;
 use crate::common::config::getenv;
-use crate::modules::ports::tasks::ConnectionGuard;
+use crate::ingress::tasks::ConnectionGuard;
 use dashmap::DashMap;
 use fancy_log::{LogLevel, log};
 use once_cell::sync::Lazy;

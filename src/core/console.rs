@@ -10,8 +10,8 @@ use tokio::task::JoinHandle;
 
 use crate::common::{config::getenv, net::portool};
 use crate::core::{router, socket};
+use crate::ingress::model;
 use crate::middleware::auth;
-use crate::modules::ports;
 
 pub struct ConsoleHandles {
 	pub tcp_task: JoinHandle<()>,
@@ -100,7 +100,7 @@ pub async fn start() -> Option<ConsoleHandles> {
 
 				let tcp_server = serve(
 					tcp_listener,
-					app.clone().with_state(ports::model::CONFIG_STATE.clone()),
+					app.clone().with_state(model::CONFIG_STATE.clone()),
 				)
 				.with_graceful_shutdown(async move {
 					tcp_notifier.notified().await;
@@ -118,7 +118,7 @@ pub async fn start() -> Option<ConsoleHandles> {
 			#[cfg(feature = "console")]
 			let unix_handle = if let Some(listener) = unix_socket_listener {
 				let unix_notifier = shutdown_notifier.clone();
-				let unix_server = serve(listener, app.with_state(ports::model::CONFIG_STATE.clone()))
+				let unix_server = serve(listener, app.with_state(model::CONFIG_STATE.clone()))
 					.with_graceful_shutdown(async move {
 						unix_notifier.notified().await;
 					});

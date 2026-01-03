@@ -10,9 +10,10 @@ use crate::common::{
 	sys::{lifecycle, watcher},
 };
 use crate::core::{console, logging, monitor};
+use crate::ingress::{hotswap, listener, model};
 use crate::layers::l4p::{hotswap as resolver_hotswap, model as resolver_model};
 use crate::layers::l7::{hotswap as app_hotswap, model as app_model};
-use crate::modules::{plugins::core::loader as plugin_loader, ports};
+use crate::modules::plugins::core::loader as plugin_loader;
 use crate::resources::{certs, service_discovery as nodes};
 
 /// Entry point for the Vane bootstrap sequence.
@@ -37,8 +38,8 @@ pub async fn start() {
 	certs::loader::initialize().await;
 
 	// 4. Load Port Configurations (L4 Listeners)
-	let initial_ports = ports::hotswap::scan_ports_config(&[]).await;
-	ports::model::CONFIG_STATE.store(Arc::new(initial_ports.clone()));
+	let initial_ports: Vec<crate::ingress::model::PortStatus> = hotswap::scan_ports_config(&[]).await;
+	model::CONFIG_STATE.store(Arc::new(initial_ports.clone()));
 
 	// 5. Load L4+ Resolvers
 	let initial_resolvers =
@@ -109,7 +110,7 @@ fn setup_crypto() {
 	}
 }
 
-async fn start_initial_listeners(ports: &[ports::model::PortStatus]) {
+async fn start_initial_listeners(ports: &[model::PortStatus]) {
 	log(
 		LogLevel::Info,
 		"⚙ Initializing listeners from existing config...",
@@ -126,20 +127,20 @@ async fn start_initial_listeners(ports: &[ports::model::PortStatus]) {
 				LogLevel::Info,
 				&format!("↑ {} PORT {} TCP UP", ip_version, status.port),
 			);
-			ports::listener::start_listener(status.port, ports::model::Protocol::Tcp);
+			listener::start_listener(status.port, model::Protocol::Tcp);
 		}
 		if status.udp_config.is_some() {
 			log(
 				LogLevel::Info,
 				&format!("↑ {} PORT {} UDP UP", ip_version, status.port),
 			);
-			ports::listener::start_listener(status.port, ports::model::Protocol::Udp);
+			listener::start_listener(status.port, model::Protocol::Udp);
 		}
 	}
 }
 
 async fn spawn_hotswap_tasks(receivers: watcher::ConfigChangeReceivers) {
-	tokio::spawn(ports::hotswap::listen_for_updates(receivers.ports));
+	tokio::spawn(hotswap::listen_for_updates(receivers.ports));
 	tokio::spawn(nodes::hotswap::listen_for_updates(receivers.nodes));
 	tokio::spawn(resolver_hotswap::listen_for_updates(receivers.resolvers));
 	tokio::spawn(certs::loader::listen_for_updates(receivers.certs));

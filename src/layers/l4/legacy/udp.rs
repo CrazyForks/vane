@@ -1,10 +1,10 @@
 /* src/layers/l4/legacy/udp.rs */
 
 use crate::common::{config::getenv, net::ip};
+use crate::ingress::tasks::GLOBAL_TRACKER;
 use crate::layers::l4::model::{DetectMethod, Forward};
 use crate::layers::l4::session::{REVERSE_SESSIONS, SESSIONS, Session};
 use crate::layers::l4::{balancer, health};
-use crate::modules::ports::tasks::GLOBAL_TRACKER;
 use fancy_log::{LogLevel, log};
 use serde::{Deserialize, Serialize};
 use std::collections::HashSet;

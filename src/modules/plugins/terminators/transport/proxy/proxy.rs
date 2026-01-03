@@ -222,7 +222,7 @@ pub async fn proxy_udp_direct(
 
 	if let Ok(local_addr) = upstream_arc.local_addr() {
 		// Apply Connection Rate Limits
-		let guard = match crate::modules::ports::tasks::GLOBAL_TRACKER.acquire(client_addr.ip()) {
+		let guard = match crate::ingress::tasks::GLOBAL_TRACKER.acquire(client_addr.ip()) {
 			Some(g) => g,
 			None => {
 				log(
@@ -385,7 +385,7 @@ pub async fn proxy_quic_association(
 
 	if let Ok(local_addr) = upstream_arc.local_addr() {
 		// Apply Connection Rate Limits
-		let guard = match crate::modules::ports::tasks::GLOBAL_TRACKER.acquire(client_addr.ip()) {
+		let guard = match crate::ingress::tasks::GLOBAL_TRACKER.acquire(client_addr.ip()) {
 			Some(g) => g,
 			None => {
 				log(

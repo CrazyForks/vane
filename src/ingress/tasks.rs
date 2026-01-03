@@ -1,4 +1,4 @@
-/* src/modules/ports/tasks.rs */
+/* src/ingress/tasks.rs */
 
 use super::model::{CONFIG_STATE, ListenerState, Protocol, TASK_REGISTRY};
 use crate::common::config::getenv;
@@ -113,7 +113,7 @@ pub fn spawn_tcp_listener_task(port: u16, listener: TcpListener) -> oneshot::Sen
 		loop {
 			tokio::select! {
 				Ok((socket, addr)) = listener.accept() => {
-					let client_ip = addr.ip();
+					let client_ip: std::net::IpAddr = addr.ip();
 
 					// Apply Connection Rate Limits
 					let _guard = match GLOBAL_TRACKER.acquire(client_ip) {
@@ -150,10 +150,8 @@ pub fn spawn_tcp_listener_task(port: u16, listener: TcpListener) -> oneshot::Sen
 							log(LogLevel::Warn, &format!("✗ TCP listener is active on port {}, but no config found. Dropping connection from {}.", port, addr));
 						}
 					}
-				}
-				_ = &mut shutdown_rx => {
-					log(LogLevel::Debug, &format!("⚙ TCP listener on port {} received shutdown signal.", port));
-					break;
+												}
+																		_ = &mut shutdown_rx => {				                    log(LogLevel::Debug, &format!("⚙ TCP listener on port {} received shutdown signal.", port));					break;
 				}
 			}
 		}

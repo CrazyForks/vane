@@ -1,4 +1,4 @@
-/* src/modules/ports/model.rs */
+/* src/ingress/model.rs */
 
 use crate::layers::l4::{tcp::TcpConfig, udp::UdpConfig};
 use arc_swap::ArcSwap;

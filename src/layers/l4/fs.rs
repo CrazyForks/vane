@@ -1,7 +1,7 @@
 /* src/layers/l4/fs.rs */
 
 use crate::common::config::getconf;
-use crate::modules::ports::model::Protocol;
+use crate::ingress::model::Protocol;
 use std::io;
 use std::path::PathBuf;
 use tokio::fs;

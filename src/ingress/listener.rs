@@ -1,8 +1,8 @@
-/* src/modules/ports/listener.rs */
+/* src/ingress/listener.rs */
 
 use super::model::{CONFIG_STATE, ListenerState, Protocol, RunningListener, TASK_REGISTRY};
 use crate::common::config::getenv;
-use crate::modules::ports::hotswap::scan_ports_config;
+use crate::ingress::hotswap::scan_ports_config;
 use fancy_log::{LogLevel, log};
 use std::sync::Arc;
 use tokio::net::{TcpListener, UdpSocket};
@@ -73,13 +73,13 @@ pub fn stop_listener(port: u16, protocol: Protocol) {
 }
 
 pub async fn is_port_active(port: u16) -> bool {
-	let state = scan_ports_config(&[]).await;
+	let state: Vec<crate::ingress::model::PortStatus> = scan_ports_config(&[]).await;
 	state.iter().any(|s| s.port == port && s.active)
 }
 
 async fn is_listener_still_required(port: u16, protocol: &Protocol) -> bool {
 	let current_state = CONFIG_STATE.load();
-	let state = scan_ports_config(&current_state).await;
+	let state: Vec<crate::ingress::model::PortStatus> = scan_ports_config(&current_state).await;
 	state.iter().any(|s| {
 		if s.port != port {
 			return false;
