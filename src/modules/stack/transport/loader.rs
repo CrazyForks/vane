@@ -1,6 +1,6 @@
 /* src/modules/stack/transport/loader.rs */
 
-pub use crate::common::loader::{PreProcess, load_config, load_file};
+pub use crate::common::config::loader::{PreProcess, load_config, load_file};
 
 use super::{tcp::TcpConfig, udp::UdpConfig};
 
