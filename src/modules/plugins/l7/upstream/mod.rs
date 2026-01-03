@@ -11,7 +11,7 @@ pub mod tls_verifier;
 use crate::engine::contract::{
 	HttpMiddleware, L7Middleware, MiddlewareOutput, ParamDef, ParamType, Plugin, ResolvedInputs,
 };
-use crate::modules::stack::application::container::{Container, PayloadState};
+use crate::layers::l7::container::{Container, PayloadState};
 use anyhow::{Result, anyhow};
 use async_trait::async_trait;
 use fancy_log::{LogLevel, log};

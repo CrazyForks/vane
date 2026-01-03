@@ -1,8 +1,8 @@
-/* src/modules/stack/application/http/h3.rs */
+/* src/layers/l7/http/h3.rs */
 
 use super::wrapper::{H3BodyAdapter, VaneBody};
 use crate::common::sys::lifecycle::{Error, Result};
-use crate::modules::stack::application::{
+use crate::layers::l7::{
 	container::{Container, PayloadState},
 	flow,
 	model::APPLICATION_REGISTRY,

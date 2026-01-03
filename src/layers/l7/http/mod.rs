@@ -1,4 +1,4 @@
-/* src/modules/stack/application/http/mod.rs */
+/* src/layers/l7/http/mod.rs */
 
 #[cfg(feature = "quic")]
 pub mod h3;

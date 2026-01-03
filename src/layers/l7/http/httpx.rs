@@ -1,9 +1,9 @@
-/* src/modules/stack/application/http/httpx.rs */
+/* src/layers/l7/http/httpx.rs */
 
 use super::wrapper::VaneBody;
 use crate::common::sys::lifecycle::{Error, Result};
 use crate::engine::contract::ConnectionObject;
-use crate::modules::stack::application::{
+use crate::layers::l7::{
 	container::{Container, PayloadState},
 	flow,
 	model::APPLICATION_REGISTRY,

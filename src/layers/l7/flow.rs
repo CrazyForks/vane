@@ -1,10 +1,10 @@
-/* src/modules/stack/application/flow.rs */
+/* src/layers/l7/flow.rs */
 
 use anyhow::Result;
 
 use crate::engine::contract::{ProcessingStep, TerminatorResult};
 use crate::engine::executor;
-use crate::modules::stack::application::container::Container;
+use crate::layers::l7::container::Container;
 
 pub async fn execute_l7(
 	step: &ProcessingStep,

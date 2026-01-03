@@ -4,7 +4,7 @@ use super::session::{self, SessionAction};
 use super::virtual_socket::{VirtualPacket, VirtualUdpSocket};
 use crate::common::config::getenv;
 use crate::common::sys::lifecycle::{Error, Result};
-use crate::modules::stack::application::http::h3;
+use crate::layers::l7::http::h3;
 use crate::resources::certs;
 use fancy_log::{LogLevel, log};
 use quinn::{ConnectionId, ConnectionIdGenerator};

@@ -1,4 +1,4 @@
-/* src/modules/stack/application/http/wrapper.rs */
+/* src/layers/l7/http/wrapper.rs */
 
 use crate::common::sys::lifecycle::Error;
 use bytes::Bytes;

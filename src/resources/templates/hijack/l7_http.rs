@@ -4,7 +4,7 @@ use super::Hijacker;
 use anyhow::Result;
 use async_trait::async_trait;
 
-use crate::modules::stack::application::container::Container;
+use crate::layers::l7::container::Container;
 
 /// HTTP-specific hijacker for L7 layer
 pub struct HttpHijacker<'a> {
@@ -80,7 +80,7 @@ fn get_header_value(map: &http::HeaderMap, key_name: &str) -> String {
 #[cfg(test)]
 mod tests {
 	use super::*;
-	use crate::modules::stack::application::container::PayloadState;
+	use crate::layers::l7::container::PayloadState;
 	use crate::resources::kv::KvStore;
 
 	/// Tests can_handle returns true for known hijack keys.

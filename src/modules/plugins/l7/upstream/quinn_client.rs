@@ -2,7 +2,7 @@
 
 use super::quic_pool;
 use crate::common::sys::lifecycle::{Error, Result};
-use crate::modules::stack::application::{
+use crate::layers::l7::{
 	container::{Container, PayloadState},
 	http::wrapper::{H3BodyAdapter, VaneBody},
 };

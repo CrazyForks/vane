@@ -4,7 +4,7 @@ use super::{context, flow};
 use crate::common::config::getenv;
 use crate::engine::contract::{ConnectionObject, TerminatorResult};
 use crate::layers::l4p::model::RESOLVER_REGISTRY;
-use crate::modules::stack::application::http::httpx;
+use crate::layers::l7::http::httpx;
 use crate::resources::kv::KvStore;
 use anyhow::{Result, anyhow};
 use fancy_log::{LogLevel, log};

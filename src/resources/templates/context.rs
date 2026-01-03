@@ -5,7 +5,7 @@ use async_trait::async_trait;
 use bytes::Bytes;
 use fancy_log::{LogLevel, log};
 
-use crate::modules::stack::application::container::Container;
+use crate::layers::l7::container::Container;
 use crate::resources::kv::KvStore;
 
 use super::hijack::{self, Hijacker};

@@ -3,7 +3,7 @@
 use super::stream::{CgiResponseBody, pump_stdout};
 use crate::common::{config::getenv, sys::lifecycle::Error};
 use crate::engine::contract::MiddlewareOutput;
-use crate::modules::stack::application::{
+use crate::layers::l7::{
 	container::{Container, PayloadState},
 	http::wrapper::VaneBody,
 };

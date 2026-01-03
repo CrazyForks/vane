@@ -9,7 +9,7 @@ use crate::common::sys::lifecycle::Error;
 use crate::engine::contract::{
 	HttpMiddleware, L7Middleware, MiddlewareOutput, ParamDef, ParamType, Plugin, ResolvedInputs,
 };
-use crate::modules::stack::application::{
+use crate::layers::l7::{
 	container::{Container, PayloadState},
 	http::wrapper::VaneBody,
 };

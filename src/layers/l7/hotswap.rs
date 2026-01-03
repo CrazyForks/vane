@@ -1,4 +1,4 @@
-/* src/modules/stack/application/hotswap.rs */
+/* src/layers/l7/hotswap.rs */
 
 use super::model::{APPLICATION_REGISTRY, ApplicationConfig, SUPPORTED_APP_PROTOCOLS};
 use crate::common::{

@@ -1,4 +1,4 @@
-/* src/modules/stack/application/model.rs */
+/* src/layers/l7/model.rs */
 
 use crate::engine::contract::{Layer, ProcessingStep};
 use crate::layers::l4::loader::PreProcess;

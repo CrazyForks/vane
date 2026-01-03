@@ -1,4 +1,4 @@
-/* src/modules/stack/application/container.rs */
+/* src/layers/l7/container.rs */
 
 use std::sync::atomic::{AtomicUsize, Ordering};
 
@@ -14,7 +14,7 @@ use crate::common::{
 	config::getenv,
 	sys::lifecycle::{Error, Result},
 };
-use crate::modules::stack::application::{
+use crate::layers::l7::{
 	http::{protocol_data::HttpProtocolData, wrapper::VaneBody},
 	protocol_data::ProtocolData,
 };

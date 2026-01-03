@@ -5,7 +5,8 @@ use fancy_log::{LogLevel, log};
 
 use crate::{
 	engine::contract::{ConnectionObject, MiddlewareOutput, ProcessingStep, TerminatorResult},
-	modules::{plugins::core::registry, stack::application::container::Container},
+	layers::l7::container::Container,
+	modules::plugins::core::registry,
 };
 
 use crate::engine::{

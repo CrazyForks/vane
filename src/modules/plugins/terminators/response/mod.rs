@@ -5,7 +5,7 @@ pub mod content_type;
 use crate::engine::contract::{
 	L7Terminator, ParamDef, ParamType, Plugin, ResolvedInputs, TerminatorResult,
 };
-use crate::modules::stack::application::{
+use crate::layers::l7::{
 	container::{Container, PayloadState},
 	http::wrapper::VaneBody,
 };

@@ -6,7 +6,7 @@ pub mod stream;
 use crate::engine::contract::{
 	HttpMiddleware, L7Middleware, MiddlewareOutput, ParamDef, ParamType, Plugin, ResolvedInputs,
 };
-use crate::modules::stack::application::container::Container;
+use crate::layers::l7::container::Container;
 use anyhow::Result;
 use async_trait::async_trait;
 use executor::CgiConfig;
