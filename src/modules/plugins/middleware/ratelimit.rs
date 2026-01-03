@@ -1,7 +1,7 @@
 /* src/modules/plugins/middleware/ratelimit.rs */
 
 use crate::{
-	common::getenv,
+	common::config::getenv,
 	modules::plugins::core::model::{
 		GenericMiddleware, Middleware, MiddlewareOutput, ParamDef, ParamType, Plugin, ResolvedInputs,
 	},
