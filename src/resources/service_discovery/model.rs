@@ -1,6 +1,6 @@
 /* src/resources/service_discovery/model.rs */
 
-use crate::modules::stack::transport::loader::PreProcess;
+use crate::layers::l4::loader::PreProcess;
 use arc_swap::ArcSwap;
 use lazy_static::lazy_static;
 use serde::{Deserialize, Serialize};
