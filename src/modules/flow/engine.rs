@@ -8,7 +8,8 @@ use crate::{
 	modules::{plugins::core::registry, stack::application::container::Container},
 };
 
-use super::{context::ApplicationContext, context::ExecutionContext, key_scoping};
+use super::key_scoping;
+use crate::engine::context::{ApplicationContext, ExecutionContext};
 
 /// Execute a flow starting from the given step.
 ///
