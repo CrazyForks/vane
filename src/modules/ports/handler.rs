@@ -1,7 +1,7 @@
 /* src/modules/ports/handler.rs */
 
 use super::model::{PortState, Protocol};
-use crate::common::{getconf, portool};
+use crate::common::{config::getconf, portool};
 use crate::core::response;
 use crate::modules::stack::transport::fs as transport_fs;
 use axum::{
