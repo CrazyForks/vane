@@ -147,10 +147,10 @@ This plan breaks down the structural overhaul into atomic, verifiable steps.
             - [x] Create `src/layers/` and `src/layers/mod.rs`.
             - [x] Add `pub mod layers;` to `src/lib.rs`.
             - [x] `cargo check`.
-        - [ ] **3.1.2: Move Transport**        - [ ] Move `src/modules/stack/transport/` -> `src/layers/l4/`.
-        - [ ] Add `l4` to `src/layers/mod.rs`.
-        - [ ] Search & Replace `crate::modules::stack::transport` -> `crate::layers::l4`.
-        - [ ] `cargo check`.
+        - [x] **3.1.2: Move Transport**
+            - [x] Move `src/modules/stack/transport/` -> `src/layers/l4/`.
+            - [x] Update imports.
+            - [x] `cargo check`.
 
 - [ ] **3.2: Layer 4+ (Carrier)**
     - [ ] **3.2.1: Move Carrier**
