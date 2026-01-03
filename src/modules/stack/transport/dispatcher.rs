@@ -40,7 +40,7 @@ pub async fn dispatch_tcp_connection(
 							&flow_config.connection,
 							&mut kv_store,
 							conn_object,
-							std::collections::HashMap::new(),
+							ahash::AHashMap::new(),
 						)
 						.await;
 
