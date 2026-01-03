@@ -1,7 +1,7 @@
 /* src/modules/ports/tasks.rs */
 
 use super::model::{CONFIG_STATE, ListenerState, Protocol, TASK_REGISTRY};
-use crate::common::getenv;
+use crate::common::config::getenv;
 use crate::modules::{
 	kv,
 	plugins::protocol::quic::parser,
