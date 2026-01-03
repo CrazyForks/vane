@@ -1,28 +1,18 @@
-# Agent Session Progress
+# Current Session Status
 
-**Last Updated**: 2026-01-02
-**Current Task**: Task 7.1 - Optimize KV Hashing (Completed)
-**Status**: Milestone Achieved
-**Strategy**: Global switch to `ahash` for KV Store and transient payloads.
+## Objective
+Analyze the `src/` directory structure for optimization (renaming, splitting, merging) without modifying code logic. Produce a `TODO.md` with recommendations.
 
----
+## Plan
+1.  [ ] List and visualize the current `src/` file structure.
+2.  [ ] Analyze `src/common/` for cohesion and bloat.
+3.  [ ] Analyze `src/core/` for architectural clarity.
+4.  [ ] Analyze `src/middleware/`.
+5.  [ ] Analyze `src/modules/` (The bulk of the work).
+    -   [ ] `stack/` hierarchy.
+    -   [ ] `plugins/` organization.
+    -   [ ] `ports/` and `nodes/`.
+6.  [ ] Draft `TODO.md` with concrete refactoring tasks.
 
-## 📍 Current Position
-
-Task 7.1 is fully implemented and verified. Vane now uses `ahash::AHashMap` for its high-frequency metadata storage and variable resolution.
-
-### Recently Completed
-
-1. ✅ **Task 7.1: Optimize KV Hashing**
-   - Added `ahash` dependency to `Cargo.toml`.
-   - Switched `KvStore` type alias to use `ahash::AHashMap`.
-   - Updated `TransportContext` and `SimpleContext` to use `AHashMap` for `payloads`.
-   - Updated all Flow Engine entry points and callers to initialize with `AHashMap`.
-   - Verified with unit tests (`test_l4p_hijacking`).
-   - Cleaned up redundant `std::collections::HashMap` imports.
-   - Updated `Cargo.toml` and `CHANGELOG.md` to **0.8.13**.
-
-## 📝 Version Information
-
-**Current Version**: 0.8.13
-**Target Version**: 0.9.0
+## Progress Log
+- Session started.
