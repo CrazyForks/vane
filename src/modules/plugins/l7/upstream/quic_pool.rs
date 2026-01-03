@@ -3,7 +3,7 @@
 use super::tls_verifier::NoVerifier;
 use crate::common::config::getenv;
 use crate::common::sys::lifecycle::{Error, Result};
-use crate::modules::stack::transport::resolver;
+use crate::layers::l4::resolver;
 use fancy_log::{LogLevel, log};
 use h3::client::SendRequest;
 use h3_quinn::{
