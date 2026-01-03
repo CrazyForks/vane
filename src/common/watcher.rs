@@ -1,6 +1,6 @@
 /* src/common/watcher.rs */
 
-use crate::common::getconf;
+use crate::common::config::getconf;
 use fancy_log::{LogLevel, log};
 use notify::{Event, EventKind, RecursiveMode, Watcher};
 use std::{ffi::OsStr, time::Duration};
