@@ -1,7 +1,7 @@
 /* src/modules/stack/transport/health.rs */
 
 use super::{legacy::tcp::TcpDestination, model::ResolvedTarget, resolver, tcp::TcpConfig};
-use crate::{common::getenv, modules::ports::model::CONFIG_STATE};
+use crate::{common::config::getenv, modules::ports::model::CONFIG_STATE};
 use dashmap::DashMap;
 use fancy_log::{LogLevel, log};
 use once_cell::sync::Lazy;
