@@ -83,13 +83,14 @@ use crate::modules::kv::KvStore;
 
 #### Logging Conventions
 Use `fancy_log` with emoji prefixes:
-- Checkmark: Success
-- X mark: Errors
-- Warning sign: Warnings
-- Gear: Operations/processing
-- Arrow: Actions/execution
-- Up arrow: Startup/initialization
-- Reload symbol: Configuration reloading
+- `✓` (Checkmark): Success
+- `✗` (X mark): Errors
+- `⚠` (Warning sign): Warnings
+- `⚙` (Gear): Operations/processing
+- `➜` (Arrow): Actions/execution
+- `↑` (Up arrow): Startup/initialization
+- `↓` (Down arrow): Shutdown/unloading
+- `↻` (Reload symbol): Configuration reloading
 
 Format: `log(LogLevel::Info, "Message here");`
 
