@@ -3,10 +3,9 @@
 use super::model::{CONFIG_STATE, ListenerState, Protocol, TASK_REGISTRY};
 use crate::common::config::getenv;
 use crate::layers::l4::{dispatcher, udp};
-use crate::modules::{
-	plugins::protocol::quic::parser,
-	stack::carrier::quic::{muxer::QuicMuxer, session},
-};
+
+use crate::layers::l4p::quic::{muxer::QuicMuxer, session};
+use crate::modules::plugins::protocol::quic::parser;
 use crate::resources::kv;
 use dashmap::DashMap;
 use fancy_log::{LogLevel, log};
@@ -196,17 +195,16 @@ pub fn spawn_udp_listener_task(port: u16, socket: UdpSocket) -> oneshot::Sender<
 									// Long Header
 									if let Some(dcid) = parser::peek_long_header_dcid(packet) {
 										if let Some(action) = session::get_session(&dcid) {
-											hit_session = Some((dcid, action));
+											hit_session = Some((dcid.to_vec(), action));
 										}
 									}
 								} else {
 									// Short Header - Speculative Try
 									for &cid_len in &[8, 12, 16] {
 										if let Some(dcid) = parser::peek_short_header_dcid(packet, cid_len) {
-											if let Some(action) = session::get_session(&dcid) {
-												hit_session = Some((dcid, action));
-												break;
-											}
+																					if let Some(action) = session::get_session(&dcid) {
+																						hit_session = Some((dcid.to_vec(), action));
+																						break;											}
 										}
 									}
 								};
