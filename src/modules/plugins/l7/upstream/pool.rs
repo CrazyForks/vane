@@ -35,7 +35,7 @@ impl Service<Name> for VaneResolver {
 		let host = name.as_str().to_string();
 		Box::pin(async move {
 			// Call Global Resolver
-			let ips = crate::modules::stack::transport::resolver::resolve_domain_to_ips(&host).await;
+			let ips = crate::layers::l4::resolver::resolve_domain_to_ips(&host).await;
 
 			if ips.is_empty() {
 				return Err(std::io::Error::new(
