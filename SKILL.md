@@ -78,7 +78,7 @@ use tokio::net::TcpStream;
 // Blank line
 // Internal crate imports
 use crate::modules::plugins::model::Plugin;
-use crate::modules::kv::KvStore;
+use crate::resources::kv::KvStore;
 ```
 
 #### Logging Conventions
