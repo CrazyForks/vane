@@ -2,9 +2,11 @@
 
 use super::model::{RESOLVER_REGISTRY, ResolverConfig, SUPPORTED_UPGRADE_PROTOCOLS};
 use crate::common::{
-	getconf,
+	config::{
+		getconf,
+		loader::{self, LoadResult},
+	},
 	hotswap::watch_loop,
-	loader::{self, LoadResult},
 };
 use dashmap::DashMap;
 use fancy_log::{LogLevel, log};
