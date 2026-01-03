@@ -5,7 +5,7 @@ use fancy_log::{LogLevel, log};
 use std::sync::Arc;
 use tokio::signal;
 
-use crate::common::{getenv, requirements};
+use crate::common::{getenv, lifecycle, watcher};
 use crate::core::{console, logging, monitor};
 use crate::modules::{
 	certs, nodes,
@@ -28,7 +28,7 @@ pub async fn start() {
 	logging::print_motd();
 
 	// 1. Infrastructure Readiness
-	requirements::ensure_config_files_exist().await;
+	lifecycle::ensure_config_files_exist().await;
 
 	// 2. Load Service Discovery (Nodes)
 	if let Some(initial_nodes) = nodes::hotswap::scan_nodes_config().await {
@@ -54,7 +54,7 @@ pub async fn start() {
 		),
 	);
 
-	// 6. Load L7 Applications
+	// 6. Load Applications (L7 Protocols)
 	let initial_apps =
 		app_hotswap::scan_application_config(&app_model::APPLICATION_REGISTRY.load()).await;
 	app_model::APPLICATION_REGISTRY.store(Arc::new(initial_apps));
@@ -67,7 +67,7 @@ pub async fn start() {
 	);
 
 	// 7. Start Background Maintenance Tasks
-	requirements::start_background_tasks().await;
+	lifecycle::start_background_tasks().await;
 
 	// 8. Initialize Plugin System
 	plugin_loader::initialize().await;
@@ -79,7 +79,7 @@ pub async fn start() {
 	start_initial_listeners(&initial_ports).await;
 
 	// 10. Start Configuration Hotswap System
-	let receivers = requirements::start_config_watchers_only();
+	let receivers = watcher::start_config_watchers_only();
 	spawn_hotswap_tasks(receivers).await;
 
 	// 11. Start Management Plane (Console)
@@ -140,7 +140,7 @@ async fn start_initial_listeners(ports: &[ports::model::PortStatus]) {
 	}
 }
 
-async fn spawn_hotswap_tasks(receivers: requirements::ConfigChangeReceivers) {
+async fn spawn_hotswap_tasks(receivers: watcher::ConfigChangeReceivers) {
 	tokio::spawn(ports::hotswap::listen_for_updates(receivers.ports));
 	tokio::spawn(nodes::hotswap::listen_for_updates(receivers.nodes));
 	tokio::spawn(resolver_hotswap::listen_for_updates(receivers.resolvers));
