@@ -32,7 +32,7 @@ pub async fn execute<C: ExecutionContext>(
 	flow_path: String,
 ) -> Result<TerminatorResult> {
 	let timeout_secs =
-		crate::common::getenv::get_env("FLOW_EXECUTION_TIMEOUT_SECS", "10".to_string())
+		crate::common::config::getenv::get_env("FLOW_EXECUTION_TIMEOUT_SECS", "10".to_string())
 			.parse::<u64>()
 			.unwrap_or(10);
 
@@ -103,10 +103,12 @@ async fn execute_recursive<C: ExecutionContext>(
 	let is_external = registry::get_external_plugin(plugin_name).is_some();
 	if is_external {
 		if let Some(last_failure) = registry::EXTERNAL_PLUGIN_FAILURES.get(plugin_name) {
-			let quiet_period_secs =
-				crate::common::getenv::get_env("EXTERNAL_PLUGIN_QUIET_PERIOD_SECS", "3".to_string())
-					.parse::<u64>()
-					.unwrap_or(3);
+			let quiet_period_secs = crate::common::config::getenv::get_env(
+				"EXTERNAL_PLUGIN_QUIET_PERIOD_SECS",
+				"3".to_string(),
+			)
+			.parse::<u64>()
+			.unwrap_or(3);
 
 			if last_failure.elapsed().as_secs() < quiet_period_secs {
 				log(
