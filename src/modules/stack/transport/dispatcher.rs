@@ -2,9 +2,9 @@
 
 use super::{context, flow, legacy, tcp::TcpConfig};
 use crate::modules::{
-	kv::KvStore, plugins::core::model::ConnectionObject, plugins::core::model::TerminatorResult,
-	stack::carrier,
+	plugins::core::model::ConnectionObject, plugins::core::model::TerminatorResult, stack::carrier,
 };
+use crate::resources::kv::KvStore;
 use fancy_log::{LogLevel, log};
 use std::sync::Arc;
 use tokio::net::TcpStream;
