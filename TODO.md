@@ -35,36 +35,36 @@ This plan breaks down the structural overhaul into atomic, verifiable steps.
         - [x] Create `src/common/net/mod.rs` and `src/common/sys/mod.rs`.
         - [x] Update `src/common/mod.rs` (add `net`, `sys`).
         - [x] `cargo check`.
-    - [ ] **1.2.2: Migrate `ip.rs` (Net)**
-        - [ ] Move `src/common/ip.rs` -> `src/common/net/ip.rs`.
-        - [ ] Update mods.
-        - [ ] Search & Replace `crate::common::ip` -> `crate::common::net::ip`.
-        - [ ] `cargo check`.
-    - [ ] **1.2.3: Migrate `portool.rs` (Net)**
-        - [ ] Move `src/common/portool.rs` -> `src/common/net/portool.rs`.
-        - [ ] Update mods.
-        - [ ] Search & Replace `crate::common::portool` -> `crate::common::net::portool`.
-        - [ ] `cargo check`.
-    - [ ] **1.2.4: Migrate `lifecycle.rs` (Sys)**
-        - [ ] Move `src/common/lifecycle.rs` -> `src/common/sys/lifecycle.rs`.
-        - [ ] Update mods.
-        - [ ] Search & Replace `crate::common::lifecycle` -> `crate::common::sys::lifecycle`.
-        - [ ] `cargo check`.
-    - [ ] **1.2.5: Migrate `system.rs` (Sys)**
-        - [ ] Move `src/common/system.rs` -> `src/common/sys/system.rs`.
-        - [ ] Update mods.
-        - [ ] Search & Replace `crate::common::system` -> `crate::common::sys::system`.
-        - [ ] `cargo check`.
-    - [ ] **1.2.6: Migrate `watcher.rs` (Sys)**
-        - [ ] Move `src/common/watcher.rs` -> `src/common/sys/watcher.rs`.
-        - [ ] Update mods.
-        - [ ] Search & Replace `crate::common::watcher` -> `crate::common::sys::watcher`.
-        - [ ] `cargo check`.
-    - [ ] **1.2.7: Migrate `hotswap.rs` (Sys)**
-        - [ ] Move `src/common/hotswap.rs` -> `src/common/sys/hotswap.rs`.
-        - [ ] Update mods.
-        - [ ] Search & Replace `crate::common::hotswap` -> `crate::common::sys::hotswap`.
-        - [ ] `cargo check`.
+    - [x] **1.2.2: Migrate `ip.rs` (Net)**
+        - [x] Move `src/common/ip.rs` -> `src/common/net/ip.rs`.
+        - [x] Update mods.
+        - [x] Search & Replace `crate::common::ip` -> `crate::common::net::ip`.
+        - [x] `cargo check`.
+    - [x] **1.2.3: Migrate `portool.rs` (Net)**
+        - [x] Move `src/common/portool.rs` -> `src/common/net/portool.rs`.
+        - [x] Update mods.
+        - [x] Search & Replace `crate::common::portool` -> `crate::common::net::portool`.
+        - [x] `cargo check`.
+    - [x] **1.2.4: Migrate `lifecycle.rs` (Sys)**
+        - [x] Move `src/common/lifecycle.rs` -> `src/common/sys/lifecycle.rs`.
+        - [x] Update mods.
+        - [x] Search & Replace `crate::common::lifecycle` -> `crate::common::sys::lifecycle`.
+        - [x] `cargo check`.
+    - [x] **1.2.5: Migrate `system.rs` (Sys)**
+        - [x] Move `src/common/system.rs` -> `src/common/sys/system.rs`.
+        - [x] Update mods.
+        - [x] Search & Replace `crate::common::system` -> `crate::common::sys::system`.
+        - [x] `cargo check`.
+    - [x] **1.2.6: Migrate `watcher.rs` (Sys)**
+        - [x] Move `src/common/watcher.rs` -> `src/common/sys/watcher.rs`.
+        - [x] Update mods.
+        - [x] Search & Replace `crate::common::watcher` -> `crate::common::sys::watcher`.
+        - [x] `cargo check`.
+    - [x] **1.2.7: Migrate `hotswap.rs` (Sys)**
+        - [x] Move `src/common/hotswap.rs` -> `src/common/sys/hotswap.rs`.
+        - [x] Update mods.
+        - [x] Search & Replace `crate::common::hotswap` -> `crate::common::sys::hotswap`.
+        - [x] `cargo check`.
 
 - [ ] **1.3: Establish `src/resources/kv`**
     - [ ] **1.3.1: Setup Resources Module**
