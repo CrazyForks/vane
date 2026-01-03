@@ -1,6 +1,9 @@
 /* src/modules/certs/loader.rs */
 
-use crate::common::{config::getconf, hotswap::watch_loop, lifecycle::Result};
+use crate::common::{
+	config::getconf,
+	sys::{hotswap::watch_loop, lifecycle::Result},
+};
 use crate::modules::certs::{arcswap, format};
 use fancy_log::{LogLevel, log};
 use std::collections::HashMap;
@@ -49,11 +52,11 @@ async fn ensure_default_certificate() {
 async fn check_cert_expiration(cert_path: &Path) -> Result<bool> {
 	let content = fs::read(cert_path)
 		.await
-		.map_err(|e| crate::common::lifecycle::Error::Io(e.to_string()))?;
+		.map_err(|e| crate::common::sys::lifecycle::Error::Io(e.to_string()))?;
 	let (_, pem) = parse_x509_pem(&content)
-		.map_err(|e| crate::common::lifecycle::Error::Tls(format!("PEM error: {}", e)))?;
+		.map_err(|e| crate::common::sys::lifecycle::Error::Tls(format!("PEM error: {}", e)))?;
 	let (_, x509) = x509_parser::certificate::X509Certificate::from_der(&pem.contents)
-		.map_err(|e| crate::common::lifecycle::Error::Tls(format!("X509 error: {}", e)))?;
+		.map_err(|e| crate::common::sys::lifecycle::Error::Tls(format!("X509 error: {}", e)))?;
 	let not_after = x509.validity.not_after.timestamp();
 	let now = SystemTime::now()
 		.duration_since(UNIX_EPOCH)
@@ -65,7 +68,7 @@ async fn check_cert_expiration(cert_path: &Path) -> Result<bool> {
 async fn generate_self_signed(cert_path: &Path, key_path: &Path) -> Result<()> {
 	let san = vec!["localhost".to_string(), "127.0.0.1".to_string()];
 	let ck = rcgen::generate_simple_self_signed(san)
-		.map_err(|e| crate::common::lifecycle::Error::Tls(format!("rcgen error: {}", e)))?;
+		.map_err(|e| crate::common::sys::lifecycle::Error::Tls(format!("rcgen error: {}", e)))?;
 	let _ = fs::write(cert_path, ck.cert.pem()).await;
 	let _ = fs::write(key_path, ck.signing_key.serialize_pem()).await;
 	Ok(())
