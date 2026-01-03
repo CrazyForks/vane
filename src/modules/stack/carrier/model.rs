@@ -1,7 +1,7 @@
 /* src/modules/stack/carrier/model.rs */
 
 use crate::engine::contract::{Layer, ProcessingStep};
-use crate::modules::stack::transport::loader::PreProcess;
+use crate::layers::l4::loader::PreProcess;
 use arc_swap::ArcSwap;
 use dashmap::DashMap;
 use once_cell::sync::Lazy;
@@ -26,7 +26,7 @@ impl Validate for ResolverConfig {
 		// Validation must be context-aware.
 		// We validate as L4Plus to allow Upgraders but restrict L7-only components if any.
 		// Terminators check this layer context.
-		use crate::modules::stack::transport::validator;
+		use crate::layers::l4::validator;
 		validator::validate_flow_config(&self.connection, Layer::L4Plus, &self.protocol)
 	}
 }
