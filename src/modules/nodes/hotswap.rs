@@ -3,7 +3,7 @@
 use super::model::{NODES_STATE, NodesConfig};
 use crate::common::{
 	config::{getconf, loader},
-	hotswap::watch_loop,
+	sys::hotswap::watch_loop,
 };
 use fancy_log::{LogLevel, log};
 use std::sync::Arc;
