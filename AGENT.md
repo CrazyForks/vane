@@ -10,8 +10,24 @@ Execute the Vane 2.0 structural refactoring plan as detailed in `TODO.md`.
     - [x] 3.1: Layer 4 (Transport)
         - [x] 3.1.1: Setup Layers
         - [x] 3.1.2: Move Transport (Completed)
-    - [ ] 3.2: Layer 4+ (Carrier)
-        - [ ] 3.2.1: Move Carrier (Next)
+    - [x] 3.2: Layer 4+ (Carrier)
+        - [x] 3.2.1: Move Carrier (completed)
+            - [x] Create src/layers/l4p/. (completed)
+            - [x] Move src/modules/stack/carrier/ contents to src/layers/l4p/. (completed)
+            - [x] Add l4p to src/layers/mod.rs. (completed)
+            - [x] Search & Replace crate::modules::stack::carrier -> crate::layers::l4p. (completed)
+            - [x] Search & Replace stack::carrier -> layers::l4p. (completed)
+            - [x] Fix src/core/bootstrap.rs import. (completed)
+            - [x] Fix src/layers/l4p/plain.rs import. (completed)
+            - [x] Fix src/layers/l4p/quic/quic.rs import. (completed)
+            - [x] Fix src/layers/l4p/tls.rs import. (completed)
+            - [x] Fix src/modules/plugins/terminators/transport/proxy/proxy.rs import. (completed)
+            - [x] Fix src/modules/ports/tasks.rs import. (completed)
+            - [x] Fix src/layers/l4/dispatcher.rs imports. (completed)
+            - [x] Fix src/layers/l4/udp.rs imports. (completed)
+            - [x] Fix src/modules/ports/tasks.rs PortStatus import and add parser import. (completed)
+            - [x] Fix src/modules/ports/tasks.rs dcid type conversion. (completed)
+            - [x] cargo check. (completed)
     - [ ] 3.3: Layer 7 (Application)
     - [ ] 3.4: Cleanup Stack
 4. [ ] **Phase 4: Ingress & Plugins**
@@ -29,6 +45,29 @@ Execute the Vane 2.0 structural refactoring plan as detailed in `TODO.md`.
     - Batch updated imports.
     - Manually fixed imports in `proxy.rs`, `hotswap.rs`, `model.rs`, `tasks.rs`.
     - `cargo check` passed (type inference errors resolved themselves or were transient).
+- **3.2.1 Completed:** Moved `src/modules/stack/carrier/` to `src/layers/l4p/`.
+    - `src/layers/l4p/` directory created.
+    - Files moved from `src/modules/stack/carrier/` to `src/layers/l4p/`.
+    - `l4p` module already added to `src/layers/mod.rs`.
+    - Global search and replace for module paths completed.
+    - Fixed `src/core/bootstrap.rs` import.
+    - Fixed `src/layers/l4p/plain.rs` import.
+    - Fixed `src/layers/l4p/quic/quic.rs` import.
+    - Fixed `src/layers/l4p/tls.rs` import.
+    - Fixed `src/modules/plugins/terminators/transport/proxy/proxy.rs` import.
+    - Fixed `src/modules/ports/tasks.rs` import.
+    - Fixed `src/layers/l4/dispatcher.rs` imports.
+    - Fixed `src/layers/l4/udp.rs` imports.
+    - Fixed `src/modules/ports/tasks.rs` PortStatus import and added parser import.
+    - Fixed `src/modules/ports/tasks.rs` dcid type conversion.
+    - `cargo check` passed with only unused import warnings.
+
+## Temporary Task: Fix unused import warnings (completed)
+- [x] Fix `src/layers/l4/dispatcher.rs` unused import. (completed)
+- [x] Fix `src/layers/l4/udp.rs` unused import. (completed)
+- [x] Fix `src/modules/ports/tasks.rs` unused import. (completed)
+- [x] Run `cargo check`. (completed)
+- [x] Stop and wait for user instruction. (completed)
 
 ### 1. AGENT.md Management
 - `AGENT.md` is your personal workspace and status tracker.
@@ -47,3 +86,8 @@ Execute the Vane 2.0 structural refactoring plan as detailed in `TODO.md`.
 - **File Content (English Only)**: ALL content written to files MUST be in English. This includes:
   - Source code and comments
   - Documentation (Markdown files)
+- **User Communication (Chinese Only)**: ALL conversational output to the user MUST be in Chinese. This includes:
+  - Discussing requirements
+  - Explaining plans
+  - Reporting status
+  - Answering questions
