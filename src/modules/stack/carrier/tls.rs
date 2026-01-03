@@ -36,7 +36,7 @@ pub async fn run(stream: TcpStream, kv: &mut KvStore, parent_path: String) -> Re
 	let mut buf = vec![0u8; buffer_size];
 	let mut parse_success = false;
 	let mut error_code = None;
-	let mut initial_payloads = std::collections::HashMap::new();
+	let mut initial_payloads = ahash::AHashMap::new();
 
 	// 1. Smart Peek Loop (Handles fragmentation)
 	let peek_result = timeout(Duration::from_millis(peek_timeout_ms), async {
