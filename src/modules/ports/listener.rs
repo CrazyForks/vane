@@ -1,7 +1,7 @@
 /* src/modules/ports/listener.rs */
 
 use super::model::{CONFIG_STATE, ListenerState, Protocol, RunningListener, TASK_REGISTRY};
-use crate::common::getenv;
+use crate::common::config::getenv;
 use crate::modules::ports::hotswap::scan_ports_config;
 use fancy_log::{LogLevel, log};
 use std::sync::Arc;
