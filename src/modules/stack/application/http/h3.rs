@@ -2,12 +2,12 @@
 
 use super::wrapper::{H3BodyAdapter, VaneBody};
 use crate::common::sys::lifecycle::{Error, Result};
-use crate::modules::kv::KvStore;
 use crate::modules::stack::application::{
 	container::{Container, PayloadState},
 	flow,
 	model::APPLICATION_REGISTRY,
 };
+use crate::resources::kv::KvStore;
 use fancy_log::{LogLevel, log};
 
 use bytes::{Buf, Bytes};
