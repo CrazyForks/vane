@@ -1,6 +1,6 @@
 /* src/modules/plugins/core/model.rs */
 
-use crate::modules::kv::KvStore;
+use crate::resources::kv::KvStore;
 use anyhow::Result;
 use async_trait::async_trait;
 use serde::{Deserialize, Serialize};
