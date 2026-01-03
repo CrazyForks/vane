@@ -16,26 +16,40 @@ Execute the Vane 2.0 structural refactoring plan as detailed in `TODO.md`.
         - [x] 3.3.1: Move Application (completed)
     - [x] 3.4: Cleanup Stack (completed)
 4. [ ] **Phase 4: Ingress & Plugins**
-    - [x] **4.1: Ingress**
-        - [x] **4.1.1: Move Ports to Ingress** (completed)
-        - [x] **4.1.2: Refactor Tasks (Split TCP/UDP)** (completed)
-            - [x] Extract `src/ingress/tcp.rs` from `tasks.rs`. (completed)
-            - [x] Fix `src/ingress/listener.rs` `spawn_tcp_listener_task` reference. (completed)
-            - [x] Extract `src/ingress/udp.rs` from `tasks.rs`. (completed)
-            - [x] Update `ingress/mod.rs`. (completed)
-            - [x] Fix `src/ingress/listener.rs` `spawn_udp_listener_task` reference. (completed)
-            - [x] Fix warnings in `src/ingress/tasks.rs`. (completed)
-            - [x] Fix warnings in `src/ingress/tcp.rs`. (completed)
-            - [x] Fix warnings in `src/ingress/udp.rs`. (completed)
-            - [x] Fix `src/ingress/tasks.rs` import issues. (completed)
-            - [x] Fix `src/ingress/tasks.rs` LogLevel and log unused import. (completed)
+    - [x] **4.1: Ingress** (completed)
+    - [x] **4.2: Plugins Organization**
+        - [x] **4.2.1: Setup Plugins Dirs** (completed)
+        - [x] **4.2.2: Move L4 Plugins** (completed)
+            - [x] Move `terminators/transport/proxy` -> `src/plugins/l4/proxy`. (completed)
+            - [x] Remove `pub mod proxy;` from `src/modules/plugins/terminators/transport/mod.rs`. (completed)
+            - [x] Fix `src/modules/plugins/core/registry.rs` proxy reference. (completed)
+            - [x] Fix `src/modules/plugins/core/registry.rs` l4 import. (completed)
+            - [x] Move `terminators/transport/abort.rs` -> `src/plugins/l4/abort.rs`. (completed)
+            - [x] Remove `pub mod abort;` from `src/modules/plugins/terminators/transport/mod.rs`. (completed)
+            - [x] Fix `src/modules/plugins/core/registry.rs` abort reference. (completed)
+            - [x] Reorganize `src/modules/plugins/core/registry.rs` imports. (completed)
+            - [x] Recheck `src/modules/plugins/core/registry.rs` imports and fixing the specific import structure. (completed)
+            - [x] Add `pub mod l4;` to `src/plugins/mod.rs`. (completed)
+            - [x] Create `src/plugins/l4/mod.rs`. (completed)
+            - [x] Fix `src/modules/plugins/core/registry.rs` to use `crate::plugins` instead of `crate::modules::plugins`. (completed)
+            - [x] Fix `src/modules/plugins/core/registry.rs` l4 path. (completed)
+            - [x] Fix `src/modules/plugins/core/registry.rs` super::l4 reference. (completed)
+            - [x] Add `pub mod abort;` and `pub mod proxy;` to `src/plugins/l4/mod.rs`. (completed)
             - [x] `cargo check`. (completed)
-    - [ ] **4.2: Plugins Organization**
-        - [ ] **4.2.1: Setup Plugins Dirs**
-        - [ ] **4.2.2: Move L4 Plugins**
         - [ ] **4.2.3: Move L7 Plugins**
+            - [ ] Move `l7/resource` -> `src/plugins/l7/static_files`.
+            - [ ] Move `l7/cgi` -> `src/plugins/l7/cgi`.
+            - [ ] Move `l7/upstream` -> `src/plugins/l7/upstream`.
+            - [ ] Move `terminators/response` -> `src/plugins/l7/response`.
+            - [ ] `cargo check`.
         - [ ] **4.2.4: Move System/Protocol**
+            - [ ] Move TLS/QUIC -> `src/plugins/protocol/`.
+            - [ ] Move `exec.rs`, `unix.rs` -> `src/plugins/system/`.
+            - [ ] `cargo check`.
         - [ ] **4.2.5: Cleanup Plugins**
+            - [ ] Remove `src/modules/plugins`.
+            - [ ] Remove `plugins` from `src/modules/mod.rs`.
+            - [ ] `cargo check`.
 5. [ ] **Phase 5: Server & API**
 6. [ ] **Phase 6: Final Sweep**
 
@@ -60,6 +74,10 @@ Execute the Vane 2.0 structural refactoring plan as detailed in `TODO.md`.
     - `cargo check` passed with only one unused import warning.
 - **4.1.2 Completed:** Extracted `src/ingress/tcp.rs` and `src/ingress/udp.rs` from `tasks.rs`.
     - `cargo check` passed with no warnings.
+- **4.2.1 Completed:** Setup plugin directories and added `pub mod plugins;` to `src/main.rs`.
+    - `cargo check` passed with no errors or warnings.
+- **4.2.2 Completed:** Moved L4 Plugins.
+    - All sub-steps completed and `cargo check` passed with no errors or warnings.
 
 ### 1. AGENT.md Management
 - `AGENT.md` is your personal workspace and status tracker.

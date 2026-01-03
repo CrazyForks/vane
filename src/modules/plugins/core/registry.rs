@@ -1,6 +1,7 @@
 /* src/modules/plugins/core/registry.rs */
 
 use crate::engine::contract::Plugin;
+use crate::plugins::l4::{abort::AbortConnectionPlugin, proxy::{domain::ProxyDomainPlugin, ip::TransparentProxyPlugin, node::ProxyNodePlugin}};
 use crate::modules::plugins::{
 	l7::{cgi::CgiPlugin, resource::StaticPlugin, upstream::FetchUpstreamPlugin},
 	middleware::{
@@ -10,10 +11,6 @@ use crate::modules::plugins::{
 	protocol::detect::ProtocolDetectPlugin,
 	terminators::{
 		response::SendResponsePlugin,
-		transport::{
-			abort::AbortConnectionPlugin,
-			proxy::{domain::ProxyDomainPlugin, ip::TransparentProxyPlugin, node::ProxyNodePlugin},
-		},
 		upgrader::upgrade::UpgradePlugin,
 	},
 };
