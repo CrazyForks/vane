@@ -1,9 +1,9 @@
 /* src/modules/stack/transport/legacy/tcp.rs */
 
 use crate::common::config::getenv;
-use crate::modules::kv::KvStore;
 use crate::modules::stack::transport::model::{Detect, DetectMethod, Forward};
 use crate::modules::stack::transport::{balancer, proxy};
+use crate::resources::kv::KvStore;
 use fancy_log::{LogLevel, log};
 use serde::{Deserialize, Serialize};
 use std::collections::HashSet;
