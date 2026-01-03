@@ -80,8 +80,8 @@ fn get_header_value(map: &http::HeaderMap, key_name: &str) -> String {
 #[cfg(test)]
 mod tests {
 	use super::*;
-	use crate::modules::kv::KvStore;
 	use crate::modules::stack::application::container::PayloadState;
+	use crate::resources::kv::KvStore;
 
 	/// Tests can_handle returns true for known hijack keys.
 	#[test]
