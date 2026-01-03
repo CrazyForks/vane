@@ -2,7 +2,8 @@
 
 use super::{context, flow, legacy, tcp::TcpConfig};
 use crate::engine::contract::{ConnectionObject, TerminatorResult};
-use crate::modules::stack::carrier;
+
+use crate::layers::l4p::{plain, tls};
 use crate::resources::kv::KvStore;
 use fancy_log::{LogLevel, log};
 use std::sync::Arc;
@@ -60,7 +61,7 @@ pub async fn dispatch_tcp_connection(
 									#[cfg(feature = "tls")]
 									("tls", ConnectionObject::Tcp(stream)) => {
 										tokio::spawn(async move {
-											if let Err(e) = carrier::tls::run(stream, &mut kv_store, parent_path).await {
+											if let Err(e) = tls::run(stream, &mut kv_store, parent_path).await {
 												log(LogLevel::Error, &format!("✗ TLS Carrier failed: {:#}", e));
 											}
 										});
@@ -71,9 +72,7 @@ pub async fn dispatch_tcp_connection(
 									}
 									("http", ConnectionObject::Tcp(stream)) => {
 										tokio::spawn(async move {
-											if let Err(e) =
-												carrier::plain::run(stream, &mut kv_store, parent_path, "http").await
-											{
+											if let Err(e) = plain::run(stream, &mut kv_store, parent_path, "http").await {
 												log(LogLevel::Error, &format!("✗ HTTP Carrier failed: {:#}", e));
 											}
 										});
@@ -83,7 +82,7 @@ pub async fn dispatch_tcp_connection(
 										let proto_owned = proto_str.to_string();
 										tokio::spawn(async move {
 											if let Err(e) =
-												carrier::plain::run(stream, &mut kv_store, parent_path, &proto_owned).await
+												plain::run(stream, &mut kv_store, parent_path, &proto_owned).await
 											{
 												log(
 													LogLevel::Error,
