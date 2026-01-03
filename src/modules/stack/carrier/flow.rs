@@ -9,14 +9,13 @@ use crate::modules::{
 };
 
 use bytes::Bytes;
-use std::collections::HashMap;
 
 pub async fn execute(
 	step: &ProcessingStep,
 	kv: &mut KvStore,
 	conn: ConnectionObject,
 	parent_path: String,
-	initial_payloads: HashMap<String, Bytes>,
+	initial_payloads: ahash::AHashMap<String, Bytes>,
 ) -> Result<TerminatorResult> {
 	kv.insert("conn.layer".to_string(), "l4p".to_string());
 
