@@ -2,7 +2,7 @@
 
 use super::session::{self, SessionAction};
 use super::virtual_socket::{VirtualPacket, VirtualUdpSocket};
-use crate::common::getenv;
+use crate::common::config::getenv;
 use crate::common::lifecycle::{Error, Result};
 use crate::modules::{certs, stack::application::http::h3};
 use fancy_log::{LogLevel, log};
