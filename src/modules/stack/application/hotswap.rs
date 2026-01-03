@@ -2,9 +2,11 @@
 
 use super::model::{APPLICATION_REGISTRY, ApplicationConfig, SUPPORTED_APP_PROTOCOLS};
 use crate::common::{
-	getconf,
+	config::{
+		getconf,
+		loader::{self, LoadResult},
+	},
 	hotswap::watch_loop,
-	loader::{self, LoadResult},
 };
 use dashmap::DashMap;
 use fancy_log::{LogLevel, log};
