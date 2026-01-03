@@ -6,13 +6,13 @@ use crate::common::config::getenv;
 use crate::modules::ports::tasks::GLOBAL_TRACKER;
 use crate::modules::stack::carrier::{context, flow};
 use crate::modules::{
-	kv::KvStore,
 	plugins::{
 		core::model::{ConnectionObject, TerminatorResult},
 		protocol::quic::parser,
 	},
 	stack::carrier::model::RESOLVER_REGISTRY,
 };
+use crate::resources::kv::KvStore;
 use anyhow::{Result, anyhow};
 use fancy_log::{LogLevel, log};
 use std::collections::BTreeMap;
