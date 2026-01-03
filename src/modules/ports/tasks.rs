@@ -2,10 +2,10 @@
 
 use super::model::{CONFIG_STATE, ListenerState, Protocol, TASK_REGISTRY};
 use crate::common::config::getenv;
+use crate::layers::l4::{dispatcher, udp};
 use crate::modules::{
 	plugins::protocol::quic::parser,
 	stack::carrier::quic::{muxer::QuicMuxer, session},
-	stack::transport::{dispatcher, udp},
 };
 use crate::resources::kv;
 use dashmap::DashMap;
