@@ -1,6 +1,6 @@
 /* src/modules/plugins/l7/resource/inspect.rs */
 
-use crate::common::getenv;
+use crate::common::config::getenv;
 use std::path::Path;
 use tokio::{
 	fs::File,
