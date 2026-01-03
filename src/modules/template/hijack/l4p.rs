@@ -5,7 +5,7 @@ use async_trait::async_trait;
 use bytes::Bytes;
 
 use super::Hijacker;
-use crate::modules::kv::KvStore;
+use crate::resources::kv::KvStore;
 
 /// L4+ carrier hijacker for lazy hex encoding
 pub struct L4PlusHijacker<'a> {
