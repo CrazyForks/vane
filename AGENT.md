@@ -7,11 +7,9 @@ Execute the Vane 2.0 structural refactoring plan as detailed in `TODO.md`.
 1. [x] **Phase 1: Foundation (Common & Resources)**
 2. [ ] **Phase 2: The Engine Core**
     - [x] 2.1: Extract Traits (Contract)
-        - [x] 2.1.2: Move Model/Contract
-        - [x] 2.1.3: Fix Contract Imports (Completed)
     - [ ] 2.2: Move Flow Logic
-        - [ ] 2.2.1: Move Context (Next)
-        - [ ] 2.2.2: Move Key Scoping
+        - [x] 2.2.1: Move Context (Completed)
+        - [ ] 2.2.2: Move Key Scoping (Next)
         - [ ] 2.2.3: Move Executor (Engine)
         - [ ] 2.2.4: Cleanup Flow Module
 3. [ ] **Phase 3: The Protocol Stack (Layers)**
@@ -26,11 +24,11 @@ Execute the Vane 2.0 structural refactoring plan as detailed in `TODO.md`.
 - **Instruction Update:** Received explicit instruction to limit work strictly to atomic sub-tasks (e.g., x.x.1 -> x.x.2), run `cargo check` after each, and WAIT for user approval.
 - **2.1.2 Completed:** Moved `model.rs` to `engine/contract.rs`.
 - **2.1.3 Completed:** Fixed all import errors.
-    - Batch replaced `modules::plugins::core::model` -> `engine::contract`.
-    - Manually fixed nested imports in `handler.rs`, `loader.rs`, `exec.rs` (drivers).
-    - Manually fixed nested imports in `stack/application`, `stack/carrier`, `stack/transport`.
-    - Manually fixed nested imports in `terminators` (response, proxy, upgrader).
-    - `cargo check` passed successfully.
+- **2.2.1 Completed:** Moved `src/modules/flow/context.rs` -> `src/engine/context.rs`.
+    - Updated `engine/mod.rs` to expose `context`.
+    - Updated `src/modules/flow/mod.rs` to remove local mod and export from `crate::engine::context`.
+    - Fixed imports in `modules/flow/engine.rs`, `stack/carrier/flow.rs`, `stack/transport/flow.rs`.
+    - `cargo check` passed.
 
 ### 1. AGENT.md Management
 - `AGENT.md` is your personal workspace and status tracker.
