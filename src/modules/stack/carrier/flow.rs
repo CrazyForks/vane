@@ -4,9 +4,9 @@ use anyhow::Result;
 
 use crate::modules::{
 	flow::{context::TransportContext, engine},
-	kv::KvStore,
 	plugins::core::model::{ConnectionObject, ProcessingStep, TerminatorResult},
 };
+use crate::resources::kv::KvStore;
 
 use bytes::Bytes;
 
