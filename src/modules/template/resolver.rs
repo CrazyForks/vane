@@ -92,9 +92,9 @@ fn resolve_ast_with_depth<'a>(
 #[cfg(test)]
 mod tests {
 	use super::*;
-	use crate::modules::kv::KvStore;
 	use crate::modules::template::context::SimpleContext;
 	use crate::modules::template::parser::parse_template;
+	use crate::resources::kv::KvStore;
 
 	/// Tests resolving simple variable.
 	#[tokio::test]
