@@ -6,8 +6,9 @@ pub mod node;
 pub mod proxy;
 
 use crate::modules::{
-	kv::KvStore, plugins::core::model::ConnectionObject, stack::transport::model::ResolvedTarget,
+	plugins::core::model::ConnectionObject, stack::transport::model::ResolvedTarget,
 };
+use crate::resources::kv::KvStore;
 use anyhow::{Result, anyhow};
 use fancy_log::{LogLevel, log};
 
