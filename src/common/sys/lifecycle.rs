@@ -2,7 +2,7 @@
 
 use crate::common::config::getconf;
 use crate::layers::l4::{health, session};
-use crate::modules::stack::carrier::quic::session as quic_session;
+use crate::layers::l4p::quic::session as quic_session;
 
 #[derive(Debug, thiserror::Error)]
 pub enum Error {
