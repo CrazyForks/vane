@@ -2,32 +2,29 @@
 
 **Last Updated**: 2026-01-02
 **Current Task**: Phase V - Architecture & Quality Improvements
-**Status**: Task 5.3 Complete
+**Status**: Task 5.1 Complete
 **Strategy**: Iterative refinement.
 
 ---
 
 ## 📍 Current Position
 
-Successfully reorganized the Transport Proxy logic.
+Successfully refactored `common/requirements.rs` into specialized modules.
 
 ### Recently Completed
 
-1. ✅ **Task 5.3: Flatten Proxy Module**
-   - Created `src/modules/stack/transport/proxy/` directory.
-   - Split monolithic `proxy.rs` into `tcp.rs`, `udp.rs`, `stream.rs`, and `mod.rs`.
-   - Verified zero-copy performance and idle watchdog consistency.
-   - Cleaned up imports and verified with `cargo check`.
+1. ✅ **Task 5.1: Split requirements.rs**
+   - Created `src/common/lifecycle.rs` (Initialization, Background Tasks, Errors).
+   - Created `src/common/watcher.rs` (Config Monitoring, Debouncing).
+   - Updated `src/common/mod.rs` to export new modules.
+   - Performed global migration of imports from `common::requirements` to `common::lifecycle`.
+   - Verified with `cargo check`.
 
-## 📋 Next Recommended Task: Task 5.4 - Rename static.rs
+## 📋 Next Recommended Task: Task 6.2 - TLS Fail-Closed Audit
 
-**Goal:** Rename `src/modules/plugins/l7/resource/static.rs` to something that isn't a Rust keyword (e.g., `file_server.rs` or `assets.rs`).
+**Goal:** Ensure that TLS inspection failure leads to immediate connection termination by default.
 
-**Plan:**
-1.  Rename file.
-2.  Update `mod.rs`.
-3.  Update registry imports.
-4.  Verify `cargo check`.
+**Status:** Planned.
 
 ## 📝 Version Information
 
