@@ -1,6 +1,6 @@
 /* src/common/lifecycle.rs */
 
-use crate::common::getconf;
+use crate::common::config::getconf;
 use crate::modules::stack::carrier::quic::session as quic_session;
 use crate::modules::stack::transport::{health, session};
 
