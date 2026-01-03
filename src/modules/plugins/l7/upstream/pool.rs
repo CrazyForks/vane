@@ -2,7 +2,7 @@
 
 use super::tls_verifier::NoVerifier;
 use crate::common::config::getenv;
-use crate::common::lifecycle::Error;
+use crate::common::sys::lifecycle::Error;
 use bytes::Bytes;
 use http_body_util::combinators::BoxBody;
 use hyper_rustls::HttpsConnector;
