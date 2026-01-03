@@ -1,11 +1,9 @@
 /* src/modules/plugins/terminators/transport/abort.rs */
 
-use crate::modules::{
-	kv::KvStore,
-	plugins::core::model::{
-		ConnectionObject, Layer, ParamDef, Plugin, ResolvedInputs, Terminator, TerminatorResult,
-	},
+use crate::modules::plugins::core::model::{
+	ConnectionObject, Layer, ParamDef, Plugin, ResolvedInputs, Terminator, TerminatorResult,
 };
+use crate::resources::kv::KvStore;
 use anyhow::Result;
 use async_trait::async_trait;
 use fancy_log::{LogLevel, log};
