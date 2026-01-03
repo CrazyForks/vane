@@ -107,11 +107,11 @@ This plan breaks down the structural overhaul into atomic, verifiable steps.
 *Goal: Centralize the "Contract" and "Executor".*
 
 - [ ] **2.1: Extract Traits (Contract)**
-    - [ ] **2.1.1: Setup Engine Module**
-        - [ ] Create `src/engine/` directory.
-        - [ ] Create `src/engine/mod.rs`.
-        - [ ] Add `pub mod engine;` to `src/lib.rs`.
-        - [ ] `cargo check`.
+    - [x] **2.1.1: Setup Engine Module**
+        - [x] Create `src/engine/` directory.
+        - [x] Create `src/engine/mod.rs`.
+        - [x] Add `pub mod engine;` to `src/lib.rs` (or main.rs/mod structure).
+        - [x] `cargo check`.
     - [ ] **2.1.2: Move Model/Contract**
         - [ ] Move `src/modules/plugins/core/model.rs` -> `src/engine/contract.rs`.
         - [ ] Expose `contract` in `src/engine/mod.rs`.
