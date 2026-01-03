@@ -87,7 +87,7 @@ This plan breaks down the structural overhaul into atomic, verifiable steps.
         - [x] Search & Replace `crate::modules::certs` -> `crate::resources::certs`.
         - [x] `cargo check`.
 
-- [ ] **1.5: Establish `src/resources/service_discovery`**
+- [x] **1.5: Establish `src/resources/service_discovery`**
     - [x] **1.5.1: Move Nodes Module**
         - [x] Move `src/modules/nodes/` -> `src/resources/service_discovery/`.
         - [x] Add `pub mod service_discovery;` to `src/resources/mod.rs`.
@@ -95,7 +95,7 @@ This plan breaks down the structural overhaul into atomic, verifiable steps.
         - [x] Search & Replace `crate::modules::nodes` -> `crate::resources::service_discovery`.
         - [x] `cargo check`.
 
-- [ ] **1.6: Establish `src/resources/templates`**
+- [x] **1.6: Establish `src/resources/templates`**
     - [x] **1.6.1: Move Template Module**
         - [x] Move `src/modules/template/` -> `src/resources/templates/`.
         - [x] Add `pub mod templates;` to `src/resources/mod.rs`.
@@ -112,15 +112,15 @@ This plan breaks down the structural overhaul into atomic, verifiable steps.
         - [x] Create `src/engine/mod.rs`.
         - [x] Add `pub mod engine;` to `src/lib.rs` (or main.rs/mod structure).
         - [x] `cargo check`.
-    - [ ] **2.1.2: Move Model/Contract**
-        - [ ] Move `src/modules/plugins/core/model.rs` -> `src/engine/contract.rs`.
-        - [ ] Expose `contract` in `src/engine/mod.rs`.
-        - [ ] Remove `model` from `src/modules/plugins/core/mod.rs`.
-        - [ ] `cargo check` (expect errors).
-    - [ ] **2.1.3: Fix Contract Imports**
-        - [ ] Search & Replace `crate::modules::plugins::core::model` -> `crate::engine::contract`.
-        - [ ] Fix internal imports in `contract.rs`.
-        - [ ] `cargo check`.
+    - [x] **2.1.2: Move Model/Contract**
+        - [x] Move `src/modules/plugins/core/model.rs` -> `src/engine/contract.rs`.
+        - [x] Expose `contract` in `src/engine/mod.rs`.
+        - [x] Remove `model` from `src/modules/plugins/core/mod.rs`.
+        - [x] `cargo check` (expect errors).
+    - [x] **2.1.3: Fix Contract Imports**
+        - [x] Search & Replace `crate::modules::plugins::core::model` -> `crate::engine::contract`.
+        - [x] Fix internal imports in `contract.rs`.
+        - [x] `cargo check`.
 
 - [ ] **2.2: Move Flow Logic**
     - [ ] **2.2.1: Move Context**
