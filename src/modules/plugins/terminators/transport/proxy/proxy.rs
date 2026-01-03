@@ -1,7 +1,7 @@
 /* src/modules/plugins/terminators/transport/proxy/proxy.rs */
 
 use crate::{
-	common::{config::getenv, ip},
+	common::{config::getenv, net::ip},
 	modules::{
 		plugins::protocol::quic::parser,
 		stack::carrier::quic::session::{self, SessionAction},
