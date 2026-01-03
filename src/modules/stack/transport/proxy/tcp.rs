@@ -98,7 +98,7 @@ pub async fn proxy_tcp_stream(client_stream: TcpStream, target: ResolvedTarget) 
 		res = client_to_server => res.map(|_| ()).context("Client->Server copy failed"),
 		res = server_to_client => res.map(|_| ()).context("Server->Client copy failed"),
 		_ = watchdog => {
-			log(LogLevel::Warn, "✗ Security: Stream idle timeout triggered (TCP).");
+			log(LogLevel::Warn, "⚠ Security: Stream idle timeout triggered (TCP).");
 			Err(anyhow::anyhow!("Stream idle timeout"))
 		}
 	}

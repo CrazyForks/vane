@@ -98,7 +98,7 @@ pub fn mark_tcp_target_unhealthy(target: &ResolvedTarget) {
 		log(
 			LogLevel::Warn,
 			&format!(
-				"✗ Proactively marked TCP target {}:{} as unavailable due to connection failure.",
+				"⚠ Proactively marked TCP target {}:{} as unavailable due to connection failure.",
 				target.ip, target.port
 			),
 		);

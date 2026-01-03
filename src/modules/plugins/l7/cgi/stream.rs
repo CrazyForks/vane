@@ -105,7 +105,7 @@ pub async fn pump_stdout(
 			Ok(Ok(n)) => {
 				total_bytes += n;
 				if total_bytes > max_size {
-					log(LogLevel::Error, "CGI Body Exceeded Max Size.");
+					log(LogLevel::Error, "✗ CGI Body Exceeded Max Size.");
 					let _ = tx
 						.send(Err(Error::System("CGI Body Exceeded Max Size".into())))
 						.await;
@@ -126,12 +126,12 @@ pub async fn pump_stdout(
 				}
 			}
 			Ok(Err(e)) => {
-				log(LogLevel::Error, &format!("CGI Read Error: {}", e));
+				log(LogLevel::Error, &format!("✗ CGI Read Error: {}", e));
 				let _ = tx.send(Err(Error::System(e.to_string()))).await;
 				break;
 			}
 			Err(_) => {
-				log(LogLevel::Error, "CGI Body Idle Timeout.");
+				log(LogLevel::Error, "✗ CGI Body Idle Timeout.");
 				let _ = tx
 					.send(Err(Error::System("CGI Body Idle Timeout".into())))
 					.await;

@@ -80,7 +80,7 @@ pub async fn execute(
 				log(
 					LogLevel::Warn,
 					&format!(
-						"🛡 Security: Dropped Linker env var '{}' (ALLOW_EXTERNAL_LINKER_ENV is false)",
+						"⚠ Security: Dropped Linker env var '{}' (ALLOW_EXTERNAL_LINKER_ENV is false)",
 						key
 					),
 				);
@@ -102,7 +102,7 @@ pub async fn execute(
 				log(
 					LogLevel::Warn,
 					&format!(
-						"🛡 Security: Dropped Runtime env var '{}' (ALLOW_EXTERNAL_RUNTIME_ENV is false)",
+						"⚠ Security: Dropped Runtime env var '{}' (ALLOW_EXTERNAL_RUNTIME_ENV is false)",
 						key
 					),
 				);
@@ -119,7 +119,7 @@ pub async fn execute(
 				log(
 					LogLevel::Warn,
 					&format!(
-						"🛡 Security: Dropped Shell env var '{}' (ALLOW_EXTERNAL_SHELL_ENV is false)",
+						"⚠ Security: Dropped Shell env var '{}' (ALLOW_EXTERNAL_SHELL_ENV is false)",
 						key
 					),
 				);
@@ -145,7 +145,7 @@ pub async fn execute(
 				log(
 					LogLevel::Warn,
 					&format!(
-						"🛡 Security: Dropped PATH env var from plugin '{}' (ALLOW_EXTERNAL_PATH_ENV_APPEND is false)",
+						"⚠ Security: Dropped PATH env var from plugin '{}' (ALLOW_EXTERNAL_PATH_ENV_APPEND is false)",
 						program
 					),
 				);

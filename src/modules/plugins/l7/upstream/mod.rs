@@ -265,7 +265,7 @@ impl HttpMiddleware for FetchUpstreamPlugin {
 				store: None,
 			}),
 			Err(e) => {
-				log(LogLevel::Error, &format!("FetchUpstream Failed: {}", e));
+				log(LogLevel::Error, &format!("✗ FetchUpstream Failed: {}", e));
 				Ok(MiddlewareOutput {
 					branch: "failure".into(),
 					store: Some(std::collections::HashMap::from([(

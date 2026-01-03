@@ -101,7 +101,7 @@ pub async fn proxy_generic_stream(
 		res = client_to_server => res.map(|_| ()).context("L4+ Client->Server copy failed"),
 		res = server_to_client => res.map(|_| ()).context("L4+ Server->Client copy failed"),
 		_ = watchdog => {
-			log(LogLevel::Warn, "🛡 Security: Stream idle timeout triggered (Generic).");
+			log(LogLevel::Warn, "⚠ Security: Stream idle timeout triggered (Generic).");
 			Err(anyhow::anyhow!("Stream idle timeout"))
 		}
 	}

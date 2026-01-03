@@ -110,7 +110,7 @@ pub async fn dispatch_tcp_connection(
 					}
 				}
 				Err(e) => {
-					log(LogLevel::Warn, &format!("✗ Failed to peek: {}", e));
+					log(LogLevel::Warn, &format!("⚠ Failed to peek: {}", e));
 				}
 			}
 		}

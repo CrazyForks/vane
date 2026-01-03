@@ -79,14 +79,14 @@ pub async fn execute_quinn_request(
 						if let Ok(data) = frame.into_data() {
 							if !data.is_empty() {
 								if let Err(e) = driver_send.send_data(data).await {
-									log(LogLevel::Warn, &format!("H3 Upload interrupted: {}", e));
+									log(LogLevel::Warn, &format!("⚠ H3 Upload interrupted: {}", e));
 									break;
 								}
 							}
 						}
 					}
 					Some(Err(e)) => {
-						log(LogLevel::Error, &format!("H3 Request Read Error: {}", e));
+						log(LogLevel::Error, &format!("✗ H3 Request Read Error: {}", e));
 						break;
 					}
 					None => {
@@ -145,7 +145,7 @@ pub async fn execute_quinn_request(
 					break;
 				}
 				Err(e) => {
-					log(LogLevel::Error, &format!("H3 Download Error: {}", e));
+					log(LogLevel::Error, &format!("✗ H3 Download Error: {}", e));
 					let _ = res_body_tx.send(Err(Error::System(e.to_string()))).await;
 					break;
 				}

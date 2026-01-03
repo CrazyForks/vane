@@ -79,7 +79,7 @@ pub async fn dispatch_legacy_tcp(
 		Err(e) => {
 			log(
 				LogLevel::Warn,
-				&format!("✗ Failed to peek initial data from {}: {}", peer_addr, e),
+				&format!("⚠ Failed to peek initial data from {}: {}", peer_addr, e),
 			);
 			return;
 		}
@@ -128,7 +128,7 @@ pub async fn dispatch_legacy_tcp(
 			log(
 				LogLevel::Info,
 				&format!(
-					"⇅ Matched Protocol[{}] {} for connection from {}",
+					"➜ Matched Protocol[{}] {} for connection from {}",
 					rule.priority, rule.name, peer_addr
 				),
 			);
@@ -142,7 +142,7 @@ pub async fn dispatch_legacy_tcp(
 					if let Some(target) = balancer::select_tcp_target(port, &rule.name, forward).await {
 						let _ = proxy::proxy_tcp_stream(socket, target).await;
 					} else {
-						log(LogLevel::Warn, "✗ No available targets.");
+						log(LogLevel::Warn, "⚠ No available targets.");
 					}
 					return;
 				}

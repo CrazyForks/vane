@@ -155,7 +155,7 @@ impl QuicMuxer {
 								log(LogLevel::Error, &format!("✗ H3 Engine Error: {:#}", e));
 							}
 						}
-						Err(e) => log(LogLevel::Warn, &format!("✗ QUIC Handshake Error: {}", e)),
+						Err(e) => log(LogLevel::Warn, &format!("⚠ QUIC Handshake Error: {}", e)),
 					}
 				});
 			}

@@ -69,7 +69,7 @@ pub fn start_session_cleanup_task() {
 				log(
 					LogLevel::Warn,
 					&format!(
-						"UDP session buffer limit exceeded ({} > {}). Pruning oldest sessions.",
+						"⚠ UDP session buffer limit exceeded ({} > {}). Pruning oldest sessions.",
 						current_size, buffer_limit
 					),
 				);

@@ -127,7 +127,7 @@ pub async fn execute(container: &mut Container, config: CgiConfig) -> Result<Mid
 
 	tokio::spawn(async move {
 		if let Err(e) = stdin.write_all(&body_bytes).await {
-			log(LogLevel::Debug, &format!("CGI stdin write error: {}", e));
+			log(LogLevel::Debug, &format!("⚠ CGI stdin write error: {}", e));
 		}
 		drop(stdin);
 	});
@@ -167,7 +167,7 @@ pub async fn execute(container: &mut Container, config: CgiConfig) -> Result<Mid
 
 	if read_result.is_err() || !header_parsed {
 		let _ = child.kill().await;
-		log(LogLevel::Warn, "CGI failed to parse headers or timed out");
+		log(LogLevel::Warn, "⚠ CGI failed to parse headers or timed out");
 		return Ok(MiddlewareOutput {
 			branch: Cow::Borrowed("failure"),
 			store: None,
