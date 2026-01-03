@@ -5,7 +5,7 @@ use crate::engine::contract::{
 	ConnectionObject, Layer, ParamDef, ParamType, Plugin, ResolvedInputs, Terminator,
 	TerminatorResult,
 };
-use crate::modules::stack::transport::{model::ResolvedTarget, resolver};
+use crate::layers::l4::{model::ResolvedTarget, resolver};
 use crate::resources::kv::KvStore;
 use anyhow::{Result, anyhow};
 use async_trait::async_trait;
