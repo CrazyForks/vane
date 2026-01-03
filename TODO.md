@@ -127,13 +127,14 @@ This plan breaks down the structural overhaul into atomic, verifiable steps.
             - [x] Move `src/modules/flow/context.rs` -> `src/engine/context.rs`.
             - [x] Search & Replace `crate::modules::flow::context` -> `crate::engine::context`.
             - [x] `cargo check`.
-        - [ ] **2.2.2: Move Key Scoping**        - [ ] Move `src/modules/flow/key_scoping.rs` -> `src/engine/key_scoping.rs`.
-        - [ ] Search & Replace `crate::modules::flow::key_scoping` -> `crate::engine::key_scoping`.
-        - [ ] `cargo check`.
-    - [ ] **2.2.3: Move Executor (Engine)**
-        - [ ] Move `src/modules/flow/engine.rs` -> `src/engine/executor.rs`.
-        - [ ] Search & Replace `crate::modules::flow::engine` -> `crate::engine::executor`.
-        - [ ] `cargo check`.
+        - [x] **2.2.2: Move Key Scoping**
+            - [x] Move `src/modules/flow/key_scoping.rs` -> `src/engine/key_scoping.rs`.
+            - [x] Update imports.
+            - [x] `cargo check`.
+        - [x] **2.2.3: Move Executor (Engine)**
+        - [x] Move `src/modules/flow/engine.rs` -> `src/engine/executor.rs`.
+        - [x] Search & Replace `crate::modules::flow::engine` -> `crate::engine::executor`.
+        - [x] `cargo check`.
     - [ ] **2.2.4: Cleanup Flow Module**
         - [ ] Remove `src/modules/flow`.
         - [ ] Remove `flow` from `src/modules/mod.rs`.
