@@ -1,6 +1,6 @@
 /* src/middleware/auth.rs */
 
-use crate::common::getenv;
+use crate::common::config::getenv;
 use axum::{extract::Request, http::StatusCode, middleware::Next, response::Response};
 use fancy_log::{LogLevel, log};
 
