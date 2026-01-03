@@ -1,5 +1,6 @@
 /* src/modules/plugins/terminators/transport/proxy/proxy.rs */
 
+use crate::layers::l4p::quic::session::{self, SessionAction};
 use crate::{
 	common::{config::getenv, net::ip},
 	layers::l4::{
@@ -7,10 +8,7 @@ use crate::{
 		model::ResolvedTarget,
 		session::{REVERSE_SESSIONS, SESSIONS, Session},
 	},
-	modules::{
-		plugins::protocol::quic::parser,
-		stack::carrier::quic::session::{self, SessionAction},
-	},
+	modules::plugins::protocol::quic::parser,
 };
 use anyhow::{Context, Result};
 use fancy_log::{LogLevel, log};
