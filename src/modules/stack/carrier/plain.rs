@@ -103,7 +103,7 @@ pub async fn run(
 		kv,
 		conn,
 		parent_path,
-		std::collections::HashMap::new(),
+		ahash::AHashMap::new(),
 	)
 	.await;
 
