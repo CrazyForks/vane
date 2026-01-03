@@ -67,17 +67,17 @@ This plan breaks down the structural overhaul into atomic, verifiable steps.
         - [x] `cargo check`.
 
 - [ ] **1.3: Establish `src/resources/kv`**
-    - [ ] **1.3.1: Setup Resources Module**
-        - [ ] Create `src/resources/` directory.
-        - [ ] Create `src/resources/mod.rs`.
-        - [ ] Add `pub mod resources;` to `src/lib.rs` (or main.rs/mod structure).
-        - [ ] `cargo check`.
-    - [ ] **1.3.2: Move KV Module**
-        - [ ] Move `src/modules/kv/` -> `src/resources/kv/`.
-        - [ ] Add `pub mod kv;` to `src/resources/mod.rs`.
-        - [ ] Remove `kv` from `src/modules/mod.rs`.
-        - [ ] Search & Replace `crate::modules::kv` -> `crate::resources::kv`.
-        - [ ] `cargo check`.
+    - [x] **1.3.1: Setup Resources Module**
+        - [x] Create `src/resources/` directory.
+        - [x] Create `src/resources/mod.rs`.
+        - [x] Add `pub mod resources;` to `src/lib.rs` (or main.rs/mod structure).
+        - [x] `cargo check`.
+    - [x] **1.3.2: Move KV Module**
+        - [x] Move `src/modules/kv/` -> `src/resources/kv/`.
+        - [x] Add `pub mod kv;` to `src/resources/mod.rs`.
+        - [x] Remove `kv` from `src/modules/mod.rs`.
+        - [x] Search & Replace `crate::modules::kv` -> `crate::resources::kv`.
+        - [x] `cargo check`.
 
 - [ ] **1.4: Establish `src/resources/certs`**
     - [ ] **1.4.1: Move Certs Module**
