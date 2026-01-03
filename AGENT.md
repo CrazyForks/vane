@@ -1,32 +1,35 @@
 # Agent Session Progress
 
 **Last Updated**: 2026-01-02
-**Current Task**: Phase V - Architecture & Quality Improvements
-**Status**: Task 5.1 Complete
-**Strategy**: Iterative refinement.
+**Current Task**: Task 6.4 - Global L7 Buffer Cap (Deep Testing)
+**Status**: Task 6.2 Complete
+**Strategy**: Audit current L7 buffer usage and identify any remaining gaps.
 
 ---
 
 ## 📍 Current Position
 
-Successfully refactored `common/requirements.rs` into specialized modules.
+Task 6.2 (TLS Hardening) is complete. Version is now **0.8.10**.
 
 ### Recently Completed
 
-1. ✅ **Task 5.1: Split requirements.rs**
-   - Created `src/common/lifecycle.rs` (Initialization, Background Tasks, Errors).
-   - Created `src/common/watcher.rs` (Config Monitoring, Debouncing).
-   - Updated `src/common/mod.rs` to export new modules.
-   - Performed global migration of imports from `common::requirements` to `common::lifecycle`.
-   - Verified with `cargo check`.
+1. ✅ **Task 6.2: TLS Hardening**
+   - Implemented `peek_handshake` loop with fragmentation support.
+   - Added `TLS_HANDSHAKE_PEEK_TIMEOUT_MS` (500ms).
+   - Implemented SNI Sanitization (Lowercase + Character filtering).
+   - Added detailed `tls.error` codes.
+   - Updated `CHANGELOG.md` and `Cargo.toml`.
 
-## 📋 Next Recommended Task: Task 6.2 - TLS Fail-Closed Audit
+## 📋 Next Task: Task 6.4 - Global L7 Buffer Cap (Follow-up)
 
-**Goal:** Ensure that TLS inspection failure leads to immediate connection termination by default.
+**Goal:** Ensure the adaptive memory limit we implemented is used consistently across all L7 components.
 
-**Status:** Planned.
+**Audit Plan:**
+1.  Check `FetchUpstream` plugin for potential large body buffering.
+2.  Check `CGI` executor for stdout buffering limits.
+3.  Check `Static` plugin (Directory listing was already updated).
 
 ## 📝 Version Information
 
-**Current Version**: 0.8.9
-**Target Version**: 0.9.0
+**Current Version**: 0.8.10
+**Target Version**: 0.8.11
