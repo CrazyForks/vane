@@ -11,7 +11,7 @@ use hyper::upgrade::OnUpgrade;
 use tokio::sync::oneshot;
 
 use crate::common::{
-	getenv,
+	config::getenv,
 	lifecycle::{Error, Result},
 };
 use crate::modules::{
