@@ -2,12 +2,10 @@
 
 use super::stream::{CgiResponseBody, pump_stdout};
 use crate::common::{config::getenv, sys::lifecycle::Error};
-use crate::modules::{
-	plugins::core::model::MiddlewareOutput,
-	stack::application::{
-		container::{Container, PayloadState},
-		http::wrapper::VaneBody,
-	},
+use crate::engine::contract::MiddlewareOutput;
+use crate::modules::stack::application::{
+	container::{Container, PayloadState},
+	http::wrapper::VaneBody,
 };
 use anyhow::{Context as AnyhowContext, Result};
 use bytes::BytesMut;

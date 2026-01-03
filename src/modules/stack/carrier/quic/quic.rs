@@ -3,15 +3,10 @@
 use super::muxer::QuicMuxer;
 use super::session::{self, PendingState, SessionAction};
 use crate::common::config::getenv;
+use crate::engine::contract::{ConnectionObject, TerminatorResult};
 use crate::modules::ports::tasks::GLOBAL_TRACKER;
 use crate::modules::stack::carrier::{context, flow};
-use crate::modules::{
-	plugins::{
-		core::model::{ConnectionObject, TerminatorResult},
-		protocol::quic::parser,
-	},
-	stack::carrier::model::RESOLVER_REGISTRY,
-};
+use crate::modules::{plugins::protocol::quic::parser, stack::carrier::model::RESOLVER_REGISTRY};
 use crate::resources::kv::KvStore;
 use anyhow::{Result, anyhow};
 use fancy_log::{LogLevel, log};

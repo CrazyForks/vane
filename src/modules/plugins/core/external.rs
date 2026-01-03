@@ -1,8 +1,8 @@
 /* src/modules/plugins/core/external.rs */
 
 use crate::common::config::getenv;
-use crate::modules::plugins::core::model::ConnectionObject;
-use crate::modules::plugins::core::model::{
+use crate::engine::contract::ConnectionObject;
+use crate::engine::contract::{
 	ExternalPluginConfig, ExternalPluginDriver, Layer, Middleware, MiddlewareOutput, ParamDef,
 	ParamType, Plugin, PluginRole, ResolvedInputs, Terminator, TerminatorResult,
 };
@@ -135,9 +135,7 @@ impl Plugin for ExternalPlugin {
 			None
 		}
 	}
-	fn as_generic_middleware(
-		&self,
-	) -> Option<&dyn crate::modules::plugins::core::model::GenericMiddleware> {
+	fn as_generic_middleware(&self) -> Option<&dyn crate::engine::contract::GenericMiddleware> {
 		if self.config.role == PluginRole::Middleware {
 			Some(self)
 		} else {
@@ -150,7 +148,7 @@ impl Plugin for ExternalPlugin {
 }
 
 #[async_trait]
-impl crate::modules::plugins::core::model::GenericMiddleware for ExternalPlugin {
+impl crate::engine::contract::GenericMiddleware for ExternalPlugin {
 	fn output(&self) -> Vec<Cow<'static, str>> {
 		vec!["success".into(), "failure".into()]
 	}

@@ -2,10 +2,8 @@
 
 use anyhow::Result;
 
-use crate::modules::{
-	flow::{context::TransportContext, engine},
-	plugins::core::model::{ConnectionObject, ProcessingStep, TerminatorResult},
-};
+use crate::engine::contract::{ConnectionObject, ProcessingStep, TerminatorResult};
+use crate::modules::flow::{context::TransportContext, engine};
 use crate::resources::kv::KvStore;
 
 use bytes::Bytes;

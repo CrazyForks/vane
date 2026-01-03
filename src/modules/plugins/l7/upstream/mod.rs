@@ -8,12 +8,10 @@ pub mod quic_pool;
 pub mod quinn_client;
 pub mod tls_verifier;
 
-use crate::modules::{
-	plugins::core::model::{
-		HttpMiddleware, L7Middleware, MiddlewareOutput, ParamDef, ParamType, Plugin, ResolvedInputs,
-	},
-	stack::application::container::{Container, PayloadState},
+use crate::engine::contract::{
+	HttpMiddleware, L7Middleware, MiddlewareOutput, ParamDef, ParamType, Plugin, ResolvedInputs,
 };
+use crate::modules::stack::application::container::{Container, PayloadState};
 use anyhow::{Result, anyhow};
 use async_trait::async_trait;
 use fancy_log::{LogLevel, log};

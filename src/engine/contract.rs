@@ -1,4 +1,4 @@
-/* src/modules/plugins/core/model.rs */
+/* src/engine/contract.rs */
 
 use crate::resources::kv::KvStore;
 use anyhow::Result;

@@ -1,6 +1,6 @@
 /* src/modules/plugins/terminators/transport/abort.rs */
 
-use crate::modules::plugins::core::model::{
+use crate::engine::contract::{
 	ConnectionObject, Layer, ParamDef, Plugin, ResolvedInputs, Terminator, TerminatorResult,
 };
 use crate::resources::kv::KvStore;

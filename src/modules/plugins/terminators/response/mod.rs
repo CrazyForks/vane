@@ -2,14 +2,12 @@
 
 pub mod content_type;
 
-use crate::modules::{
-	plugins::core::model::{
-		L7Terminator, ParamDef, ParamType, Plugin, ResolvedInputs, TerminatorResult,
-	},
-	stack::application::{
-		container::{Container, PayloadState},
-		http::wrapper::VaneBody,
-	},
+use crate::engine::contract::{
+	L7Terminator, ParamDef, ParamType, Plugin, ResolvedInputs, TerminatorResult,
+};
+use crate::modules::stack::application::{
+	container::{Container, PayloadState},
+	http::wrapper::VaneBody,
 };
 use anyhow::{Result, anyhow};
 use async_trait::async_trait;

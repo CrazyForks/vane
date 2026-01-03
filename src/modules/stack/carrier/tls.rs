@@ -3,12 +3,9 @@
 use super::{context, flow};
 use crate::common::config::getenv;
 use crate::common::sys::lifecycle::{Error, Result};
+use crate::engine::contract::{ConnectionObject, TerminatorResult};
 use crate::modules::{
-	plugins::{
-		core::model::{ConnectionObject, TerminatorResult},
-		protocol::tls::clienthello,
-		terminators::upgrader::decryptor,
-	},
+	plugins::{protocol::tls::clienthello, terminators::upgrader::decryptor},
 	stack::carrier::model::RESOLVER_REGISTRY,
 };
 use crate::resources::kv::KvStore;

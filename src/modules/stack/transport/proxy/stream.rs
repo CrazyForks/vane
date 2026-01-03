@@ -16,7 +16,7 @@ use tokio::{
 const CONNECT_TIMEOUT: Duration = Duration::from_secs(5);
 
 pub async fn proxy_generic_stream(
-	client_stream: Box<dyn crate::modules::plugins::core::model::ByteStream>,
+	client_stream: Box<dyn crate::engine::contract::ByteStream>,
 	target: ResolvedTarget,
 ) -> Result<()> {
 	log(

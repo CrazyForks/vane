@@ -1,9 +1,7 @@
 /* src/modules/stack/transport/validator.rs */
 
-use crate::modules::plugins::core::{
-	model::{Layer, ParamType, ProcessingStep},
-	registry,
-};
+use crate::engine::contract::{Layer, ParamType, ProcessingStep};
+use crate::modules::plugins::core::registry;
 use serde_json::Value;
 use std::borrow::Cow;
 use std::collections::{HashMap, HashSet};
@@ -220,7 +218,7 @@ pub fn validate_flow_recursive(
 
 fn validate_plugin_inputs_internal(
 	plugin_name: &str,
-	param_defs: &[crate::modules::plugins::core::model::ParamDef],
+	param_defs: &[crate::engine::contract::ParamDef],
 	inputs: &HashMap<String, Value>,
 	current_path: &str,
 	errors: &mut Vec<FlowValidationError>,

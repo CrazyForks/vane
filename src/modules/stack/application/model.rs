@@ -1,9 +1,7 @@
 /* src/modules/stack/application/model.rs */
 
-use crate::modules::{
-	plugins::core::model::{Layer, ProcessingStep},
-	stack::transport::loader::PreProcess,
-};
+use crate::engine::contract::{Layer, ProcessingStep};
+use crate::modules::stack::transport::loader::PreProcess;
 use arc_swap::ArcSwap;
 use dashmap::DashMap;
 use once_cell::sync::Lazy;

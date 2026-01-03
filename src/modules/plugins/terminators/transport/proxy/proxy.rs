@@ -85,7 +85,7 @@ pub async fn proxy_tcp_stream(mut client_stream: TcpStream, target: ResolvedTarg
 }
 
 pub async fn proxy_generic_stream(
-	client_stream: Box<dyn crate::modules::plugins::core::model::ByteStream>,
+	client_stream: Box<dyn crate::engine::contract::ByteStream>,
 	target: ResolvedTarget,
 ) -> Result<()> {
 	log(

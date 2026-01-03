@@ -1,13 +1,11 @@
 /* src/modules/plugins/terminators/transport/proxy/node.rs */
 
 use super::execute_proxy;
-use crate::modules::{
-	plugins::core::model::{
-		ConnectionObject, Layer, ParamDef, ParamType, Plugin, ResolvedInputs, Terminator,
-		TerminatorResult,
-	},
-	stack::transport::model::ResolvedTarget,
+use crate::engine::contract::{
+	ConnectionObject, Layer, ParamDef, ParamType, Plugin, ResolvedInputs, Terminator,
+	TerminatorResult,
 };
+use crate::modules::stack::transport::model::ResolvedTarget;
 use crate::resources::{kv::KvStore, service_discovery::model::NODES_STATE};
 use anyhow::{Result, anyhow};
 use async_trait::async_trait;

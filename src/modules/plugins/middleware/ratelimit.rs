@@ -2,7 +2,7 @@
 
 use crate::{
 	common::config::getenv,
-	modules::plugins::core::model::{
+	engine::contract::{
 		GenericMiddleware, Middleware, MiddlewareOutput, ParamDef, ParamType, Plugin, ResolvedInputs,
 	},
 };

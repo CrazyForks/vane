@@ -1,11 +1,9 @@
 /* src/modules/plugins/core/loader.rs */
 
 use crate::common::config::{getconf, getenv};
+use crate::engine::contract::{ExternalPluginConfig, Plugin};
 use crate::modules::plugins::core::external::ExternalPlugin;
-use crate::modules::plugins::core::{
-	model::{ExternalPluginConfig, Plugin},
-	registry,
-};
+use crate::modules::plugins::core::registry;
 use anyhow::{Result, anyhow};
 use dashmap::DashMap;
 use fancy_log::{LogLevel, log};

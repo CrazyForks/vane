@@ -2,7 +2,7 @@
 
 use crate::{
 	common::config::getenv,
-	modules::plugins::core::model::{ExternalApiResponse, MiddlewareOutput, ResolvedInputs},
+	engine::contract::{ExternalApiResponse, MiddlewareOutput, ResolvedInputs},
 };
 use anyhow::{Result, anyhow};
 use fancy_log::{LogLevel, log};

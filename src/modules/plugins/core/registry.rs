@@ -1,6 +1,6 @@
 /* src/modules/plugins/core/registry.rs */
 
-use crate::modules::plugins::core::model::Plugin;
+use crate::engine::contract::Plugin;
 use crate::modules::plugins::{
 	l7::{cgi::CgiPlugin, resource::StaticPlugin, upstream::FetchUpstreamPlugin},
 	middleware::{

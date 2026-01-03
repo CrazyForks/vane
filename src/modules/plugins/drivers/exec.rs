@@ -1,10 +1,8 @@
 /* src/modules/plugins/drivers/exec.rs */
 
 use crate::common::config::getenv;
-use crate::modules::plugins::core::{
-	external,
-	model::{MiddlewareOutput, ResolvedInputs},
-};
+use crate::engine::contract::{MiddlewareOutput, ResolvedInputs};
+use crate::modules::plugins::core::external;
 use anyhow::Result;
 use fancy_log::{LogLevel, log};
 use std::collections::HashMap;

@@ -2,10 +2,8 @@
 
 use super::{context, flow};
 use crate::common::config::getenv;
-use crate::modules::{
-	plugins::core::model::{ConnectionObject, TerminatorResult},
-	stack::{application::http::httpx, carrier::model::RESOLVER_REGISTRY},
-};
+use crate::engine::contract::{ConnectionObject, TerminatorResult};
+use crate::modules::stack::{application::http::httpx, carrier::model::RESOLVER_REGISTRY};
 use crate::resources::kv::KvStore;
 use anyhow::{Result, anyhow};
 use fancy_log::{LogLevel, log};

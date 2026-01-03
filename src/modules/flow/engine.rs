@@ -3,12 +3,9 @@
 use anyhow::{Context, Result, anyhow};
 use fancy_log::{LogLevel, log};
 
-use crate::modules::{
-	plugins::core::{
-		model::{ConnectionObject, MiddlewareOutput, ProcessingStep, TerminatorResult},
-		registry,
-	},
-	stack::application::container::Container,
+use crate::{
+	engine::contract::{ConnectionObject, MiddlewareOutput, ProcessingStep, TerminatorResult},
+	modules::{plugins::core::registry, stack::application::container::Container},
 };
 
 use super::{context::ApplicationContext, context::ExecutionContext, key_scoping};
@@ -225,7 +222,7 @@ async fn handle_middleware_output<C: ExecutionContext>(
 	output: MiddlewareOutput,
 	plugin_name: &str,
 	flow_path: &str,
-	instance: &crate::modules::plugins::core::model::PluginInstance,
+	instance: &crate::engine::contract::PluginInstance,
 	context: &mut C,
 	conn: ConnectionObject,
 ) -> Result<TerminatorResult> {

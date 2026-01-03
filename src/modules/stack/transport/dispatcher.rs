@@ -1,9 +1,8 @@
 /* src/modules/stack/transport/dispatcher.rs */
 
 use super::{context, flow, legacy, tcp::TcpConfig};
-use crate::modules::{
-	plugins::core::model::ConnectionObject, plugins::core::model::TerminatorResult, stack::carrier,
-};
+use crate::engine::contract::{ConnectionObject, TerminatorResult};
+use crate::modules::stack::carrier;
 use crate::resources::kv::KvStore;
 use fancy_log::{LogLevel, log};
 use std::sync::Arc;

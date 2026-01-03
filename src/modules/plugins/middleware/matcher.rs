@@ -1,6 +1,6 @@
 /* src/modules/plugins/middleware/matcher.rs */
 
-use crate::modules::plugins::core::model::{
+use crate::engine::contract::{
 	GenericMiddleware, Middleware, MiddlewareOutput, ParamDef, ParamType, Plugin, ResolvedInputs,
 };
 use anyhow::{Result, anyhow};

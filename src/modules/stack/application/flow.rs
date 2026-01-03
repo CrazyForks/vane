@@ -2,11 +2,8 @@
 
 use anyhow::Result;
 
-use crate::modules::{
-	flow::engine,
-	plugins::core::model::{ProcessingStep, TerminatorResult},
-	stack::application::container::Container,
-};
+use crate::engine::contract::{ProcessingStep, TerminatorResult};
+use crate::modules::{flow::engine, stack::application::container::Container};
 
 pub async fn execute_l7(
 	step: &ProcessingStep,
