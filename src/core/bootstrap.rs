@@ -11,7 +11,7 @@ use crate::common::{
 };
 use crate::core::{console, logging, monitor};
 use crate::modules::{
-	certs, nodes,
+	nodes,
 	plugins::core::loader as plugin_loader,
 	ports,
 	stack::{
@@ -19,6 +19,7 @@ use crate::modules::{
 		carrier::{hotswap as resolver_hotswap, model as resolver_model},
 	},
 };
+use crate::resources::certs;
 
 /// Entry point for the Vane bootstrap sequence.
 pub async fn start() {
