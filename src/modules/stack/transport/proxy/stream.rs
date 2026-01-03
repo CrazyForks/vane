@@ -1,7 +1,7 @@
 /* src/modules/stack/transport/proxy/stream.rs */
 
 use super::IdleWatchdog;
-use crate::common::getenv;
+use crate::common::config::getenv;
 use crate::modules::stack::transport::{health, model::ResolvedTarget};
 use anyhow::{Context, Result};
 use fancy_log::{LogLevel, log};
