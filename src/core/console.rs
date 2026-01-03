@@ -25,15 +25,12 @@ pub async fn start() -> Option<ConsoleHandles> {
 		Ok(None) => {
 			log(
 				LogLevel::Info,
-				"⚙ ACCESS_TOKEN not set, management API disabled",
+				"⚙ Access token not set, management API disabled",
 			);
 			None
 		}
 		Ok(Some(_token)) => {
-			log(
-				LogLevel::Info,
-				"✓ ACCESS_TOKEN configured (management console enabled)",
-			);
+			log(LogLevel::Info, "✓ Access token configured");
 
 			let unix_socket_listener = {
 				#[cfg(feature = "console")]
