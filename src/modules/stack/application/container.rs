@@ -12,7 +12,7 @@ use tokio::sync::oneshot;
 
 use crate::common::{
 	getenv,
-	requirements::{Error, Result},
+	lifecycle::{Error, Result},
 };
 use crate::modules::{
 	kv::KvStore,
