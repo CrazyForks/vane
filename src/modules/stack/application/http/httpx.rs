@@ -1,7 +1,7 @@
 /* src/modules/stack/application/http/httpx.rs */
 
 use super::wrapper::VaneBody;
-use crate::common::requirements::{Error, Result};
+use crate::common::lifecycle::{Error, Result};
 use crate::modules::kv::KvStore;
 use crate::modules::plugins::core::model::ConnectionObject;
 use crate::modules::stack::application::{
