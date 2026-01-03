@@ -4,11 +4,16 @@
 Execute the Vane 2.0 structural refactoring plan as detailed in `TODO.md`.
 
 ## Plan
-1. [ ] **Phase 1: Foundation (Common & Resources)**
-    - [>] **1.1: Restructure `src/common/`** (In Progress)
-    - [ ] 1.2: Establish `src/resources/` (Part A: KV & Certs)
-    - [ ] 1.3: Establish `src/resources/` (Part B: Service Discovery & Templates)
+1. [x] **Phase 1: Foundation (Common & Resources)**
 2. [ ] **Phase 2: The Engine Core**
+    - [x] 2.1: Extract Traits (Contract)
+        - [x] 2.1.2: Move Model/Contract
+        - [x] 2.1.3: Fix Contract Imports (Completed)
+    - [ ] 2.2: Move Flow Logic
+        - [ ] 2.2.1: Move Context (Next)
+        - [ ] 2.2.2: Move Key Scoping
+        - [ ] 2.2.3: Move Executor (Engine)
+        - [ ] 2.2.4: Cleanup Flow Module
 3. [ ] **Phase 3: The Protocol Stack (Layers)**
 4. [ ] **Phase 4: Ingress & Plugins**
 5. [ ] **Phase 5: Server & API**
@@ -16,14 +21,17 @@ Execute the Vane 2.0 structural refactoring plan as detailed in `TODO.md`.
 
 ## Progress Log
 - Session started.
-- Reviewed `TODO.md` and confirmed the Vane 2.0 refactoring plan.
-- Completed Phase 1.1: Restructuring `src/common/` (Config).
-- Completed Phase 1.2: Restructuring `src/common/` (Net & Sys).
-- Completed 1.3.1: Setup Resources Module.
-- Completed 1.3.2: Move KV Module.
-- Completed 1.4.1: Move Certs Module.
-- Fixed integration tests: Updated expected log message from "ACCESS_TOKEN not set" to "Access token not set, management API disabled" in `integration/pkg/env/process.go` and `integration/tests/common/test_no_console.go`.
-- Ready to proceed with Phase 1.5.1: Move Nodes Module (waiting for user approval).
+- Verified codebase state.
+- **Sync:** Found that Phase 1 (1.5, 1.6) and 2.1.1 were already completed in the codebase but marked pending in `TODO.md`. Updated `TODO.md`.
+- **Instruction Update:** Received explicit instruction to limit work strictly to atomic sub-tasks (e.g., x.x.1 -> x.x.2), run `cargo check` after each, and WAIT for user approval.
+- **2.1.2 Completed:** Moved `model.rs` to `engine/contract.rs`.
+- **2.1.3 Completed:** Fixed all import errors.
+    - Batch replaced `modules::plugins::core::model` -> `engine::contract`.
+    - Manually fixed nested imports in `handler.rs`, `loader.rs`, `exec.rs` (drivers).
+    - Manually fixed nested imports in `stack/application`, `stack/carrier`, `stack/transport`.
+    - Manually fixed nested imports in `terminators` (response, proxy, upgrader).
+    - `cargo check` passed successfully.
+
 ### 1. AGENT.md Management
 - `AGENT.md` is your personal workspace and status tracker.
 - You MUST update it frequently (ideally every turn or after completing a logical step).
