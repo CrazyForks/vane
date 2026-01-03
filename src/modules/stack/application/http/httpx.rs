@@ -2,13 +2,13 @@
 
 use super::wrapper::VaneBody;
 use crate::common::sys::lifecycle::{Error, Result};
-use crate::modules::kv::KvStore;
 use crate::modules::plugins::core::model::ConnectionObject;
 use crate::modules::stack::application::{
 	container::{Container, PayloadState},
 	flow,
 	model::APPLICATION_REGISTRY,
 };
+use crate::resources::kv::KvStore;
 use bytes::Bytes;
 use fancy_log::{LogLevel, log};
 use http::{HeaderMap, Request, Response};
