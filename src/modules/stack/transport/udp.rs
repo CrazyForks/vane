@@ -2,10 +2,10 @@
 
 use super::{context, flow, legacy};
 use crate::modules::{
-	kv::KvStore,
 	plugins::core::model::{ConnectionObject, Layer, ProcessingStep, TerminatorResult},
 	stack::carrier,
 };
+use crate::resources::kv::KvStore;
 use fancy_log::{LogLevel, log};
 use serde::{Deserialize, Serialize};
 use std::net::SocketAddr;
