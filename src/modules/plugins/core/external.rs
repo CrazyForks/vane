@@ -1,6 +1,6 @@
 /* src/modules/plugins/core/external.rs */
 
-use crate::common::getenv;
+use crate::common::config::getenv;
 use crate::modules::kv::KvStore;
 use crate::modules::plugins::core::model::ConnectionObject;
 use crate::modules::plugins::core::model::{
@@ -22,7 +22,7 @@ pub struct ExternalPlugin {
 }
 
 pub async fn get_trusted_bin_root() -> PathBuf {
-	let root = crate::common::getconf::get_config_dir().join("bin");
+	let root = crate::common::config::getconf::get_config_dir().join("bin");
 	fs::canonicalize(&root).await.unwrap_or(root)
 }
 
