@@ -1,6 +1,6 @@
 /* src/modules/stack/transport/fs.rs */
 
-use crate::common::getconf;
+use crate::common::config::getconf;
 use crate::modules::ports::model::Protocol;
 use std::io;
 use std::path::PathBuf;
