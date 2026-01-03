@@ -4,7 +4,6 @@ use super::{context, flow};
 use crate::common::config::getenv;
 use crate::common::sys::lifecycle::{Error, Result};
 use crate::modules::{
-	kv::KvStore,
 	plugins::{
 		core::model::{ConnectionObject, TerminatorResult},
 		protocol::tls::clienthello,
@@ -12,6 +11,7 @@ use crate::modules::{
 	},
 	stack::carrier::model::RESOLVER_REGISTRY,
 };
+use crate::resources::kv::KvStore;
 use anyhow::anyhow;
 use fancy_log::{LogLevel, log};
 use std::time::Duration;
