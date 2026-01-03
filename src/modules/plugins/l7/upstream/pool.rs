@@ -1,7 +1,7 @@
 /* src/modules/plugins/l7/upstream/pool.rs */
 
 use super::tls_verifier::NoVerifier;
-use crate::common::getenv;
+use crate::common::config::getenv;
 use crate::common::lifecycle::Error;
 use bytes::Bytes;
 use http_body_util::combinators::BoxBody;
