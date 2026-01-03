@@ -1,9 +1,9 @@
 /* src/modules/template/context.rs */
 
+use ahash::AHashMap;
 use async_trait::async_trait;
 use bytes::Bytes;
 use fancy_log::{LogLevel, log};
-use std::collections::HashMap;
 
 use crate::modules::kv::KvStore;
 use crate::modules::stack::application::container::Container;
@@ -21,7 +21,7 @@ pub trait TemplateContext: Send {
 /// L4/L4+ simple context (KV Store only, but supports hijacking for raw payloads)
 pub struct SimpleContext<'a> {
 	pub kv: &'a mut KvStore,
-	pub payloads: Option<&'a HashMap<String, Bytes>>,
+	pub payloads: Option<&'a AHashMap<String, Bytes>>,
 }
 
 #[async_trait]
@@ -149,7 +149,7 @@ mod tests {
 	#[tokio::test]
 	async fn test_l4p_hijacking() {
 		let mut kv = KvStore::new();
-		let mut payloads = HashMap::new();
+		let mut payloads = AHashMap::new();
 		let data = vec![0xDE, 0xAD, 0xBE, 0xEF];
 		payloads.insert("tls.clienthello".to_string(), Bytes::from(data));
 
