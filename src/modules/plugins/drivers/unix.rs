@@ -1,6 +1,6 @@
 /* src/modules/plugins/drivers/unix.rs */
 
-use crate::common::getenv;
+use crate::common::config::getenv;
 use crate::modules::plugins::core::model::{ExternalApiResponse, MiddlewareOutput, ResolvedInputs};
 use anyhow::{Result, anyhow};
 use fancy_log::{LogLevel, log};
