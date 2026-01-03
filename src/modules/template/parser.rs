@@ -1,6 +1,6 @@
 /* src/modules/template/parser.rs */
 
-use crate::common::getenv;
+use crate::common::config::getenv;
 use anyhow::{Context, Result, anyhow};
 
 /// Template AST node
