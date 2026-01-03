@@ -135,21 +135,19 @@ This plan breaks down the structural overhaul into atomic, verifiable steps.
         - [x] Move `src/modules/flow/engine.rs` -> `src/engine/executor.rs`.
         - [x] Search & Replace `crate::modules::flow::engine` -> `crate::engine::executor`.
         - [x] `cargo check`.
-    - [ ] **2.2.4: Cleanup Flow Module**
-        - [ ] Remove `src/modules/flow`.
-        - [ ] Remove `flow` from `src/modules/mod.rs`.
-        - [ ] `cargo check`.
+            - [x] **2.2.4: Cleanup Flow Module**
+                - [x] Remove `src/modules/flow`.
+                - [x] Remove `flow` from `src/modules/mod.rs`.
+                - [x] `cargo check`.
+    
+    ## Phase 3: The Protocol Stack (Layers)*Goal: Flatten the network stack.*
 
-## Phase 3: The Protocol Stack (Layers)
-*Goal: Flatten the network stack.*
-
-- [ ] **3.1: Layer 4 (Transport)**
-    - [ ] **3.1.1: Setup Layers**
-        - [ ] Create `src/layers/` and `src/layers/mod.rs`.
-        - [ ] Add `pub mod layers;` to `src/lib.rs`.
-        - [ ] `cargo check`.
-    - [ ] **3.1.2: Move Transport**
-        - [ ] Move `src/modules/stack/transport/` -> `src/layers/l4/`.
+    - [ ] **3.1: Layer 4 (Transport)**
+        - [x] **3.1.1: Setup Layers**
+            - [x] Create `src/layers/` and `src/layers/mod.rs`.
+            - [x] Add `pub mod layers;` to `src/lib.rs`.
+            - [x] `cargo check`.
+        - [ ] **3.1.2: Move Transport**        - [ ] Move `src/modules/stack/transport/` -> `src/layers/l4/`.
         - [ ] Add `l4` to `src/layers/mod.rs`.
         - [ ] Search & Replace `crate::modules::stack::transport` -> `crate::layers::l4`.
         - [ ] `cargo check`.
