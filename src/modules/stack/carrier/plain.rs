@@ -1,7 +1,7 @@
 /* src/modules/stack/carrier/plain.rs */
 
 use super::{context, flow};
-use crate::common::getenv;
+use crate::common::config::getenv;
 use crate::modules::{
 	kv::KvStore,
 	plugins::core::model::{ConnectionObject, TerminatorResult},
