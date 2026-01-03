@@ -6,6 +6,7 @@ pub mod common;
 pub mod core;
 pub mod middleware;
 pub mod modules;
+pub mod resources;
 
 #[tokio::main]
 async fn main() {
