@@ -1,7 +1,7 @@
 /* src/modules/stack/application/model.rs */
 
 use crate::engine::contract::{Layer, ProcessingStep};
-use crate::modules::stack::transport::loader::PreProcess;
+use crate::layers::l4::loader::PreProcess;
 use arc_swap::ArcSwap;
 use dashmap::DashMap;
 use once_cell::sync::Lazy;
@@ -24,7 +24,7 @@ pub struct ApplicationConfig {
 
 impl Validate for ApplicationConfig {
 	fn validate(&self) -> Result<(), ValidationErrors> {
-		use crate::modules::stack::transport::validator;
+		use crate::layers::l4::validator;
 		// Validate with L7 context to enable HTTP-specific plugin checks
 		validator::validate_flow_config(&self.pipeline, Layer::L7, &self.protocol)
 	}
