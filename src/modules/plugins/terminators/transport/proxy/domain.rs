@@ -2,13 +2,13 @@
 
 use super::execute_proxy;
 use crate::modules::{
-	kv::KvStore,
 	plugins::core::model::{
 		ConnectionObject, Layer, ParamDef, ParamType, Plugin, ResolvedInputs, Terminator,
 		TerminatorResult,
 	},
 	stack::transport::{model::ResolvedTarget, resolver},
 };
+use crate::resources::kv::KvStore;
 use anyhow::{Result, anyhow};
 use async_trait::async_trait;
 use serde_json::Value;
