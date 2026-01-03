@@ -7,7 +7,7 @@ pub mod resolver;
 
 pub use context::TemplateContext;
 
-use crate::common::getenv;
+use crate::common::config::getenv;
 use serde_json::{Map, Value};
 use std::collections::HashMap;
 
