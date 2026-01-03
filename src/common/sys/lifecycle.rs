@@ -1,8 +1,8 @@
 /* src/common/sys/lifecycle.rs */
 
 use crate::common::config::getconf;
+use crate::layers::l4::{health, session};
 use crate::modules::stack::carrier::quic::session as quic_session;
-use crate::modules::stack::transport::{health, session};
 
 #[derive(Debug, thiserror::Error)]
 pub enum Error {
