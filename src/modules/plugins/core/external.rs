@@ -1,13 +1,13 @@
 /* src/modules/plugins/core/external.rs */
 
 use crate::common::config::getenv;
-use crate::modules::kv::KvStore;
 use crate::modules::plugins::core::model::ConnectionObject;
 use crate::modules::plugins::core::model::{
 	ExternalPluginConfig, ExternalPluginDriver, Layer, Middleware, MiddlewareOutput, ParamDef,
 	ParamType, Plugin, PluginRole, ResolvedInputs, Terminator, TerminatorResult,
 };
 use crate::modules::plugins::drivers;
+use crate::resources::kv::KvStore;
 use anyhow::{Result, anyhow};
 use async_trait::async_trait;
 use std::any::Any;
