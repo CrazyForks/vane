@@ -2,7 +2,8 @@
 
 use super::{context, flow, legacy};
 use crate::engine::contract::{ConnectionObject, Layer, ProcessingStep, TerminatorResult};
-use crate::modules::stack::carrier;
+
+use crate::layers::l4p::quic;
 use crate::resources::kv::KvStore;
 use fancy_log::{LogLevel, log};
 use serde::{Deserialize, Serialize};
@@ -110,8 +111,7 @@ pub async fn dispatch_udp_datagram(
 						#[cfg(feature = "quic")]
 						("quic", conn_obj) => {
 							tokio::spawn(async move {
-								if let Err(e) = carrier::quic::quic::run(conn_obj, &mut kv_store, parent_path).await
-								{
+								if let Err(e) = quic::quic::run(conn_obj, &mut kv_store, parent_path).await {
 									log(LogLevel::Error, &format!("✗ QUIC Carrier failed: {:#}", e));
 								}
 							});
