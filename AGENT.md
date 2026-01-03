@@ -7,10 +7,11 @@ Execute the Vane 2.0 structural refactoring plan as detailed in `TODO.md`.
 1. [x] **Phase 1: Foundation (Common & Resources)**
 2. [x] **Phase 2: The Engine Core**
 3. [ ] **Phase 3: The Protocol Stack (Layers)**
-    - [ ] 3.1: Layer 4 (Transport)
-        - [x] 3.1.1: Setup Layers (Completed)
-        - [ ] 3.1.2: Move Transport (Next)
+    - [x] 3.1: Layer 4 (Transport)
+        - [x] 3.1.1: Setup Layers
+        - [x] 3.1.2: Move Transport (Completed)
     - [ ] 3.2: Layer 4+ (Carrier)
+        - [ ] 3.2.1: Move Carrier (Next)
     - [ ] 3.3: Layer 7 (Application)
     - [ ] 3.4: Cleanup Stack
 4. [ ] **Phase 4: Ingress & Plugins**
@@ -23,12 +24,11 @@ Execute the Vane 2.0 structural refactoring plan as detailed in `TODO.md`.
 - **Sync:** Found that Phase 1 (1.5, 1.6) and 2.1.1 were already completed in the codebase but marked pending in `TODO.md`. Updated `TODO.md`.
 - **Instruction Update:** Received explicit instruction to limit work strictly to atomic sub-tasks (e.g., x.x.1 -> x.x.2), run `cargo check` after each, and WAIT for user approval.
 - **Phase 2 Completed:** Successfully moved all flow-related logic to `src/engine/`.
-- **3.1.1 Completed:**
-    - Created `src/layers/` directory.
-    - Setup `src/layers/mod.rs` with `l4`, `l4p`, `l7` sub-modules.
-    - Created placeholder directories and `mod.rs` for sub-layers.
-    - Added `pub mod layers;` to `src/main.rs`.
-    - `cargo check` passed.
+- **3.1.1 Completed:** Setup `src/layers/` with `l4`, `l4p`, `l7`.
+- **3.1.2 Completed:** Moved `src/modules/stack/transport/` -> `src/layers/l4/`.
+    - Batch updated imports.
+    - Manually fixed imports in `proxy.rs`, `hotswap.rs`, `model.rs`, `tasks.rs`.
+    - `cargo check` passed (type inference errors resolved themselves or were transient).
 
 ### 1. AGENT.md Management
 - `AGENT.md` is your personal workspace and status tracker.
