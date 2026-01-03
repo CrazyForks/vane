@@ -1,9 +1,9 @@
 /* src/modules/stack/carrier/context.rs */
 
-use crate::modules::{
-	kv::KvStore,
-	plugins::protocol::{quic::parser::QuicInitialData, tls::clienthello::TlsClientHelloData},
+use crate::modules::plugins::protocol::{
+	quic::parser::QuicInitialData, tls::clienthello::TlsClientHelloData,
 };
+use crate::resources::kv::KvStore;
 use fancy_log::{LogLevel, log};
 
 pub fn inject_common(kv: &mut KvStore, protocol: &str) {
