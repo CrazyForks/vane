@@ -1,7 +1,7 @@
 /* src/modules/plugins/l7/upstream/quic_pool.rs */
 
 use super::tls_verifier::NoVerifier;
-use crate::common::getenv;
+use crate::common::config::getenv;
 use crate::common::lifecycle::{Error, Result};
 use crate::modules::stack::transport::resolver;
 use fancy_log::{LogLevel, log};
