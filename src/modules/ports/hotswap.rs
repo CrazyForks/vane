@@ -8,7 +8,7 @@ use super::{
 use crate::common::config::loader::LoadResult;
 use crate::common::{
 	config::{getconf, getenv},
-	hotswap::watch_loop,
+	sys::hotswap::watch_loop,
 };
 use fancy_log::{LogLevel, log};
 use std::{collections::HashMap, sync::Arc};
