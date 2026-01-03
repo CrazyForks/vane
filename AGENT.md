@@ -18,28 +18,24 @@ Execute the Vane 2.0 structural refactoring plan as detailed in `TODO.md`.
 4. [ ] **Phase 4: Ingress & Plugins**
     - [x] **4.1: Ingress**
         - [x] **4.1.1: Move Ports to Ingress** (completed)
-            - [x] Create `src/ingress/`. (completed)
-            - [x] Move `src/modules/ports/` contents -> `src/ingress/`. (completed)
-            - [x] Add `pub mod ingress;` to `src/main.rs`. (completed)
-            - [x] Remove `pub mod ports;` from `src/modules/mod.rs`. (completed)
-            - [x] Search & Replace `crate::modules::ports` -> `crate::ingress`. (completed)
-            - [x] Search & Replace `modules::ports` -> `ingress`. (completed)
-            - [x] Fix `E0282: type annotations needed` errors. (completed)
-            - [x] Fix warnings. (completed)
-            - [x] Fix unexpected closing delimiter in `src/ingress/tasks.rs`. (completed)
-            - [x] Fix `src/core/bootstrap.rs` imports. (completed)
-            - [x] Fix `src/core/console.rs` imports. (completed)
-            - [x] Fix remaining import issues in `src/core/bootstrap.rs`. (completed)
-            - [x] Fix `src/ingress/tasks.rs` variable name issues. (completed)
-            - [x] Fix `src/ingress/tasks.rs` E0282 error. (completed)
-            - [x] Fix `src/core/bootstrap.rs` ingress prefix issues. (completed)
-            - [x] Fix `src/ingress/tasks.rs` mutability issue. (completed)
+        - [x] **4.1.2: Refactor Tasks (Split TCP/UDP)** (completed)
+            - [x] Extract `src/ingress/tcp.rs` from `tasks.rs`. (completed)
+            - [x] Fix `src/ingress/listener.rs` `spawn_tcp_listener_task` reference. (completed)
+            - [x] Extract `src/ingress/udp.rs` from `tasks.rs`. (completed)
+            - [x] Update `ingress/mod.rs`. (completed)
+            - [x] Fix `src/ingress/listener.rs` `spawn_udp_listener_task` reference. (completed)
+            - [x] Fix warnings in `src/ingress/tasks.rs`. (completed)
+            - [x] Fix warnings in `src/ingress/tcp.rs`. (completed)
+            - [x] Fix warnings in `src/ingress/udp.rs`. (completed)
+            - [x] Fix `src/ingress/tasks.rs` import issues. (completed)
+            - [x] Fix `src/ingress/tasks.rs` LogLevel and log unused import. (completed)
             - [x] `cargo check`. (completed)
-        - [ ] **4.1.2: Refactor Tasks (Split TCP/UDP)**
-            - [ ] Extract `src/ingress/tcp.rs` from `tasks.rs`.
-            - [ ] Extract `src/ingress/udp.rs` from `tasks.rs`.
-            - [ ] Update `ingress/mod.rs`.
-            - [ ] `cargo check`.
+    - [ ] **4.2: Plugins Organization**
+        - [ ] **4.2.1: Setup Plugins Dirs**
+        - [ ] **4.2.2: Move L4 Plugins**
+        - [ ] **4.2.3: Move L7 Plugins**
+        - [ ] **4.2.4: Move System/Protocol**
+        - [ ] **4.2.5: Cleanup Plugins**
 5. [ ] **Phase 5: Server & API**
 6. [ ] **Phase 6: Final Sweep**
 
@@ -61,23 +57,9 @@ Execute the Vane 2.0 structural refactoring plan as detailed in `TODO.md`.
 - **3.4 Completed:** Cleaned up `src/modules/stack`.
     - `cargo check` passed with no warnings.
 - **4.1.1 Completed:** Moved `src/modules/ports/` to `src/ingress/`.
-    - `src/ingress/` directory created.
-    - Files moved from `src/modules/ports/` to `src/ingress/`.
-    - `pub mod ingress;` added to `src/main.rs`.
-    - `pub mod ports;` removed from `src/modules/mod.rs`.
-    - `crate::modules::ports` -> `crate::ingress` replacement completed.
-    - `modules::ports` -> `ingress` replacement completed.
-    - `E0282: type annotations needed` errors fixed.
-    - Warnings fixed.
-    - Unexpected closing delimiter in `src/ingress/tasks.rs` fixed.
-    - `src/core/bootstrap.rs` imports fixed.
-    - `src/core/console.rs` imports fixed.
-    - Remaining import issues in `src/core/bootstrap.rs` fixed.
-    - `src/ingress/tasks.rs` variable name issues fixed.
-    - `src/ingress/tasks.rs` E0282 error fixed.
-    - `src/core/bootstrap.rs` ingress prefix issues fixed.
-    - `src/ingress/tasks.rs` mutability issue fixed.
     - `cargo check` passed with only one unused import warning.
+- **4.1.2 Completed:** Extracted `src/ingress/tcp.rs` and `src/ingress/udp.rs` from `tasks.rs`.
+    - `cargo check` passed with no warnings.
 
 ### 1. AGENT.md Management
 - `AGENT.md` is your personal workspace and status tracker.

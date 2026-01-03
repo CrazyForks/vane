@@ -29,7 +29,7 @@ pub fn start_listener(port: u16, protocol: Protocol) {
 
 		let shutdown_tx = match protocol {
 			Protocol::Tcp => match TcpListener::bind(addr).await {
-				Ok(l) => Some(super::tasks::spawn_tcp_listener_task(port, l)),
+				Ok(l) => Some(super::tcp::spawn_tcp_listener_task(port, l)),
 				Err(e) => {
 					log(
 						LogLevel::Error,
@@ -39,7 +39,7 @@ pub fn start_listener(port: u16, protocol: Protocol) {
 				}
 			},
 			Protocol::Udp => match UdpSocket::bind(addr).await {
-				Ok(s) => Some(super::tasks::spawn_udp_listener_task(port, s)),
+				Ok(s) => Some(super::udp::spawn_udp_listener_task(port, s)),
 				Err(e) => {
 					log(
 						LogLevel::Error,
