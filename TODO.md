@@ -88,12 +88,12 @@ This plan breaks down the structural overhaul into atomic, verifiable steps.
         - [x] `cargo check`.
 
 - [ ] **1.5: Establish `src/resources/service_discovery`**
-    - [ ] **1.5.1: Move Nodes Module**
-        - [ ] Move `src/modules/nodes/` -> `src/resources/service_discovery/`.
-        - [ ] Add `pub mod service_discovery;` to `src/resources/mod.rs`.
-        - [ ] Remove `nodes` from `src/modules/mod.rs`.
-        - [ ] Search & Replace `crate::modules::nodes` -> `crate::resources::service_discovery`.
-        - [ ] `cargo check`.
+    - [x] **1.5.1: Move Nodes Module**
+        - [x] Move `src/modules/nodes/` -> `src/resources/service_discovery/`.
+        - [x] Add `pub mod service_discovery;` to `src/resources/mod.rs`.
+        - [x] Remove `nodes` from `src/modules/mod.rs`.
+        - [x] Search & Replace `crate::modules::nodes` -> `crate::resources::service_discovery`.
+        - [x] `cargo check`.
 
 - [ ] **1.6: Establish `src/resources/templates`**
     - [ ] **1.6.1: Move Template Module**
