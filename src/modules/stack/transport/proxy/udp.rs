@@ -1,6 +1,6 @@
 /* src/modules/stack/transport/proxy/udp.rs */
 
-use crate::common::{config::getenv, ip};
+use crate::common::{config::getenv, net::ip};
 use crate::modules::stack::transport::{
 	health,
 	model::ResolvedTarget,
