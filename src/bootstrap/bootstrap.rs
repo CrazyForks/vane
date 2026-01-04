@@ -1,15 +1,15 @@
-/* src/core/bootstrap.rs */
+/* src/bootstrap/bootstrap.rs */
 
 use dotenvy::dotenv;
 use fancy_log::{LogLevel, log};
 use std::sync::Arc;
 use tokio::signal;
 
+use crate::bootstrap::{console, logging, monitor};
 use crate::common::{
 	config::getenv,
 	sys::{lifecycle, watcher},
 };
-use crate::core::{console, logging, monitor};
 use crate::ingress::{hotswap, listener, model};
 use crate::layers::l4p::{hotswap as resolver_hotswap, model as resolver_model};
 use crate::layers::l7::{hotswap as app_hotswap, model as app_model};

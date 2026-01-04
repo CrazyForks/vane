@@ -224,15 +224,15 @@ This plan breaks down the structural overhaul into atomic, verifiable steps.
         - [x] Fix imports.
         - [x] `cargo check`.
 
-- [ ] **5.2: Bootstrap**
-    - [ ] **5.2.1: Rename Core**
-        - [ ] Rename `src/core` -> `src/bootstrap`.
-        - [ ] Update imports `crate::core` -> `crate::bootstrap`.
-        - [ ] `cargo check`.
+- [x] **5.2: Bootstrap**
+    - [x] **5.2.1: Rename Core**
+        - [x] Rename `src/core` -> `src/bootstrap`.
+        - [x] Update imports `crate::core` -> `crate::bootstrap`.
+        - [x] `cargo check`.
 
 ## Phase 6: Final Cleanup
-- [ ] **6.1: Remove Empty Directories**
-    - [ ] Remove `src/modules`.
-    - [ ] Remove `src/middleware`.
-- [ ] **6.2: Documentation Update**
-    - [ ] Update path references in `docs/`.
+- [x] **6.1: Remove Empty Directories**
+    - [x] Remove `src/modules`.
+    - [x] Remove `src/middleware`.
+- [x] **6.2: Documentation Update**
+    - [x] Update path references in `docs/`.

@@ -1,4 +1,4 @@
-/* src/core/mod.rs */
+/* src/bootstrap/mod.rs */
 
 pub mod bootstrap;
 pub mod console;

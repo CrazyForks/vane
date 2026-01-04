@@ -3,12 +3,11 @@
 use std::env;
 
 pub mod api;
+pub mod bootstrap;
 pub mod common;
-pub mod core;
 pub mod engine;
 pub mod ingress;
 pub mod layers;
-pub mod modules;
 pub mod plugins;
 pub mod resources;
 
@@ -63,5 +62,5 @@ async fn main() {
 	}
 
 	// If no version arg, start the vane proxy server.
-	core::bootstrap::start().await;
+	bootstrap::bootstrap::start().await;
 }

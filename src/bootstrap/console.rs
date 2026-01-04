@@ -1,4 +1,4 @@
-/* src/core/console.rs */
+/* src/bootstrap/console.rs */
 
 use axum::serve;
 use fancy_log::{LogLevel, log};
@@ -10,8 +10,8 @@ use tokio::task::JoinHandle;
 
 use crate::api::middleware::auth;
 use crate::api::router;
+use crate::bootstrap::socket;
 use crate::common::{config::getenv, net::portool};
-use crate::core::socket;
 use crate::ingress::model;
 
 pub struct ConsoleHandles {

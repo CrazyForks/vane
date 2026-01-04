@@ -1,4 +1,4 @@
-/* src/core/monitor.rs */
+/* src/bootstrap/monitor.rs */
 
 use crate::common::{config::getenv, sys::system};
 use crate::layers::l7::container;
