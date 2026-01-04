@@ -1,4 +1,4 @@
-/* src/modules/plugins/protocol/quic/frame.rs */
+/* src/plugins/protocol/quic/frame.rs */
 
 use super::packet::read_varint;
 use anyhow::{Result, anyhow};

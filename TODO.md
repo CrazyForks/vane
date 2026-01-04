@@ -202,10 +202,11 @@ This plan breaks down the structural overhaul into atomic, verifiable steps.
         - [ ] Move `l7/upstream` -> `src/plugins/l7/upstream`.
         - [ ] Move `terminators/response` -> `src/plugins/l7/response`.
         - [ ] `cargo check`.
-    - [ ] **4.2.4: Move System/Protocol**
-        - [ ] Move TLS/QUIC -> `src/plugins/protocol/`.
-        - [ ] Move `exec.rs`, `unix.rs` -> `src/plugins/system/`.
-        - [ ] `cargo check`.
+            - [x] **4.2.4: Move System/Protocol**
+                - [x] Move TLS/QUIC -> `src/plugins/protocol/`.
+                - [x] Move `exec.rs`, `unix.rs` -> `src/plugins/system/`.
+                - [x] `cargo check`.
+    
     - [ ] **4.2.5: Cleanup Plugins**
         - [ ] Remove `src/modules/plugins`.
         - [ ] Remove `plugins` from `src/modules/mod.rs`.

@@ -1,4 +1,4 @@
-/* src/modules/plugins/protocol/tls/clienthello.rs */
+/* src/plugins/protocol/tls/clienthello.rs */
 
 use anyhow::{Result, anyhow};
 use tls_parser::{

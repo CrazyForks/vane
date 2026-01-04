@@ -8,7 +8,7 @@ use crate::{
 		model::ResolvedTarget,
 		session::{REVERSE_SESSIONS, SESSIONS, Session},
 	},
-	modules::plugins::protocol::quic::parser,
+	plugins::protocol::quic::parser,
 };
 use anyhow::{Context, Result};
 use fancy_log::{LogLevel, log};

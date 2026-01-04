@@ -1,4 +1,4 @@
-/* src/modules/plugins/protocol/detect.rs */
+/* src/plugins/protocol/detect.rs */
 
 use crate::engine::contract::{
 	GenericMiddleware, Middleware, MiddlewareOutput, ParamDef, ParamType, Plugin, ResolvedInputs,

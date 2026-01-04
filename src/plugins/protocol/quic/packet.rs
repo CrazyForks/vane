@@ -1,4 +1,4 @@
-/* src/modules/plugins/protocol/quic/packet.rs */
+/* src/plugins/protocol/quic/packet.rs */
 
 use anyhow::{Result, anyhow};
 

@@ -6,7 +6,7 @@ use crate::engine::contract::{
 	ExternalPluginConfig, ExternalPluginDriver, Layer, Middleware, MiddlewareOutput, ParamDef,
 	ParamType, Plugin, PluginRole, ResolvedInputs, Terminator, TerminatorResult,
 };
-use crate::modules::plugins::drivers;
+use crate::plugins::system as drivers;
 use crate::resources::kv::KvStore;
 use anyhow::{Result, anyhow};
 use async_trait::async_trait;

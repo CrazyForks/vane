@@ -76,6 +76,10 @@ Execute the Vane 2.0 structural refactoring plan as detailed in `TODO.md`.
     - All sub-steps completed and `cargo check` passed with no errors or warnings.
 - **4.2.3 Completed:** Moved L7 Plugins.
     - All sub-steps completed and `cargo check` passed with no errors or warnings.
+- **4.2.4 Completed:** Moved System/Protocol Plugins.
+    - Moved TLS/QUIC/Detect to `src/plugins/protocol/`.
+    - Moved exec/unix/httpx drivers to `src/plugins/system/`.
+    - `cargo check` passed.
 
 ### 1. AGENT.md Management
 - `AGENT.md` is your personal workspace and status tracker.

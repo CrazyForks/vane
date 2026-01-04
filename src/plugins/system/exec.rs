@@ -1,4 +1,4 @@
-/* src/modules/plugins/drivers/exec.rs */
+/* src/plugins/system/exec.rs */
 
 use crate::common::config::getenv;
 use crate::engine::contract::{MiddlewareOutput, ResolvedInputs};

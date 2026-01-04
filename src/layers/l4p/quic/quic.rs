@@ -7,7 +7,7 @@ use crate::engine::contract::{ConnectionObject, TerminatorResult};
 use crate::ingress::tasks::GLOBAL_TRACKER;
 use crate::layers::l4p::model::RESOLVER_REGISTRY;
 use crate::layers::l4p::{context, flow};
-use crate::modules::plugins::protocol::quic::parser;
+use crate::plugins::protocol::quic::parser;
 use crate::resources::kv::KvStore;
 use anyhow::{Result, anyhow};
 use fancy_log::{LogLevel, log};

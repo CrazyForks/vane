@@ -1,6 +1,6 @@
 /* src/layers/l4p/context.rs */
 
-use crate::modules::plugins::protocol::{
+use crate::plugins::protocol::{
 	quic::parser::QuicInitialData, tls::clienthello::TlsClientHelloData,
 };
 use crate::resources::kv::KvStore;

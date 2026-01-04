@@ -1,4 +1,4 @@
-/* src/modules/plugins/drivers/httpx.rs */
+/* src/plugins/system/httpx.rs */
 
 use crate::{
 	common::config::getenv,

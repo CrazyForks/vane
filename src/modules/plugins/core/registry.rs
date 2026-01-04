@@ -6,7 +6,6 @@ use crate::modules::plugins::{
 		matcher::CommonMatchPlugin,
 		ratelimit::{KeywordRateLimitMinPlugin, KeywordRateLimitSecPlugin},
 	},
-	protocol::detect::ProtocolDetectPlugin,
 	terminators::upgrader::upgrade::UpgradePlugin,
 };
 use crate::plugins::l4::{
@@ -17,6 +16,7 @@ use crate::plugins::l7::response::SendResponsePlugin;
 use crate::plugins::l7::{
 	cgi::CgiPlugin, static_files::StaticPlugin, upstream::FetchUpstreamPlugin,
 };
+use crate::plugins::protocol::detect::ProtocolDetectPlugin;
 use arc_swap::ArcSwap;
 use dashmap::DashMap;
 use once_cell::sync::Lazy;
