@@ -20,28 +20,24 @@ Execute the Vane 2.0 structural refactoring plan as detailed in `TODO.md`.
     - [x] **4.2: Plugins Organization**
         - [x] **4.2.1: Setup Plugins Dirs** (completed)
         - [x] **4.2.2: Move L4 Plugins** (completed)
-            - [x] Move `terminators/transport/proxy` -> `src/plugins/l4/proxy`. (completed)
-            - [x] Remove `pub mod proxy;` from `src/modules/plugins/terminators/transport/mod.rs`. (completed)
-            - [x] Fix `src/modules/plugins/core/registry.rs` proxy reference. (completed)
-            - [x] Fix `src/modules/plugins/core/registry.rs` l4 import. (completed)
-            - [x] Move `terminators/transport/abort.rs` -> `src/plugins/l4/abort.rs`. (completed)
-            - [x] Remove `pub mod abort;` from `src/modules/plugins/terminators/transport/mod.rs`. (completed)
-            - [x] Fix `src/modules/plugins/core/registry.rs` abort reference. (completed)
-            - [x] Reorganize `src/modules/plugins/core/registry.rs` imports. (completed)
-            - [x] Recheck `src/modules/plugins/core/registry.rs` imports and fixing the specific import structure. (completed)
-            - [x] Add `pub mod l4;` to `src/plugins/mod.rs`. (completed)
-            - [x] Create `src/plugins/l4/mod.rs`. (completed)
-            - [x] Fix `src/modules/plugins/core/registry.rs` to use `crate::plugins` instead of `crate::modules::plugins`. (completed)
-            - [x] Fix `src/modules/plugins/core/registry.rs` l4 path. (completed)
-            - [x] Fix `src/modules/plugins/core/registry.rs` super::l4 reference. (completed)
-            - [x] Add `pub mod abort;` and `pub mod proxy;` to `src/plugins/l4/mod.rs`. (completed)
+        - [x] **4.2.3: Move L7 Plugins** (completed)
+            - [x] Move `l7/resource` -> `src/plugins/l7/static_files`. (completed)
+            - [x] Remove `pub mod resource;` from `src/modules/plugins/l7/mod.rs`. (completed)
+            - [x] Fix `src/modules/plugins/core/registry.rs` resource reference. (completed)
+            - [x] Move `l7/cgi` -> `src/plugins/l7/cgi`. (completed)
+            - [x] Remove `pub mod cgi;` from `src/modules/plugins/l7/mod.rs`. (completed)
+            - [x] Fix `src/modules/plugins/core/registry.rs` cgi reference. (completed)
+            - [x] Move `l7/upstream` -> `src/plugins/l7/upstream`. (completed)
+            - [x] Remove `pub mod upstream;` from `src/modules/plugins/l7/mod.rs`. (completed)
+            - [x] Fix `src/modules/plugins/core/registry.rs` upstream reference. (completed)
+            - [x] Move `terminators/response` -> `src/plugins/l7/response`. (completed)
+            - [x] Remove `pub mod response;` from `src/modules/plugins/terminators/response/mod.rs`. (completed)
+            - [x] Remove `pub mod response;` from `src/modules/plugins/terminators/mod.rs`. (completed)
+            - [x] Fix `src/modules/plugins/core/registry.rs` l7 and response reference. (completed)
+            - [x] Add `pub mod l7;` to `src/plugins/mod.rs`. (completed)
+            - [x] Create `src/plugins/l7/mod.rs`. (completed)
+            - [x] Add `pub mod cgi;`, `pub mod static_files;`, `pub mod upstream;`, `pub mod response;` to `src/plugins/l7/mod.rs`. (completed)
             - [x] `cargo check`. (completed)
-        - [ ] **4.2.3: Move L7 Plugins**
-            - [ ] Move `l7/resource` -> `src/plugins/l7/static_files`.
-            - [ ] Move `l7/cgi` -> `src/plugins/l7/cgi`.
-            - [ ] Move `l7/upstream` -> `src/plugins/l7/upstream`.
-            - [ ] Move `terminators/response` -> `src/plugins/l7/response`.
-            - [ ] `cargo check`.
         - [ ] **4.2.4: Move System/Protocol**
             - [ ] Move TLS/QUIC -> `src/plugins/protocol/`.
             - [ ] Move `exec.rs`, `unix.rs` -> `src/plugins/system/`.
@@ -77,6 +73,8 @@ Execute the Vane 2.0 structural refactoring plan as detailed in `TODO.md`.
 - **4.2.1 Completed:** Setup plugin directories and added `pub mod plugins;` to `src/main.rs`.
     - `cargo check` passed with no errors or warnings.
 - **4.2.2 Completed:** Moved L4 Plugins.
+    - All sub-steps completed and `cargo check` passed with no errors or warnings.
+- **4.2.3 Completed:** Moved L7 Plugins.
     - All sub-steps completed and `cargo check` passed with no errors or warnings.
 
 ### 1. AGENT.md Management

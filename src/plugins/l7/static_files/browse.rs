@@ -1,4 +1,4 @@
-/* src/modules/plugins/l7/resource/browse.rs */
+/* src/plugins/l7/static_files/browse.rs */
 
 use anyhow::Result;
 use bytes::Bytes;

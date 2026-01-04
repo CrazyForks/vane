@@ -1,4 +1,4 @@
-/* src/modules/plugins/terminators/transport/proxy/proxy.rs */
+/* src/plugins/l4/proxy/proxy.rs */
 
 use crate::layers::l4p::quic::session::{self, SessionAction};
 use crate::{

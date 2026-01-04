@@ -1,4 +1,4 @@
-/* src/modules/plugins/l7/cgi/executor.rs */
+/* src/plugins/l7/cgi/executor.rs */
 
 use super::stream::{CgiResponseBody, pump_stdout};
 use crate::common::{config::getenv, sys::lifecycle::Error};

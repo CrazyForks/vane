@@ -1,4 +1,4 @@
-/* src/modules/plugins/l7/cgi/stream.rs */
+/* src/plugins/l7/cgi/stream.rs */
 
 use crate::common::sys::lifecycle::{Error, Result as VaneResult};
 use crate::layers::l7::container::{self, BufferGuard};

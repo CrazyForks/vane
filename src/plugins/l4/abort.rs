@@ -1,4 +1,4 @@
-/* src/modules/plugins/terminators/transport/abort.rs */
+/* src/plugins/l4/abort.rs */
 
 use crate::engine::contract::{
 	ConnectionObject, Layer, ParamDef, Plugin, ResolvedInputs, Terminator, TerminatorResult,

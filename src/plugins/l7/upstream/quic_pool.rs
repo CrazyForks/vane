@@ -1,4 +1,4 @@
-/* src/modules/plugins/l7/upstream/quic_pool.rs */
+/* src/plugins/l7/upstream/quic_pool.rs */
 
 use super::tls_verifier::NoVerifier;
 use crate::common::config::getenv;

@@ -1,4 +1,4 @@
-/* src/modules/plugins/l7/upstream/hyper_client.rs */
+/* src/plugins/l7/upstream/hyper_client.rs */
 
 use super::pool::{GLOBAL_INSECURE_CLIENT, GLOBAL_SECURE_CLIENT};
 use crate::common::sys::lifecycle::{Error, Result};

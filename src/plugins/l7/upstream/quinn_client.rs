@@ -1,4 +1,4 @@
-/* src/modules/plugins/l7/upstream/quinn_client.rs */
+/* src/plugins/l7/upstream/quinn_client.rs */
 
 use super::quic_pool;
 use crate::common::sys::lifecycle::{Error, Result};

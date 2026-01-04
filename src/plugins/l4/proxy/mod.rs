@@ -1,4 +1,4 @@
-/* src/modules/plugins/terminators/transport/proxy/mod.rs */
+/* src/plugins/l4/proxy/mod.rs */
 
 pub mod domain;
 pub mod ip;

@@ -1,4 +1,4 @@
-/* src/modules/plugins/terminators/response/content_type.rs */
+/* src/plugins/l7/response/content_type.rs */
 
 use bytes::Bytes;
 use serde_json::Value;

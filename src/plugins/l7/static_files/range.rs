@@ -1,4 +1,4 @@
-/* src/modules/plugins/l7/resource/range.rs */
+/* src/plugins/l7/static_files/range.rs */
 
 /// Represents a requested byte range.
 #[derive(Debug, Clone, Copy)]

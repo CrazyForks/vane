@@ -1,18 +1,21 @@
 /* src/modules/plugins/core/registry.rs */
 
 use crate::engine::contract::Plugin;
-use crate::plugins::l4::{abort::AbortConnectionPlugin, proxy::{domain::ProxyDomainPlugin, ip::TransparentProxyPlugin, node::ProxyNodePlugin}};
 use crate::modules::plugins::{
-	l7::{cgi::CgiPlugin, resource::StaticPlugin, upstream::FetchUpstreamPlugin},
 	middleware::{
 		matcher::CommonMatchPlugin,
 		ratelimit::{KeywordRateLimitMinPlugin, KeywordRateLimitSecPlugin},
 	},
 	protocol::detect::ProtocolDetectPlugin,
-	terminators::{
-		response::SendResponsePlugin,
-		upgrader::upgrade::UpgradePlugin,
-	},
+	terminators::upgrader::upgrade::UpgradePlugin,
+};
+use crate::plugins::l4::{
+	abort::AbortConnectionPlugin,
+	proxy::{domain::ProxyDomainPlugin, ip::TransparentProxyPlugin, node::ProxyNodePlugin},
+};
+use crate::plugins::l7::response::SendResponsePlugin;
+use crate::plugins::l7::{
+	cgi::CgiPlugin, static_files::StaticPlugin, upstream::FetchUpstreamPlugin,
 };
 use arc_swap::ArcSwap;
 use dashmap::DashMap;

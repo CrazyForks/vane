@@ -1,4 +1,4 @@
-/* src/modules/plugins/terminators/transport/proxy/domain.rs */
+/* src/plugins/l4/proxy/domain.rs */
 
 use super::execute_proxy;
 use crate::engine::contract::{

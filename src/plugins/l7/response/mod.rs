@@ -1,4 +1,4 @@
-/* src/modules/plugins/terminators/response/mod.rs */
+/* src/plugins/l7/response/mod.rs */
 
 pub mod content_type;
 

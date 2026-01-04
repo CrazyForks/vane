@@ -1,4 +1,4 @@
-/* src/modules/plugins/l7/resource/mod.rs */
+/* src/plugins/l7/static_files/mod.rs */
 
 pub mod browse;
 pub mod inspect;

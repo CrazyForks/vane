@@ -1,4 +1,4 @@
-/* src/modules/plugins/l7/resource/inspect.rs */
+/* src/plugins/l7/static_files/inspect.rs */
 
 use crate::common::config::getenv;
 use std::path::Path;

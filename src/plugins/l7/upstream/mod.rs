@@ -1,4 +1,4 @@
-/* src/modules/plugins/l7/upstream/mod.rs */
+/* src/plugins/l7/upstream/mod.rs */
 
 pub mod hyper_client;
 pub mod pool;
