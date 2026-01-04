@@ -1,4 +1,4 @@
-/* src/modules/plugins/middleware/ratelimit.rs */
+/* src/plugins/middleware/ratelimit.rs */
 
 use crate::{
 	common::config::getenv,

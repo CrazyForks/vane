@@ -1,7 +1,7 @@
 /* src/layers/l4/validator.rs */
 
 use crate::engine::contract::{Layer, ParamType, ProcessingStep};
-use crate::modules::plugins::core::registry;
+use crate::plugins::core::registry;
 use serde_json::Value;
 use std::borrow::Cow;
 use std::collections::{HashMap, HashSet};

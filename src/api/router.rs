@@ -1,8 +1,10 @@
-/* src/core/router.rs */
+/* src/api/router.rs */
 
 use crate::{
-	core::root, ingress::handler as ports_handler, ingress::model::PortState, middleware::auth,
-	middleware::logger, modules::plugins::core::handler as plugins_handler,
+	api::{handlers::root, middleware::auth, middleware::logger},
+	ingress::handler as ports_handler,
+	ingress::model::PortState,
+	plugins::core::handler as plugins_handler,
 };
 use axum::{
 	Router, middleware,

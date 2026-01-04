@@ -1,4 +1,4 @@
-/* src/modules/plugins/terminators/upgrader/upgrade.rs */
+/* src/plugins/protocol/upgrader/upgrade.rs */
 
 use crate::engine::contract::{
 	ConnectionObject, Layer, ParamDef, ParamType, Plugin, ResolvedInputs, Terminator,

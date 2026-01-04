@@ -1,4 +1,4 @@
-/* src/core/response.rs */
+/* src/api/response.rs */
 
 use axum::{
 	http::StatusCode,

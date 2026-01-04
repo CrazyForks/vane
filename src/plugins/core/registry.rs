@@ -1,13 +1,6 @@
-/* src/modules/plugins/core/registry.rs */
+/* src/plugins/core/registry.rs */
 
 use crate::engine::contract::Plugin;
-use crate::modules::plugins::{
-	middleware::{
-		matcher::CommonMatchPlugin,
-		ratelimit::{KeywordRateLimitMinPlugin, KeywordRateLimitSecPlugin},
-	},
-	terminators::upgrader::upgrade::UpgradePlugin,
-};
 use crate::plugins::l4::{
 	abort::AbortConnectionPlugin,
 	proxy::{domain::ProxyDomainPlugin, ip::TransparentProxyPlugin, node::ProxyNodePlugin},
@@ -17,6 +10,13 @@ use crate::plugins::l7::{
 	cgi::CgiPlugin, static_files::StaticPlugin, upstream::FetchUpstreamPlugin,
 };
 use crate::plugins::protocol::detect::ProtocolDetectPlugin;
+use crate::plugins::{
+	middleware::{
+		matcher::CommonMatchPlugin,
+		ratelimit::{KeywordRateLimitMinPlugin, KeywordRateLimitSecPlugin},
+	},
+	protocol::upgrader::upgrade::UpgradePlugin,
+};
 use arc_swap::ArcSwap;
 use dashmap::DashMap;
 use once_cell::sync::Lazy;

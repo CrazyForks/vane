@@ -2,7 +2,7 @@
 
 use crate::common::config::getenv;
 use crate::engine::contract::{MiddlewareOutput, ResolvedInputs};
-use crate::modules::plugins::core::external;
+use crate::plugins::core::external;
 use anyhow::Result;
 use fancy_log::{LogLevel, log};
 use std::collections::HashMap;

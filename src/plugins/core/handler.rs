@@ -1,8 +1,8 @@
-/* src/modules/plugins/core/handler.rs */
+/* src/plugins/core/handler.rs */
 
-use crate::core::response;
+use crate::api::response;
 use crate::engine::contract::ExternalPluginConfig;
-use crate::modules::plugins::core::{loader, registry};
+use crate::plugins::core::{loader, registry};
 use axum::{Json, extract::Path, http::StatusCode, response::IntoResponse};
 use serde_json::json;
 

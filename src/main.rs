@@ -2,12 +2,12 @@
 
 use std::env;
 
+pub mod api;
 pub mod common;
 pub mod core;
 pub mod engine;
 pub mod ingress;
 pub mod layers;
-pub mod middleware;
 pub mod modules;
 pub mod plugins;
 pub mod resources;

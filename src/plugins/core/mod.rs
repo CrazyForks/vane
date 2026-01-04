@@ -1,4 +1,4 @@
-/* src/modules/plugins/core/mod.rs */
+/* src/plugins/core/mod.rs */
 
 pub mod external;
 pub mod handler;

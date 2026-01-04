@@ -80,6 +80,16 @@ Execute the Vane 2.0 structural refactoring plan as detailed in `TODO.md`.
     - Moved TLS/QUIC/Detect to `src/plugins/protocol/`.
     - Moved exec/unix/httpx drivers to `src/plugins/system/`.
     - `cargo check` passed.
+- **4.2.5 Completed:** Finalized Plugins Refactoring.
+    - Moved remaining plugin components (core, middleware, upgrader) to `src/plugins/`.
+    - Completely removed `src/modules/plugins` directory.
+    - Cleaned up `src/modules/mod.rs`.
+    - Updated all global imports to use the new `crate::plugins` path.
+    - `cargo check` passed.
+- **5.1.1 Completed:** Setup API Module.
+    - Moved router, handlers, response, and middleware to `src/api/`.
+    - Updated all global imports (`crate::core::router` -> `crate::api::router`, etc.).
+    - `cargo check` passed.
 
 ### 1. AGENT.md Management
 - `AGENT.md` is your personal workspace and status tracker.

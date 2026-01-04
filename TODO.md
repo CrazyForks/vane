@@ -207,23 +207,22 @@ This plan breaks down the structural overhaul into atomic, verifiable steps.
                 - [x] Move `exec.rs`, `unix.rs` -> `src/plugins/system/`.
                 - [x] `cargo check`.
     
-    - [ ] **4.2.5: Cleanup Plugins**
-        - [ ] Remove `src/modules/plugins`.
-        - [ ] Remove `plugins` from `src/modules/mod.rs`.
-        - [ ] `cargo check`.
-
-## Phase 5: Server & API
+            - [x] **4.2.5: Cleanup Plugins**
+                - [x] Remove `src/modules/plugins`.
+                - [x] Remove `plugins` from `src/modules/mod.rs`.
+                - [x] `cargo check`.
+    ## Phase 5: Server & API
 *Goal: Separate startup from runtime.*
 
 - [ ] **5.1: API**
-    - [ ] **5.1.1: Setup API**
-        - [ ] Create `src/api/`.
-        - [ ] Move `src/core/router.rs` -> `src/api/router.rs`.
-        - [ ] Move `src/core/root.rs` -> `src/api/handlers/root.rs`.
-        - [ ] Move `src/core/response.rs` -> `src/api/response.rs`.
-        - [ ] Move `src/middleware/` -> `src/api/middleware/`.
-        - [ ] Fix imports.
-        - [ ] `cargo check`.
+    - [x] **5.1.1: Setup API**
+        - [x] Create `src/api/`.
+        - [x] Move `src/core/router.rs` -> `src/api/router.rs`.
+        - [x] Move `src/core/root.rs` -> `src/api/handlers/root.rs`.
+        - [x] Move `src/core/response.rs` -> `src/api/response.rs`.
+        - [x] Move `src/middleware/` -> `src/api/middleware/`.
+        - [x] Fix imports.
+        - [x] `cargo check`.
 
 - [ ] **5.2: Bootstrap**
     - [ ] **5.2.1: Rename Core**

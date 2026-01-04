@@ -13,7 +13,7 @@ use crate::core::{console, logging, monitor};
 use crate::ingress::{hotswap, listener, model};
 use crate::layers::l4p::{hotswap as resolver_hotswap, model as resolver_model};
 use crate::layers::l7::{hotswap as app_hotswap, model as app_model};
-use crate::modules::plugins::core::loader as plugin_loader;
+use crate::plugins::core::loader as plugin_loader;
 use crate::resources::{certs, service_discovery as nodes};
 
 /// Entry point for the Vane bootstrap sequence.

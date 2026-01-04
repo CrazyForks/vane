@@ -1,4 +1,4 @@
-/* src/modules/plugins/core/external.rs */
+/* src/plugins/core/external.rs */
 
 use crate::common::config::getenv;
 use crate::engine::contract::ConnectionObject;

@@ -1,4 +1,4 @@
-/* src/modules/plugins/terminators/upgrader/decryptor.rs */
+/* src/plugins/protocol/upgrader/decryptor.rs */
 
 use crate::engine::contract::ConnectionObject;
 use crate::layers::l7::http::httpx;

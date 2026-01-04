@@ -1,6 +1,6 @@
-/* src/core/root.rs */
+/* src/api/handlers/root.rs */
 
-use crate::core::response;
+use crate::api::response;
 use axum::response::IntoResponse;
 use chrono::Utc;
 use serde_json::{Map, Value, json};

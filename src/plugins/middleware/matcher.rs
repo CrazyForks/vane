@@ -1,4 +1,4 @@
-/* src/modules/plugins/middleware/matcher.rs */
+/* src/plugins/middleware/matcher.rs */
 
 use crate::engine::contract::{
 	GenericMiddleware, Middleware, MiddlewareOutput, ParamDef, ParamType, Plugin, ResolvedInputs,

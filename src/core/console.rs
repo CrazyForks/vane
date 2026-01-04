@@ -8,10 +8,11 @@ use tokio::net::TcpListener;
 use tokio::sync::Notify;
 use tokio::task::JoinHandle;
 
+use crate::api::middleware::auth;
+use crate::api::router;
 use crate::common::{config::getenv, net::portool};
-use crate::core::{router, socket};
+use crate::core::socket;
 use crate::ingress::model;
-use crate::middleware::auth;
 
 pub struct ConsoleHandles {
 	pub tcp_task: JoinHandle<()>,
